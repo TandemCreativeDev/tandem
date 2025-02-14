@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        "tandem-mono": ["'IBM Plex Mono'", "sans-serif"],
+        "tandem-block": ["'Roboto Condensed'", "sans-serif"],
+      },
     },
   },
   plugins: [],
