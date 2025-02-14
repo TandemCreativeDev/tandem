@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function AboutSection() {
   return (
     <>
@@ -15,8 +16,13 @@ export default function AboutSection() {
           </p>
         </div>
         <div className="flex h-[700px]">
-          <div className="bg-green-400 w-7/12 h-[700px]"></div>
-          <div className="border-t-4 border-t-black h-full w-5/12">
+          <Image
+            src="/laptop-image.png"
+            alt="laptop showcasing different work by Tandem"
+            height={700}
+            width={900}
+          ></Image>
+          <div className="border-t-4 border-t-black h-full w-full">
             <p className="w-1/2 m-auto mt-20 text-black text-lg">
               Fonthill is a digital agency started by Jack and Max, two
               full-stack developers who met at Founders and Coders and have a

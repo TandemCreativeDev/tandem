@@ -16,8 +16,6 @@ export default function Hero() {
           Technology with purpose, impact with power.
         </h2>
       </div>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
     </div>
   );
 }
