@@ -1,3 +1,4 @@
+import AboutSection from "@/components/About";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 export default function HeroPage() {
@@ -5,6 +6,7 @@ export default function HeroPage() {
     <div className="relative">
       <Header />
       <Hero />
+      <AboutSection />
     </div>
   );
 }
