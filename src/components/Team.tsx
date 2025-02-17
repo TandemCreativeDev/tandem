@@ -1,6 +1,6 @@
 export default function TeamSection() {
   return (
-    <>
+    <section id="team">
       <div className="h-[1000px] w-full bg-black  pt-10">
         <div className="h-1/4 flex justify-between w-3/4 m-auto ">
           <h3>projects</h3>
@@ -25,6 +25,6 @@ export default function TeamSection() {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }
