@@ -59,7 +59,7 @@ export default function Accordion() {
           return (
             <div className="bg-white text-black text-center border-t-black border-[1px] py-10">
               <h3
-                className="text-7xl uppercase font-tandem-block font-normal"
+                className="text-7xl uppercase font-tandem-block font-normal hover:bg-black hover:text-white"
                 onClick={() => handleContentClick(index)}
               >
                 {section.title}
