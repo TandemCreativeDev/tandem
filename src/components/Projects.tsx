@@ -11,7 +11,7 @@ export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(0);
 
   return (
-    <>
+    <section id="projects">
       <div className="h-[1000px] w-full bg-gray-600  pt-10">
         <div className="h-1/4 flex justify-between w-3/4 m-auto ">
           <h3>projects</h3>
@@ -35,6 +35,6 @@ export default function ProjectsSection() {
         </div>
         <h4 className="text-7xl ml-96">{projects[selectedProject]}</h4>
       </div>
-    </>
+    </section>
   );
 }
