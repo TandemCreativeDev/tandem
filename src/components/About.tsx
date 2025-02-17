@@ -7,7 +7,7 @@ export default function AboutSection() {
           <h2 className="uppercase text-black font-semibold text-xs" id="about">
             ■ About
           </h2>
-          <p className="text-[#A5A5A5] font-tandem-block uppercase text-5xl w-3/4 max-h-10 text-pretty">
+          <p className="text-gray-500 font-tandem-block uppercase text-5xl w-3/4 max-h-10 text-pretty">
             <span className="text-black">
               We prioritise human-centered design
             </span>
