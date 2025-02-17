@@ -43,10 +43,14 @@ export default function Accordion() {
     },
   ];
 
-  const [showContent, setShowContent] = useState(false);
+  const [openAccordionSection, setOpenAccordionSection] = useState(20);
 
-  const handleContentClick = () => {
-    setShowContent(!showContent);
+  const handleContentClick = (index: number) => {
+    if (openAccordionSection === index) {
+      setOpenAccordionSection(20);
+    } else {
+      setOpenAccordionSection(index);
+    }
   };
   return (
     <>
@@ -56,14 +60,14 @@ export default function Accordion() {
             <div className="bg-white text-black text-center border-t-black border-[1px] py-10">
               <h3
                 className="text-7xl uppercase font-tandem-block font-normal"
-                onClick={handleContentClick}
+                onClick={() => handleContentClick(index)}
               >
                 {section.title}
               </h3>
               <p
                 className={clsx("text-red-400", {
-                  block: showContent,
-                  hidden: !showContent,
+                  block: openAccordionSection === index,
+                  hidden: openAccordionSection !== index,
                 })}
               >
                 {section.content}
