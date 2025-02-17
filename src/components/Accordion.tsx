@@ -59,10 +59,10 @@ export default function Accordion() {
           return (
             <div
               key={`accordion-${index}`}
-              className="bg-white text-black text-center border-t-black border-[1px] py-10"
+              className="bg-white text-black text-center border-t-black border-[1px] "
             >
               <h3
-                className="text-7xl uppercase font-tandem-block font-normal hover:bg-black hover:text-white"
+                className="text-7xl uppercase font-tandem-block font-normal hover:bg-black hover:text-white py-10"
                 onClick={() => handleContentClick(index)}
               >
                 {section.title}
