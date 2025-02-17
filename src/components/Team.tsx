@@ -7,7 +7,7 @@ export default function TeamSection() {
           <div className="w-3/4">
             <p className="text-4xl font-tandem-block uppercase text-gray-400 mb-20">
               <span className="text-white">Our dedicated team specialises</span>{" "}
-              in creating impactful digital soltuions for arts, music, and
+              in creating impactful digital solutions for arts, music, and
               community focused projects.
             </p>
             <div className="flex gap-10 items-end font-tandem-mono uppercase">
