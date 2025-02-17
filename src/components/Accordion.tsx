@@ -17,7 +17,7 @@ export default function Accordion() {
         "Exercitation velit aute velit ex eiusmod amet laborum eu est esse culpa. Cillum quis esse eiusmod occaecat enim culpa est adipisicing nostrud laboris proident dolore incididunt culpa. Fugiat deserunt Lorem aliquip exercitation consectetur ex nostrud ex tempor excepteur sit irure voluptate. Cupidatat ad dolore deserunt.",
     },
     {
-      title: "technical consultantions",
+      title: "technical consultations",
       content:
         "Exercitation velit aute velit ex eiusmod amet laborum eu est esse culpa. Cillum quis esse eiusmod occaecat enim culpa est adipisicing nostrud laboris proident dolore incididunt culpa. Fugiat deserunt Lorem aliquip exercitation consectetur ex nostrud ex tempor excepteur sit irure voluptate. Cupidatat ad dolore deserunt.",
     },
