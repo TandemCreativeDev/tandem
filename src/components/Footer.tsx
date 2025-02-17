@@ -3,14 +3,14 @@ export default function FooterSection() {
   return (
     <section
       id="footer"
-      className="h-[1000px] uppercase border-t-gray-700 border-t-2 pt-6"
+      className="h-[500px] uppercase border-t-gray-700 border-t-2 pt-6"
     >
       <div className="flex w-full h-full">
         <div className="h-full w-7/12">
           <p className="font-tandem-mono pl-10">tandem creative dev</p>
         </div>
         <div className="h-full w-5/12">
-          <p className="mb-20">index</p>
+          <p className="mb-20 font-tandem-mono">index</p>
           <div className="flex flex-col text-5xl font-tandem-block ">
             <Link href={"#home"}>Home</Link>
             <Link href={"#about"}>About</Link>
