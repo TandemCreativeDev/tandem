@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import ServicesSection from "@/components/Services";
 import ProjectsSection from "@/components/Projects";
 import TestimonialsSection from "@/components/Testimonials";
+import TeamSection from "@/components/Team";
 export default function HeroPage() {
   return (
     <div className="relative">
@@ -13,6 +14,7 @@ export default function HeroPage() {
       <ServicesSection />
       <ProjectsSection />
       <TestimonialsSection />
+      <TeamSection />
     </div>
   );
 }
