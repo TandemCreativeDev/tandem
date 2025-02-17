@@ -2,6 +2,7 @@ import AboutSection from "@/components/About";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ServicesSection from "@/components/Services";
+import ProjectsSection from "@/components/Projects";
 export default function HeroPage() {
   return (
     <div className="relative">
@@ -9,6 +10,7 @@ export default function HeroPage() {
       <Hero />
       <AboutSection />
       <ServicesSection />
+      <ProjectsSection />
     </div>
   );
 }
