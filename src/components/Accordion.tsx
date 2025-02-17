@@ -57,7 +57,10 @@ export default function Accordion() {
       <div className="flex flex-col">
         {accordionSections.map((section, index) => {
           return (
-            <div className="bg-white text-black text-center border-t-black border-[1px] py-10">
+            <div
+              key={`accordion-${index}`}
+              className="bg-white text-black text-center border-t-black border-[1px] py-10"
+            >
               <h3
                 className="text-7xl uppercase font-tandem-block font-normal hover:bg-black hover:text-white"
                 onClick={() => handleContentClick(index)}
