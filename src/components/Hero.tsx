@@ -13,9 +13,9 @@ export default function Hero() {
         />
       </div>
       <div className="h-screen w-screen flex justify-center items-center">
-        <h2 className="text-7xl max-w-[1000px]  text-pretty m-auto text-center uppercase font-tandem-block font-normal leading-tight ">
+        <span className="text-white text-7xl max-w-[1000px]  text-pretty m-auto text-center uppercase font-tandem-condensed-medium leading-tight">
           Technology with purpose, impact with power.
-        </h2>
+        </span>
       </div>
     </section>
   );
