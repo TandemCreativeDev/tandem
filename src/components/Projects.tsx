@@ -39,9 +39,10 @@ export default function ProjectsSection() {
               className={clsx(
                 "font-tandem-medium text-start text-3xl uppercase ",
                 {
-                  "<text-white</text-white:w> ": selectedProject === index,
-                  "text-white hover:text-gray-300": selectedProject !== index,
-                }
+                  "text-white ": selectedProject === index,
+                  "text-gray-300 hover:text-gray-200":
+                    selectedProject !== index,
+                },
               )}
             >
               {project.title}
