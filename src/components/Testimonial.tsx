@@ -1,7 +1,7 @@
 export default function Testimonial() {
   return (
     <>
-      <div className="flex flex-col mt-20">
+      <div className="flex flex-col mb-16">
         <p className="">
           Minim ullamco commodo minim non sint cillum aliquip proident laborum
           aute. Mollit veniam incididunt dolore pariatur non ad. Id laboris
