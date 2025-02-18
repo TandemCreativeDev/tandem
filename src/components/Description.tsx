@@ -13,7 +13,7 @@ export default function DescriptionSection() {
         </div>
         <div className="border-t-4 border-t-black h-full col-span-5 col-start-8 bg-white">
           <p className="w-1/2 m-auto mt-20 text-black text-lg">
-            Fonthill is a digital agency started by Jack and Max, two full-stack
+            Tandem Creative Dev was started by Jack and Max, two full-stack
             developers who met at Founders and Coders and have a shared passion
             for driving positive change through digital innovation.
           </p>
