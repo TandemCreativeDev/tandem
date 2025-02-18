@@ -75,11 +75,11 @@ export default function Accordion() {
                   hidden: openAccordionSection !== index,
                 })}
               >
-                <p className="w-1/2">{section.content}</p>
+                <p className="w-1/2 text-pretty text-left">{section.content}</p>
                 <div className="flex flex-col w-1/2">
-                  <p>wank</p>
-                  <p>bank</p>
-                  <p>nvim</p>
+                  <p>test</p>
+                  <p>test2</p>
+                  <p>test3</p>
                 </div>
               </div>
             </div>
