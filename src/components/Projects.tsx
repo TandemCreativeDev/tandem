@@ -27,17 +27,22 @@ export default function ProjectsSection() {
           src={`/projects/${projects[selectedProject].src}.jpeg`}
         ></Image>
       </div>
-      <h3 className="col-start-3 col-span-1">projects</h3>
+      <h2 className="uppercase text-white font-tandem-mono-medium text-xs col-start-3 col-span-1">
+        ■ Projects
+      </h2>
       <div className=" col-start-8 col-span-3 flex flex-col z-30">
         {projects.map((project, index) => {
           return (
             <button
               key={`project-${index}`}
               onClick={() => setSelectedProject(index)}
-              className={clsx("text-start text-3xl uppercase ", {
-                "<text-white</text-white:w> ": selectedProject === index,
-                "text-gray-900 hover:text-gray-300": selectedProject !== index,
-              })}
+              className={clsx(
+                "font-tandem-medium text-start text-3xl uppercase ",
+                {
+                  "<text-white</text-white:w> ": selectedProject === index,
+                  "text-white hover:text-gray-300": selectedProject !== index,
+                }
+              )}
             >
               {project.title}
             </button>
