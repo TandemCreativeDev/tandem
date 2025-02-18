@@ -23,7 +23,7 @@ export default function ProjectsSection() {
           //width={1000}
           fill={true}
           height={0}
-          alt=`Mockup of ${projects[selectedProject].title}`
+          alt={`Mockup of ${projects[selectedProject].title}`}
           src={`/projects/${projects[selectedProject].src}.jpeg`}
         ></Image>
       </div>
