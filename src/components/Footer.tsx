@@ -15,7 +15,7 @@ export default function FooterSection() {
           <Link href={"#about"}>About</Link>
           <Link href={"#services"}>Services</Link>
           <Link href={"#work"}>Work</Link>
-          <Link href={"#clients"}>Clients</Link>
+          <Link href={"#testimonials"}>Testimonials</Link>
           <Link href={"#Team"}>Team</Link>
         </div>
       </div>
