@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import clsx from "clsx";
 
-import AccordionContent from "./AccordionContent";
+//import AccordionContent from "./AccordionContent";
 
 export default function Accordion() {
   const accordionSections = [
@@ -64,7 +64,7 @@ export default function Accordion() {
               className="bg-white text-black text-center border-t-black border-[1px] "
             >
               <button
-                className="text-7xl uppercase font-tandem-block font-normal w-full hover:bg-black hover:text-white py-10"
+                className="text-7xl uppercase font-tandem-condensed-medium w-full hover:bg-black hover:text-white py-10"
                 onClick={() => handleContentClick(index)}
               >
                 {section.title}
