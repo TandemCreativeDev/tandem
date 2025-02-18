@@ -13,8 +13,17 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        "tandem-mono": ["'IBM Plex Mono'", "sans-serif"],
-        "tandem-block": ["'Roboto Condensed'", "sans-serif"],
+        "tandem-regular": ["var(--font-diatype-regular)", "sans-serif"],
+        "tandem-medium": ["var(--font-diatype-medium)", "sans-serif"],
+        "tandem-mono-regular": [
+          "var(--font-diatype-mono-regular)",
+          "sans-serif",
+        ],
+        "tandem-mono-medium": ["var(--font-diatype-mono-medium)", "sans-serif"],
+        "tandem-condensed-medium": [
+          "var(--font-diatype-condensed-medium)",
+          "sans-serif",
+        ],
       },
     },
   },

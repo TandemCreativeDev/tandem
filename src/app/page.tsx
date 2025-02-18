@@ -9,7 +9,7 @@ import TeamSection from "@/components/Team";
 import FooterSection from "@/components/Footer";
 export default function HeroPage() {
   return (
-    <div className="relative">
+    <>
       <Header />
       <Hero />
       <AboutSection />
@@ -19,6 +19,6 @@ export default function HeroPage() {
       <TestimonialsSection />
       <TeamSection />
       <FooterSection />
-    </div>
+    </>
   );
 }

@@ -8,9 +8,11 @@ export default function TeamSection() {
       id="team"
       className="h-[1000px] w-full grid grid-cols-12 bg-black  pt-10"
     >
-      <h3 className="col-span-1 col-start-3">projects</h3>
+      <h2 className="uppercase text-white font-tandem-mono-medium text-xs col-start-3 col-span-1">
+        ■ Team
+      </h2>
       <div className="col-start-5 col-span-8">
-        <p className="text-4xl font-tandem-block uppercase text-gray-400 mb-20">
+        <p className="text-4xl font-tandem-condensed-medium uppercase text-gray-400 mb-20">
           <span className="text-white">Our dedicated team specialises</span> in
           creating impactful digital solutions for arts, music, and community
           focused projects.
