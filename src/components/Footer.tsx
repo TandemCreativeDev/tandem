@@ -1,16 +1,14 @@
 import Link from "next/link";
 export default function FooterSection() {
   return (
-    <section
+    <footer
       id="footer"
-      className="h-[500px] grid grid-cols-12 uppercase border-t-gray-700 border-t-2 pt-6"
+      className="bg-black text-white grid grid-cols-12 uppercase border-t-gray-700 border-t-2 pt-6 font-tandem-mono-medium"
     >
-      <p className="font-tandem-mono pl-10 col-span-2 col-start-1">
-        tandem creative dev
-      </p>
+      <span className="pl-10 col-span-2 col-start-1">tandem creative dev</span>
       <div className="h-full col-start-8 col-span-1">
-        <p className="mb-20 font-tandem-mono">index</p>
-        <div className="flex flex-col text-5xl font-tandem-block ">
+        <h2 className="mb-20">index</h2>
+        <div className="flex flex-col text-5xl font-tandem-condensed-medium">
           <Link href={"#home"}>Home</Link>
           <Link href={"#about"}>About</Link>
           <Link href={"#services"}>Services</Link>
@@ -19,24 +17,25 @@ export default function FooterSection() {
           <Link href={"#team"}>Team</Link>
         </div>
       </div>
-      <footer className="flex font-tandem-mono pt-10 col-span-12 col-start-1">
-        <div className="w-7/12 h-32 flex gap-32 pl-10">
+      <div className="flex py-10 col-span-12 col-start-1">
+        <div className="w-7/12 flex gap-32 pl-10">
           <div>
-            <p>timezone</p>
-            <p>london</p>
+            <h3 className="text-gray-500">timezone</h3>
+            <p>london (uk) 4:44PM</p>
           </div>
           <div>
-            <p>Location</p>
-            <p>london uk</p>
+            <h3 className="text-gray-500">Location</h3>
+            <p>london, uk</p>
           </div>
         </div>
-        <div className="w-5/12 h-32 ">
-          <div>
-            <p>socials</p>
+        <div className="w-5/12">
+          <h3 className="text-gray-500">socials</h3>
+          <div className="flex flex-row gap-4">
+            <p>instagram</p>
             <p>linkedin</p>
           </div>
         </div>
-      </footer>
-    </section>
+      </div>
+    </footer>
   );
 }
