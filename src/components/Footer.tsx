@@ -16,7 +16,7 @@ export default function FooterSection() {
           <Link href={"#services"}>Services</Link>
           <Link href={"#work"}>Work</Link>
           <Link href={"#testimonials"}>Testimonials</Link>
-          <Link href={"#Team"}>Team</Link>
+          <Link href={"#team"}>Team</Link>
         </div>
       </div>
       <footer className="flex font-tandem-mono pt-10 col-span-12 col-start-1">
