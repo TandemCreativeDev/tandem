@@ -61,12 +61,12 @@ export default function Accordion() {
               key={`accordion-${index}`}
               className="bg-white text-black text-center border-t-black border-[1px] "
             >
-              <h3
-                className="text-7xl uppercase font-tandem-block font-normal hover:bg-black hover:text-white py-10"
+              <button
+                className="text-7xl uppercase font-tandem-block font-normal w-full hover:bg-black hover:text-white py-10"
                 onClick={() => handleContentClick(index)}
               >
                 {section.title}
-              </h3>
+              </button>
               <p
                 className={clsx("text-red-400", {
                   block: openAccordionSection === index,
