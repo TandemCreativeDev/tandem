@@ -1,14 +1,15 @@
 import Image from "next/image";
 export default function Hero() {
   return (
-    <div>
-      <div className=" ">
+    <section>
+      <div className="absolute h-screen w-screen top-0 left-0 -z-40">
         <Image
           src={"/hero-img.jpg"}
           alt="Our hero image"
-          width={10000}
-          height={10000}
+          fill
+          sizes="100vw" // Important for responsiveness/fill={true}
           className="absolute top-0 left-0 -z-50"
+          style={{ objectFit: "cover" }} // Ensures the image covers the entire container
         />
       </div>
       <div className="h-screen w-screen flex justify-center items-center">
@@ -16,6 +17,6 @@ export default function Hero() {
           Technology with purpose, impact with power.
         </h2>
       </div>
-    </div>
+    </section>
   );
 }

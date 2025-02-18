@@ -3,25 +3,23 @@ export default function FooterSection() {
   return (
     <section
       id="footer"
-      className="h-[1000px] uppercase border-t-gray-700 border-t-2 pt-6"
+      className="h-[500px] grid grid-cols-12 uppercase border-t-gray-700 border-t-2 pt-6"
     >
-      <div className="flex w-full h-full">
-        <div className="h-full w-7/12">
-          <p className="font-tandem-mono pl-10">tandem creative dev</p>
-        </div>
-        <div className="h-full w-5/12">
-          <p className="mb-20">index</p>
-          <div className="flex flex-col text-5xl font-tandem-block ">
-            <Link href={"#home"}>Home</Link>
-            <Link href={"#about"}>About</Link>
-            <Link href={"#services"}>Services</Link>
-            <Link href={"#work"}>Work</Link>
-            <Link href={"#clients"}>Clients</Link>
-            <Link href={"#Team"}>Team</Link>
-          </div>
+      <p className="font-tandem-mono pl-10 col-span-2 col-start-1">
+        tandem creative dev
+      </p>
+      <div className="h-full col-start-8 col-span-1">
+        <p className="mb-20 font-tandem-mono">index</p>
+        <div className="flex flex-col text-5xl font-tandem-block ">
+          <Link href={"#home"}>Home</Link>
+          <Link href={"#about"}>About</Link>
+          <Link href={"#services"}>Services</Link>
+          <Link href={"#work"}>Work</Link>
+          <Link href={"#testimonials"}>Testimonials</Link>
+          <Link href={"#team"}>Team</Link>
         </div>
       </div>
-      <footer className="flex font-tandem-mono pt-10">
+      <footer className="flex font-tandem-mono pt-10 col-span-12 col-start-1">
         <div className="w-7/12 h-32 flex gap-32 pl-10">
           <div>
             <p>timezone</p>
