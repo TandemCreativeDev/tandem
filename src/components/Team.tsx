@@ -58,7 +58,7 @@ export default function TeamSection() {
                 >
                   <Image
                     src={`/portraits/portrait-max.jpg`}
-                    alt="Portrait of Jack, one of the Tandem founders"
+                    alt="Portrait of Max, one of the Tandem founders"
                     layout="intrinsic"
                     width={500}
                     height={500}
