@@ -18,10 +18,10 @@ export default function TeamPortrait({
           <div
             className={`transition-all duration-700 ${
               activeImage === teamMember
-                ? "w-[500px] h-[500px]"
+                ? "max-w-[500px] max-h-[500px]"
                 : activeImage === otherTeamMember
-                  ? "w-[380px] h-[380px]"
-                  : "w-[400px] h-[400px]"
+                  ? "max-w-[380px] max-h-[380px]"
+                  : "max-w-[400px] max-h-[400px]"
             }`}
           >
             <Image
