@@ -1,10 +1,10 @@
 import Image from "next/image";
 export default function DescriptionSection() {
   return (
-    <section className="grid grid-cols-12 h-[700px] border-t-4 border-t-black ">
+    <section className="grid grid-cols-12  border-t-4 border-t-black ">
       <div className="col-span-7">
         <Image
-          src="/laptop-image.png"
+          src="/wedgy-laptop-image.jpeg"
           alt="laptop showcasing different work by Tandem"
           height={700}
           width={900}
