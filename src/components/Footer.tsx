@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Time from "./Time";
 export default function FooterSection() {
   return (
     <footer
@@ -21,7 +22,7 @@ export default function FooterSection() {
         <div className="w-7/12 flex gap-32 pl-10">
           <div>
             <h3 className="text-gray-500">timezone</h3>
-            <p>london (uk) 4:44PM</p>
+            <Time />
           </div>
           <div>
             <h3 className="text-gray-500">Location</h3>
