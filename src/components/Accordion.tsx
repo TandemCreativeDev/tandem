@@ -73,7 +73,7 @@ export default function Accordion() {
               className="bg-white text-black text-center border-t-black border-[1px] "
             >
               <button
-                className="text-7xl uppercase font-tandem-condensed-medium w-full hover:bg-black hover:text-white py-10"
+                className="md:text-7xl text-3xl uppercase font-tandem-condensed-medium w-full hover:bg-black hover:text-white py-10"
                 onClick={() => handleContentClick(index)}
               >
                 {section.title}
