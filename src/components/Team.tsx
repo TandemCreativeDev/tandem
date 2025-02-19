@@ -18,7 +18,7 @@ export default function TeamSection() {
           focused projects.
         </p>
         <div className="col-start-5 col-span-8">
-          <div className="flex gap-10 items-end font-tandem-mono uppercase">
+          <div className="flex gap-10 items-end font-tandem-mono uppercase text-white">
             <div className="flex flex-col">
               <div
                 onClick={() => setActiveImage(1)}
