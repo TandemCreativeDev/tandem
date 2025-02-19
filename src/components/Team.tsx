@@ -20,7 +20,7 @@ export default function TeamSection() {
           focused projects.
         </p>
         <div className="col-start-5 col-span-8">
-          <div className="flex gap-10 items-end font-tandem-mono uppercase text-white">
+          <div className="flex gap-10 items-end font-tandem-mono uppercase text-white h-[550px]">
             <div className="flex flex-col">
               <button>
                 <div
@@ -66,8 +66,8 @@ export default function TeamSection() {
                   ></Image>
                 </div>
               </button>
-              <p>Maxime Downe</p>
-              <p>Co-Founder \ Full-Stack Developer</p>
+              <p className="text-right">Maxime Downe</p>
+              <p className="text-right">Co-Founder \ Full-Stack Developer</p>
             </div>
           </div>
         </div>
