@@ -1,8 +1,10 @@
 "use client";
-import clsx from "clsx";
+
 import { useState } from "react";
+import Image from "next/image";
+
 export default function TeamSection() {
-  const [activeImage, setActiveImage] = useState(0);
+  const [activeImage, setActiveImage] = useState(100);
   return (
     <section
       id="team"
@@ -18,30 +20,54 @@ export default function TeamSection() {
           focused projects.
         </p>
         <div className="col-start-5 col-span-8">
-          <div className="flex gap-10 items-end font-tandem-mono uppercase">
+          <div className="flex gap-10 items-end font-tandem-mono uppercase text-white h-[550px]">
             <div className="flex flex-col">
-              <div
-                onClick={() => setActiveImage(1)}
-                className={clsx(`bg-yellow-400 cursor-pointer`, {
-                  "h-[300px] w-[300px]": activeImage === 0,
-
-                  "h-[500px] w-[500px]": activeImage === 1,
-                })}
-              ></div>
+              <button>
+                <div
+                  className={`transition-all duration-700 ${
+                    activeImage === 0
+                      ? "w-[500px] h-[500px]"
+                      : activeImage === 1
+                        ? "w-[380px] h-[380px]"
+                        : "w-[400px] h-[400px]"
+                  }`}
+                >
+                  <Image
+                    src="/portraits/portrait-jack.jpg"
+                    alt="Portrait of Jack, one of the Tandem founders"
+                    layout="intrinsic"
+                    width={500}
+                    height={500}
+                    onMouseEnter={() => setActiveImage(0)}
+                  />
+                </div>
+              </button>
               <p>Jack Casstles-Jones</p>
               <p>Co-Founder \ Full-Stack Developer</p>
             </div>
             <div className="flex flex-col">
-              <div
-                onClick={() => setActiveImage(0)}
-                className={clsx(`bg-yellow-400 cursor-pointer`, {
-                  "h-[300px] w-[300px]": activeImage === 1,
-
-                  "h-[500px] w-[500px]": activeImage === 0,
-                })}
-              ></div>
-              <p>Maxime Downe</p>
-              <p>Co-Founder \ Full-Stack Developer</p>
+              <button>
+                <div
+                  className={`transition-all duration-700 ${
+                    activeImage === 1
+                      ? "w-[500px] h-[500px]"
+                      : activeImage === 0
+                        ? "w-[380px] h-[380px]"
+                        : "w-[400px] h-[400px]"
+                  }`}
+                >
+                  <Image
+                    src={`/portraits/portrait-max.jpg`}
+                    alt="Portrait of Max, one of the Tandem founders"
+                    layout="intrinsic"
+                    width={500}
+                    height={500}
+                    onMouseEnter={() => setActiveImage(1)}
+                  ></Image>
+                </div>
+              </button>
+              <p className="text-right">Maxime Downe</p>
+              <p className="text-right">Co-Founder \ Full-Stack Developer</p>
             </div>
           </div>
         </div>

@@ -1,16 +1,16 @@
 import Image from "next/image";
 export default function DescriptionSection() {
   return (
-    <section className="grid grid-cols-12 h-[700px]">
+    <section className="grid grid-cols-12  border-t-4 border-t-black ">
       <div className="col-span-7">
         <Image
-          src="/laptop-image.png"
+          src="/wedgy-laptop-image.jpeg"
           alt="laptop showcasing different work by Tandem"
           height={700}
           width={900}
         ></Image>
       </div>
-      <div className="border-t-4 border-t-black h-full col-span-5 col-start-8 bg-white">
+      <div className="h-full col-span-5 col-start-8 bg-white">
         <p className="w-1/2 m-auto mt-20 text-black text-lg">
           Tandem Creative Dev was started by Jack and Max, two full-stack
           developers who met at Founders and Coders and have a shared passion

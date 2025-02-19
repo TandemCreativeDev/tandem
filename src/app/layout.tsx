@@ -21,9 +21,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${diatypeRegular.variable} ${diatypeMedium.variable} ${diatypeMonoRegular.variable} ${diatypeMonoMedium.variable} ${diatypeCondensedMedium.variable}`}
+      className={`${diatypeRegular.variable} ${diatypeMedium.variable} ${diatypeMonoRegular.variable} ${diatypeMonoMedium.variable} ${diatypeCondensedMedium.variable} scroll-smooth`}
     >
-      <body className="font-tandem-regular antialiased relative">{children}</body>
+      <body className="font-tandem-regular antialiased relative">
+        {children}
+      </body>
     </html>
   );
 }
