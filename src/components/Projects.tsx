@@ -15,14 +15,14 @@ export default function ProjectsSection() {
   return (
     <section
       id="work"
-      className="h-[1000px] relative w-full pt-10 grid grid-cols-12"
+      className="h-screen relative w-full pt-10 grid grid-cols-12"
     >
       <div className="absolute top-0 left-0 w-full h-full">
         <Image
-          className="-z-40 block"
-          //width={1000}
-          fill={true}
-          height={0}
+          fill
+          sizes="100vw" // Important for responsiveness/fill={true}
+          className="absolute top-0 left-0 -z-50"
+          style={{ objectFit: "cover" }} // Ensures the image covers the entire container
           alt={`Mockup of ${projects[selectedProject].title}`}
           src={`/projects/${projects[selectedProject].src}.jpeg`}
         ></Image>
