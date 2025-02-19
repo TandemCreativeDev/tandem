@@ -30,12 +30,12 @@ export default function ProjectsSection() {
       <h2 className="uppercase text-white font-tandem-mono-medium text-xs col-start-3 col-span-1">
         ■ Projects
       </h2>
-      <div className=" col-start-8 col-span-3 flex flex-col z-30">
+      <div className=" col-start-10 col-span-3 flex flex-col z-30">
         {projects.map((project, index) => {
           return (
             <button
               key={`project-${index}`}
-              onClick={() => setSelectedProject(index)}
+              onMouseEnter={() => setSelectedProject(index)}
               className={clsx(
                 "font-tandem-medium text-start text-3xl uppercase ",
                 {
