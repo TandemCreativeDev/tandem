@@ -7,9 +7,9 @@ export default function Hero() {
           src={"/hero-img.jpg"}
           alt="Our hero image"
           fill
-          sizes="100vw" // Important for responsiveness/fill={true}
-          className="absolute top-0 left-0 -z-50"
-          style={{ objectFit: "cover" }} // Ensures the image covers the entire container
+          sizes="100vw"
+          className="absolute top-0 left-0 -z-50 grayscale brightness-50"
+          style={{ objectFit: "cover" }}
         />
       </div>
       <div className="h-screen w-screen flex justify-center items-center">
