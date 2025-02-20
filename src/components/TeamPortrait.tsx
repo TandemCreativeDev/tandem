@@ -18,10 +18,10 @@ export default function TeamPortrait({
           <div
             className={`transition-all duration-700 ${
               activeImage === teamMember
-                ? "max-w-[500px] max-h-[500px]"
+                ? "md:max-w-[500px] md:max-h-[500px]"
                 : activeImage === otherTeamMember
-                  ? "max-w-[380px] max-h-[380px]"
-                  : "max-w-[400px] max-h-[400px]"
+                  ? "md:max-w-[380px] md:max-h-[380px]"
+                  : "md:max-w-[400px] md:max-h-[400px]"
             }`}
           >
             <Image
@@ -34,7 +34,7 @@ export default function TeamPortrait({
             />
           </div>
         </button>
-        <p>{teamMember}</p>
+        <p className="mt-5 md:mt-0">{teamMember}</p>
         <p>Co-Founder \ Full-Stack Developer</p>
       </div>
     </>
