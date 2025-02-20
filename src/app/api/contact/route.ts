@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     const message = formData.get("message");
 
     const tandemEmail = await transporter.sendMail({
-      from: `${firstName} ${lastName} <${email}>`,
+      from: `${firstName} ${lastName} <form@runintandem.com>`,
       to: process.env.EMAIL_USER,
       subject: `${firstName} wants to get in touch`,
       html: `
@@ -41,7 +41,7 @@ export async function POST(request: Request) {
             <p><strong>Phone Number:</strong> ${phoneNumber}</p>
             <p><strong>Message:</strong><br> ${message}</p>
             </div>
-            <p>Please reach out to them within 2 business days.</p>
+            <p>Please reach out to them within 2 working days.</p>
             <p><strong>- Tandem Website Notification</strong></p>
             <div class="footer">
             <p>&copy; 2025 Tandem | Internal Use Only</p>
@@ -53,8 +53,8 @@ export async function POST(request: Request) {
     });
 
     const userEmail = await transporter.sendMail({
-      from: `Tandem Creative Dev <process.env.EMAIL_USER>`,
-      to: `${firstName} ${lastName} <${process.env.EMAIL_USER}>`,
+      from: `Tandem Creative Dev <${process.env.EMAIL_USER}>`,
+      to: `${firstName} ${lastName} <${email}>`,
       subject: `Hi ${firstName}, thanks for getting in touch`,
       html: `
         <!DOCTYPE html>
@@ -75,7 +75,7 @@ export async function POST(request: Request) {
         <body>
         <div class="container">
             <h2>Thank You, <span style="color: #0073e6;">${firstName}</span>!</h2>
-            <p>We’ve received your message and appreciate you reaching out to Tandem. One of our team members will be in touch within 2 business days.</p>
+            <p>We’ve received your message and appreciate you reaching out. One of our team members will be in touch within 2 working days.</p>
             <p>For your records, here are the details you submitted:</p>
             <div class="details">
             <p><strong>Name:</strong> ${firstName} ${lastName}</p>
