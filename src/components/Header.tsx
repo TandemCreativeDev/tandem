@@ -54,7 +54,7 @@ export default function Header() {
           <h1 className="text-center">tandem creative dev</h1>
         </div>
         <div className="w-1/3 self-end xl:block hidden">
-          <Nav />
+          <Nav isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
         <BsList
           size={40}
