@@ -8,9 +8,9 @@ export default function TeamSection() {
     <div className="bg-black">
       <section
         id="team"
-        className="h-[1000px] w-10/12 m-auto md:w-full flex flex-col md:grid grid-cols-12 pt-10"
+        className="h-[1530px] md:h-[1000px] w-10/12 m-auto md:w-full flex flex-col md:grid grid-cols-12 pt-10"
       >
-        <h2 className="uppercase text-white font-tandem-mono-medium text-xs col-start-3 col-span-1">
+        <h2 className="uppercase text-white font-tandem-mono-medium text-xs md:mb-0 mb-10 col-start-3 col-span-1">
           ■ Team
         </h2>
         <div className="col-start-5 col-span-8">
