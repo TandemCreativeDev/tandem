@@ -6,9 +6,11 @@ export default function FooterSection() {
       id="footer"
       className="bg-black text-white flex flex-col md:grid grid-cols-12 uppercase border-t-gray-700 border-t-2 pt-6 font-tandem-mono-medium"
     >
-      <span className="pl-10 col-span-2 col-start-1">tandem creative dev</span>
-      <div className="h-full col-start-8 col-span-1">
-        <h2 className="mb-20">index</h2>
+      <span className="md:pl-10 pl-20 mb-10 md:mb-0 col-span-2 col-start-1">
+        tandem creative dev
+      </span>
+      <div className="h-full col-start-8 col-span-1 pl-20 md:pl-0">
+        <h2 className="mb-5 md:mb-20">index</h2>
         <div className="flex flex-col text-5xl font-tandem-condensed-medium">
           <Link href={"#home"}>Home</Link>
           <Link href={"#about"}>About</Link>
@@ -23,10 +25,6 @@ export default function FooterSection() {
           <div>
             <h3 className="text-gray-500">timezone</h3>
             <Time />
-          </div>
-          <div>
-            <h3 className="text-gray-500">Location</h3>
-            <p>london, uk</p>
           </div>
         </div>
         <div className="w-5/12">
