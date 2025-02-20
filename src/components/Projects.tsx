@@ -4,11 +4,11 @@ import clsx from "clsx";
 import { useState } from "react";
 export default function ProjectsSection() {
   const projects = [
-    { title: "wedgy music", src: "wedgy" },
     { title: "clark's bowling club", src: "cbc" },
+    { title: "itch film", src: "itch" },
+    { title: "wedgy music", src: "wedgy" },
     { title: "things we do", src: "twd" },
     //{ title: "ruby kiwinda", src: "ruby" },
-    { title: "itch film", src: "itch" },
   ];
   const [selectedProject, setSelectedProject] = useState(0);
 
