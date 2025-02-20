@@ -80,7 +80,7 @@ export default function Accordion() {
               </button>
               <div
                 className={clsx(
-                  "text-lg w-3/4 m-auto flex flex-col md:flex-rowjustify-center py-10 text-left gap-20",
+                  "text-lg w-3/4 m-auto flex flex-col md:flex-row justify-center py-10 text-left gap-20",
                   {
                     block: openAccordionSection === index,
                     hidden: openAccordionSection !== index,
