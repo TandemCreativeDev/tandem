@@ -7,7 +7,7 @@ export default function ProjectsSection() {
     { title: "wedgy music", src: "wedgy" },
     { title: "clark's bowling club", src: "cbc" },
     { title: "things we do", src: "twd" },
-    { title: "ruby kiwinda", src: "ruby" },
+    //{ title: "ruby kiwinda", src: "ruby" },
     { title: "itch film", src: "itch" },
   ];
   const [selectedProject, setSelectedProject] = useState(0);
