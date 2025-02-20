@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import Time from "./Time";
-import { BsList } from "react-icons/bs";
+import { BsList, BsX } from "react-icons/bs";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,12 +63,10 @@ export default function Header() {
         />
         {isOpen === true ? (
           <div className="absolute h-screen top-0 left-0 w-screen bg-white flex justify-center items-center text-5xl overflow-hidden">
-            <p
+            <BsX
               onClick={() => setIsOpen(false)}
-              className="absolute right-0 top-0 text-black"
-            >
-              x
-            </p>
+              className="absolute right-4 top-2 text-black"
+            />
             <Nav isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
         ) : undefined}
