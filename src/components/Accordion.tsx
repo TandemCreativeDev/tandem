@@ -73,22 +73,22 @@ export default function Accordion() {
               className="bg-white text-black text-center border-t-black border-[1px] "
             >
               <button
-                className="text-7xl uppercase font-tandem-condensed-medium w-full hover:bg-black hover:text-white py-10"
+                className="md:text-7xl text-4xl uppercase font-tandem-condensed-medium w-full hover:bg-black hover:text-white py-10"
                 onClick={() => handleContentClick(index)}
               >
                 {section.title}
               </button>
               <div
                 className={clsx(
-                  "text-lg w-3/4 m-auto flex justify-center py-10 text-left gap-20",
+                  "text-lg w-3/4 m-auto flex flex-col md:flex-row justify-center py-10 text-left gap-20",
                   {
                     block: openAccordionSection === index,
                     hidden: openAccordionSection !== index,
                   },
                 )}
               >
-                <p className="w-1/2 text-pretty ">{section.content}</p>
-                <div className="flex flex-col w-1/4">
+                <p className="md:w-1/2 text-pretty ">{section.content}</p>
+                <div className="flex flex-col md:w-1/4">
                   {section.serviceList.map((item, index) => {
                     return <p className="mb-3" key={index}>{`■ ${item}`}</p>;
                   })}

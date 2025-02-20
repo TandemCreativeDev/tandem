@@ -1,19 +1,34 @@
-export default function Testimonial() {
+import Image from "next/image";
+
+interface TestimonialProps {
+  content: string;
+  clientPosition: string;
+  client: string;
+  src: string;
+}
+
+export default function Testimonial({
+  content,
+  clientPosition,
+  client,
+  src,
+}: TestimonialProps) {
   return (
     <>
       <div className="flex flex-col mb-16">
-        <p className="">
-          Minim ullamco commodo minim non sint cillum aliquip proident laborum
-          aute. Mollit veniam incididunt dolore pariatur non ad. Id laboris
-          deserunt officia culpa do deserunt nostrud excepteur incididunt ipsum.
-          Fugiat officia anim duis amet. Duis consequat et cupidatat
-          reprehenderit incididunt cillum minim enim aute.
-        </p>
+        <p className="">{content}</p>
         <div className="flex mt-5 border-t-2 border-t-gray-500 pt-4">
-          <div className="h-10 w-10 rounded-full bg-green-200 mr-5"></div>
+          <div className="overflow-hidden h-10 w-10 rounded-full mr-5">
+            <Image
+              src={`/client-pics/client-${src}.jpeg`}
+              alt="client pic"
+              width={40}
+              height={40}
+            ></Image>
+          </div>
           <div className="flex flex-col font-tandem-mono-medium uppercase">
-            <p>Bartosz</p>
-            <p className="text-gray-500">Founder of Tandem</p>
+            <p>{client}</p>
+            <p className="text-gray-500">{clientPosition}</p>
           </div>
         </div>
       </div>
