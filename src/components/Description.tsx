@@ -2,9 +2,9 @@ import Image from "next/image";
 export default function DescriptionSection() {
   return (
     <section className="flex flex-col md:grid grid-cols-12  border-t-2 border-b-[1px] border-black ">
-      <div className="col-span-7 relative">
+      <div className="col-span-6 relative">
         <Image
-          src="/wedgy-laptop-image.jpeg"
+          src="/itch-laptop-image.jpeg"
           alt="laptop showcasing different work by Tandem"
           fill
           sizes="100vw"
