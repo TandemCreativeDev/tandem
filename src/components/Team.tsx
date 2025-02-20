@@ -5,11 +5,8 @@ import { useState } from "react";
 export default function TeamSection() {
   const [activeImage, setActiveImage] = useState("");
   return (
-    <div className="bg-black">
-      <section
-        id="team"
-        className="h-[1530px] md:h-[1000px] w-10/12 m-auto md:w-full flex flex-col md:grid grid-cols-12 pt-10"
-      >
+    <section id="team" className="bg-black">
+      <div className="h-[1530px] md:h-[1000px] w-10/12 m-auto md:w-full flex flex-col md:grid grid-cols-12 pt-10">
         <h2 className="uppercase text-white font-tandem-mono-medium text-xs md:mb-0 mb-10 col-start-3 col-span-1">
           ■ Team
         </h2>
@@ -36,7 +33,7 @@ export default function TeamSection() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
