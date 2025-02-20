@@ -1,17 +1,25 @@
 "use client";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import Time from "./Time";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
   return (
     <header className="text-white bg-none flex justify-between w-full m-auto uppercase font-tandem-mono-medium pt-5 absolute top-0 left-0 z-50">
       <div className="m-auto w-11/12 flex justify-between">
-        <div className="w-1/3">
+        <div className="w-1/3 xl:block hidden">
           <Time />
         </div>
-        <div className="w-1/3">
-          <h1 className="text-center">tandem creative dev</h1>
+        <div className="w-full xl:w-1/3">
+          <h1 className="text-center ">tandem creative dev</h1>
         </div>
         <div className="w-1/3 self-end xl:block hidden">
           <Nav />
