@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { Field, Label, Switch } from "@headlessui/react";
 
 export default function ContactSection() {
@@ -21,22 +21,20 @@ export default function ContactSection() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  async function handleSubmit(e: { preventDefault: () => void }) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    const fd = new FormData();
+    fd.append("firstName", formData.firstName);
+    fd.append("lastName", formData.lastName);
+    fd.append("company", formData.company);
+    fd.append("email", formData.email);
+    fd.append("phoneNumber", formData.phoneNumber);
+    fd.append("message", formData.message);
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          company: formData.company,
-          email: formData.email,
-          phoneNumber: formData.phoneNumber,
-          message: formData.message,
-        }),
+        body: fd,
       });
       const data = await response.json();
       if (response.ok) {
