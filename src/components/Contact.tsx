@@ -62,7 +62,7 @@ export default function ContactSection() {
         onSubmit={handleSubmit}
         className="mx-auto max-w-xl col-span-5 col-start-7"
       >
-        <fieldset className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        <fieldset className="grid gap-x-8 gap-y-6">
           <legend className="text-gray-500 pb-6 text-4xl font-tandem-condensed-medium uppercase">
             <span className="text-black">Send us a message</span> we&apos;d love
             to hear from you!
