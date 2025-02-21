@@ -20,7 +20,7 @@ export default function Testimonial({
         <div className="flex mt-5 border-t-2 border-t-gray-500 pt-4">
           <div className="overflow-hidden h-10 w-10 rounded-full mr-5">
             <Image
-              src={`/client-pics/client-wedgy.jpeg`}
+              src={`/client-pics/client-${src}.jpeg`}
               alt="client pic"
               width={40}
               height={40}
