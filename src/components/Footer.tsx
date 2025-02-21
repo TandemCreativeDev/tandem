@@ -30,8 +30,12 @@ export default function FooterSection() {
         <div className="w-5/12">
           <h3 className="text-gray-500">socials</h3>
           <div className="flex flex-col md:flex-row gap-4">
-            <p>instagram</p>
-            <p>linkedin</p>
+            <Link
+              target="_blank"
+              href={"https://www.linkedin.com/company/tandemcreativedev/"}
+            >
+              linkedin
+            </Link>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ export default function Hero() {
         <span className="text-white text-7xl max-w-[1000px]  text-pretty -auto text-center uppercase font-tandem-condensed-medium leading-tight">
           Technology with purpose, impact with power.
         </span>
-        <span className="text-xl text-white w-1/3 text-center mt-5 text-pretty font-tandem-regular">
+        <span className="text-xl text-white w-10/12 xl:w-1/3 text-center mt-5 text-pretty font-tandem-regular">
           At Tandem, we blend full-stack development with thoughtful,
           accessible, and aesthetically refined design
         </span>
