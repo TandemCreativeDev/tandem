@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { toast } from "react-hot-toast";
 
 import TextInput from "./ui/TextInput";
 import Checkbox from "./ui/Checkbox";
@@ -30,20 +31,23 @@ export default function ContactSection() {
     fd.append("email", formData.email);
     fd.append("phoneNumber", formData.phoneNumber);
     fd.append("message", formData.message);
-
+    const toastId = toast.loading("Sending message...");
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         body: fd,
       });
       const data = await response.json();
+      toast.dismiss(toastId);
       if (response.ok) {
-        alert(data.message);
+        toast.success(`Thanks ${formData.firstName}, we’ll be in touch soon!`);
       } else {
-        alert(`Something went wrong: ${data.error}`);
+        toast.error(`Something went wrong: ${data.error}`);
       }
     } catch (error) {
-      alert(`Failed to send message. Please try again later. ${error}`);
+      console.error(error);
+      toast.dismiss(toastId);
+      toast.error("Failed to send message. Please try again later.");
     }
   }
 
