@@ -7,6 +7,7 @@ import ProjectsSection from "@/components/Projects";
 import TestimonialsSection from "@/components/Testimonials";
 import TeamSection from "@/components/Team";
 import FooterSection from "@/components/Footer";
+import ContactSection from "@/components/Contact";
 export default function HeroPage() {
   return (
     <>
@@ -18,6 +19,7 @@ export default function HeroPage() {
       <ProjectsSection />
       <TestimonialsSection />
       <TeamSection />
+      <ContactSection />
       <FooterSection />
     </>
   );

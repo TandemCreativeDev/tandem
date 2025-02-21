@@ -21,7 +21,7 @@ export default function Testimonial({
           <div className="overflow-hidden h-10 w-10 rounded-full mr-5">
             <Image
               src={`/client-pics/client-${src}.jpeg`}
-              alt="client pic"
+              alt={`Portrait of ${client}`}
               width={40}
               height={40}
             ></Image>
