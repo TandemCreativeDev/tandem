@@ -27,8 +27,10 @@ export default function Testimonial({
             ></Image>
           </div>
           <div className="flex flex-col font-tandem-mono-medium uppercase">
-            <p>{client}</p>
-            <p className="text-gray-500">{clientPosition}</p>
+            <p className="text-sm xl:text-base">{client}</p>
+            <p className="text-gray-500 text-sm xl:text-base">
+              {clientPosition}
+            </p>
           </div>
         </div>
       </div>

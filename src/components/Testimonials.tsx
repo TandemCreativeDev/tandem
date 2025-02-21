@@ -5,7 +5,7 @@ export default function TestimonialsSection() {
       client: "Lucy Paul",
       clientPosition: "Managing Director at Itch Film",
       content:
-        "Working with Tandem was an absolute pleasure. They had an excellent understanding of our vision and brought creative, interesting suggestions that truly elevated our site. Quick, responsive, and a joy to collaborate with, they delivered beyond expectations. We highly recommend them to anyone looking for exceptional web development.",
+        "Tandem were super lovely to work with. They showed an excellent understanding of our brief, interpreting our vision into a new website that we are immensely happy and proud of. Their design talents brought creative and interesting suggestions that really elevated our new site. They are also quick and responsive, which makes the whole process extra enjoyable. I would without hesitation highly recommend them to anyone looking for exceptional web development.",
       src: "itch",
     },
     {
