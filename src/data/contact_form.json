@@ -1,0 +1,56 @@
+[
+  {
+    "id": "firstName",
+    "name": "firstName",
+    "type": "text",
+    "label": "First Name",
+    "required": true,
+    "long": false,
+    "className": ""
+  },
+  {
+    "id": "lastName",
+    "name": "lastName",
+    "type": "text",
+    "label": "Last Name",
+    "required": true,
+    "long": false,
+    "className": ""
+  },
+  {
+    "id": "company",
+    "name": "company",
+    "type": "text",
+    "label": "Company",
+    "required": false,
+    "long": false,
+    "className": "col-span-2"
+  },
+  {
+    "id": "email",
+    "name": "email",
+    "type": "email",
+    "label": "Email",
+    "required": true,
+    "long": false,
+    "className": "col-span-2"
+  },
+  {
+    "id": "phoneNumber",
+    "name": "phoneNumber",
+    "type": "tel",
+    "label": "Phone Number",
+    "required": false,
+    "long": false,
+    "className": "col-span-2"
+  },
+  {
+    "id": "message",
+    "name": "message",
+    "type": "text",
+    "label": "Message",
+    "required": true,
+    "long": true,
+    "className": "col-span-2"
+  }
+]
