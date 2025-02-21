@@ -42,6 +42,6 @@
     "label": "Message",
     "required": true,
     "long": true,
-    "className": "sm:col-span-2"
+    "className": "col-span-2"
   }
 ]
