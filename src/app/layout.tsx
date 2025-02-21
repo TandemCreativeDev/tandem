@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import {
   diatypeRegular,
@@ -24,6 +25,7 @@ export default function RootLayout({
       className={`${diatypeRegular.variable} ${diatypeMedium.variable} ${diatypeMonoRegular.variable} ${diatypeMonoMedium.variable} ${diatypeCondensedMedium.variable} scroll-smooth`}
     >
       <body className="font-tandem-regular antialiased relative">
+        <Toaster position="bottom-center" />
         {children}
       </body>
     </html>
