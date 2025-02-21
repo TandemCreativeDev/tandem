@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-export default function Nav({ isOpen, setIsOpen }) {
+interface NavProps {
+  setIsOpen: (arg: boolean) => void;
+}
+
+export default function Nav({ setIsOpen }: NavProps) {
   const items = ["about", "services", "work", "testimonials", "team"];
 
   return (
