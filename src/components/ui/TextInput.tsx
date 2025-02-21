@@ -47,6 +47,7 @@ export default function TextInput({
           value={value}
           onChange={onChange}
           className={twMerge(baseClasses, inputClass)}
+          required={required}
         />
       ) : (
         <input
