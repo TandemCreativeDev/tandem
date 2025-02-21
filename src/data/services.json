@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Full-Stack Development",
+    "content": "We specialise in both front-end and back-end development, delivering robust, scalable, and high-performing web applications tailored to your specific needs. From concept to deployment, our expertise ensures a smooth and seamless development process every step of the way. Whether you're looking for a custom-built system, a user-friendly website, or a fully integrated application, we offer comprehensive end-to-end solutions that are aligned with your strategic business objectives.",
+    "secondaryContent": "Our team takes a collaborative approach, ensuring that your vision is realised with high-quality code and attention to detail at every stage. We bring innovative solutions to the table that will drive growth and optimise your business operations, allowing you to stay ahead in a competitive digital landscape. With our expertise, we aim to build a strong foundation for your success by delivering tailored solutions that meet your unique business needs.",
+    "secondaryTitle": "Why Choose Us?",
+    "serviceList": [
+      "Custom Web Applications",
+      "API Development & Integration",
+      "Database Design & Management",
+      "Performance Optimisation",
+      "Cloud & Server Deployment",
+      "Security & Compliance",
+      "Ongoing Maintenance & Support"
+    ]
+  },
+  {
+    "title": "Web Design",
+    "content": "We create visually stunning, highly functional, and accessible designs that prioritise real user experiences. Our approach seamlessly blends aesthetics with usability, ensuring that your website is not only beautiful but also intuitive, fast, and accessible to all users. From sleek landing pages to complex UI/UX overhauls, our design process focuses on creating seamless interactions that engage and convert visitors.",
+    "secondaryContent": "We work closely with you to understand your brand’s identity and user needs, integrating modern design trends and cutting-edge technology. Whether you need responsive web design, a mobile-first approach, or complex interactive features, we craft solutions that stand out in today’s competitive digital environment.",
+    "secondaryTitle": "How We Work",
+    "serviceList": [
+      "User Interface (UI) Design",
+      "User Experience (UX) Research",
+      "Wireframing & Prototyping",
+      "Responsive & Mobile-First Design",
+      "Design Systems & Component Libraries",
+      "Branding & Visual Identity",
+      "3D & Interactive Graphics"
+    ]
+  },
+  {
+    "title": "Technical Consultations",
+    "content": "Our technical expertise helps refine your project vision and strategy, providing a solid foundation for success. We offer free consultations for initiatives with a demonstrable social impact, believing in the transformative power of technology to drive meaningful change. From concept validation to detailed technical roadmaps, we provide insights that allow you to make informed decisions and tackle complex challenges.",
+    "secondaryContent": "We help you assess the feasibility of your concept, recommend the most suitable technology stacks, and ensure your project is on the right path. With a focus on scalability, performance, and long-term sustainability, we guide you in creating technology solutions that are both effective and future-proof, all while ensuring that your project has a positive impact on the world.",
+    "secondaryTitle": "Bringing Ideas To Life",
+    "serviceList": [
+      "Technical Feasibility Assessments",
+      "Technology Stack Recommendations",
+      "Proof of Concept (PoC) Development",
+      "Prototype & MVP Strategy",
+      "Scalability & Performance Planning",
+      "Security & Compliance Guidance",
+      "Open Source & Ethical Tech Consulting"
+    ]
+  },
+  {
+    "title": "Data Analytics",
+    "content": "We leverage data to drive intelligent decision-making and improve operational efficiency. Our expertise spans business intelligence, automation, and predictive modelling, ensuring that your organisation can harness data to gain a strategic advantage. Whether you're optimising workflows in construction tech, streamlining processes across departments, or integrating diverse datasets, we provide tailored solutions that empower innovation and data-driven growth.",
+    "secondaryContent": "Our team blends expertise in software development, construction technology, and architecture to deliver powerful, holistic data solutions. Whether we’re optimizing Building Information Modelling (BIM) workflows or crafting targeted business intelligence dashboards, our multifaceted approach and unique perspective provides the clarity and direction you need to stay competitive.",
+    "secondaryTitle": "Our Background",
+    "serviceList": [
+      "Business Intelligence & Dashboard Development",
+      "Data Warehousing & ETL Pipelines",
+      "Big Data Processing & Visualisation",
+      "Predictive Analytics & Machine Learning",
+      "Workflow Automation & Process Optimisation",
+      "Building Information Modelling (BIM) & Digital Twin Analysis",
+      "Custom Data Integration (Revit, Rhino, APIs, etc.)"
+    ]
+  },
+  {
+    "title": "Accessibility",
+    "content": "Accessibility is more than just a legal requirement—it’s about creating real usability for all users. Our team offers expert audits and consultations to ensure that your website is fully accessible to everyone, including individuals with disabilities. We take a hands-on approach, going beyond basic compliance to provide genuine inclusivity.",
+    "secondaryContent": "With firsthand experience in accessibility standards and requirements, we ensure that your site is usable by all, regardless of their abilities. We help you implement inclusive design practices, test for compatibility with assistive technologies, and offer ongoing accessibility support to ensure your website remains accessible as it evolves. Creating an inclusive online experience is essential for both legal compliance and fostering a more equitable digital environment.",
+    "secondaryTitle": "Why It Matters",
+    "serviceList": [
+      "Website Accessibility Audits (WCAG, ADA, Section 508)",
+      "Inclusive UX & Usability Testing",
+      "Assistive Technology Compatibility Testing",
+      "Remediation & Code Fixes for Accessibility",
+      "Accessible Design & Development Training",
+      "Compliance & Legal Consultation",
+      "Ongoing Accessibility Monitoring & Support"
+    ]
+  }
+]
