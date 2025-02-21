@@ -31,7 +31,7 @@ export default function Accordion() {
               </button>
               <div
                 className={clsx(
-                  "text-lg w-10/12 md:w-3/4 m-auto flex flex-col lg:flex-row <justify-start></justify-start> py-10 text-left gap-20",
+                  "md:text-lg text-xl w-10/12 md:w-3/4 m-auto flex flex-col lg:flex-row justify-start py-10 text-left md:gap-20 gap-10",
                   {
                     block: openAccordionSection === index,
                     hidden: openAccordionSection !== index,
@@ -47,7 +47,7 @@ export default function Accordion() {
                   {section.serviceList.map((item, index) => {
                     return (
                       <p
-                        className="mb-3 text-nowrap"
+                        className="mb-3 md:text-nowrap text-pretty"
                         key={index}
                       >{`■ ${item}`}</p>
                     );
