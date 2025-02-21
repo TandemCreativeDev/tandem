@@ -54,7 +54,7 @@ export default function Header() {
           <h1 className="text-center">tandem creative dev</h1>
         </div>
         <div className="w-1/3 self-end xl:block hidden">
-          <Nav isOpen={isOpen} setIsOpen={setIsOpen} />
+          <Nav setIsOpen={setIsOpen} />
         </div>
         <BsList
           size={40}
@@ -67,7 +67,7 @@ export default function Header() {
               onClick={() => setIsOpen(false)}
               className="absolute right-4 top-2 text-black"
             />
-            <Nav isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Nav setIsOpen={setIsOpen} />
           </div>
         ) : undefined}
       </div>
