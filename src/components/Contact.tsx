@@ -1,9 +1,9 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { Field, Label, Switch } from "@headlessui/react";
 
 import TextInput from "./ui/TextInput";
+import Checkbox from "./ui/Checkbox";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -15,8 +15,6 @@ export default function ContactSection() {
     country: "",
     message: "",
   });
-
-  const [agreed, setAgreed] = useState(false);
 
   const handleChange = (e: { target: { name: string; value: unknown } }) => {
     const { name, value } = e.target;
@@ -123,37 +121,21 @@ export default function ContactSection() {
             required
             long
           />
-          <Field className="flex gap-x-4 sm:col-span-2">
-            <div className="flex h-6 items-center">
-              <Switch
-                checked={agreed}
-                onChange={setAgreed}
-                className="group flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-300 data-[checked]:bg-blue-600"
-              >
-                <span className="sr-only">Agree to privacy policy</span>
-                <span
-                  aria-hidden="true"
-                  className="h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out group-data-[checked]:translate-x-3.5"
-                />
-              </Switch>
-            </div>
-            <Label className="text-sm/6">
-              By selecting this, you agree to our{" "}
-              <a href="/privacy-policy" className="font-bold text-blue-600">
-                privacy&nbsp;policy
-              </a>
-              .
-            </Label>
-          </Field>
+          <Checkbox
+            id={"privacyPolicy"}
+            name={"privacyPolicy"}
+            label={"Agree to our "}
+            url={"/privacy-policy"}
+            urlText={"privacy policy"}
+            required
+          />
         </fieldset>
-        <div className="mt-10">
-          <button
-            type="submit"
-            className="font-tandem-mono-regular uppercase bg-black block text-white w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-300"
-          >
-            Let&apos;s talk
-          </button>
-        </div>
+        <button
+          type="submit"
+          className="font-tandem-mono-regular uppercase bg-black block text-white w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-300"
+        >
+          Let&apos;s talk
+        </button>
       </form>
     </section>
   );
