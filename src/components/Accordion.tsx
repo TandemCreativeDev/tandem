@@ -31,7 +31,7 @@ export default function Accordion() {
               </button>
               <div
                 className={clsx(
-                  "md:text-lg text-xl w-10/12 md:w-3/4 m-auto flex flex-col lg:flex-row justify-start py-10 text-left md:gap-20 gap-10",
+                  "text-lg w-10/12 md:w-3/4 m-auto flex flex-col lg:flex-row justify-start py-10 text-left md:gap-20 gap-10",
                   {
                     block: openAccordionSection === index,
                     hidden: openAccordionSection !== index,
