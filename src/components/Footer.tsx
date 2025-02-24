@@ -4,14 +4,14 @@ export default function FooterSection() {
   return (
     <footer
       id="footer"
-      className="bg-black text-white flex flex-col md:grid grid-cols-12 uppercase border-t-gray-700 border-t-2 pt-6 font-tandem-mono-medium"
+      className="flex grid-cols-12 flex-col border-t-2 border-t-gray-700 bg-black py-10 font-tandem-mono-medium uppercase text-white md:grid"
     >
-      <span className="md:pl-10 pl-20 mb-10 md:mb-0 col-span-2 col-start-1">
+      <span className="col-span-2 col-start-1 mb-10 pl-20 md:mb-0 md:pl-10">
         tandem creative dev
       </span>
-      <div className="h-full col-start-8 col-span-1 pl-20 md:pl-0">
+      <div className="col-span-1 col-start-8 h-full pl-20 md:pl-0">
         <h2 className="mb-5 md:mb-20">index</h2>
-        <div className="flex flex-col text-5xl font-tandem-condensed-medium">
+        <div className="flex flex-col font-tandem-condensed-medium text-5xl">
           <Link href={"#home"}>Home</Link>
           <Link href={"#about"}>About</Link>
           <Link href={"#services"}>Services</Link>
@@ -20,8 +20,8 @@ export default function FooterSection() {
           <Link href={"#team"}>Team</Link>
         </div>
       </div>
-      <div className="flex py-10 col-span-12 col-start-1">
-        <div className="w-7/12 flex flex-col md:flex-row gap-32 pl-10">
+      <div className="col-span-12 col-start-1 flex py-10">
+        <div className="flex w-7/12 flex-col gap-32 pl-10 md:flex-row">
           <div>
             <h3 className="text-gray-500">timezone</h3>
             <Time />
@@ -29,7 +29,7 @@ export default function FooterSection() {
         </div>
         <div className="w-5/12">
           <h3 className="text-gray-500">socials</h3>
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-col gap-4 md:flex-row">
             <Link
               target="_blank"
               href={"https://www.linkedin.com/company/tandemcreativedev/"}

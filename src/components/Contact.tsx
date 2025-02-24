@@ -14,7 +14,7 @@ export default function ContactSection() {
       acc[field.id] = "";
       return acc;
     },
-    {}
+    {},
   );
 
   const [formData, setFormData] = useState(contactForm);
@@ -53,17 +53,17 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="bg-white w-10/12 m-auto gap-10 md:gap-0 md:w-screen py-20 md:py-36 flex flex-col md:grid grid-cols-12"
+      className="m-auto flex w-10/12 grid-cols-12 flex-col gap-10  bg-white md:grid md:w-screen md:gap-0 md:py-28"
     >
-      <h2 className="uppercase font-tandem-mono-medium text-xs col-start-3 col-span-1">
+      <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase">
         ■ Contact
       </h2>
       <form
         onSubmit={handleSubmit}
-        className="mx-auto max-w-xl col-span-5 col-start-7"
+        className="col-span-5 col-start-7 mx-auto max-w-xl"
       >
         <fieldset className="grid gap-x-8 gap-y-6">
-          <legend className="text-gray-500 pb-6 text-4xl font-tandem-condensed-medium uppercase">
+          <legend className="pb-6 font-tandem-condensed-medium text-4xl uppercase text-gray-500">
             <span className="text-black">Send us a message</span> we&apos;d love
             to hear from you!
           </legend>
@@ -92,7 +92,7 @@ export default function ContactSection() {
         </fieldset>
         <button
           type="submit"
-          className="font-tandem-mono-regular uppercase bg-black block text-white w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-300"
+          className="block w-full rounded-md bg-black px-3.5 py-2.5 text-center font-tandem-mono-regular text-sm font-semibold uppercase text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-300"
         >
           Let&apos;s talk
         </button>

@@ -2,12 +2,12 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="bg-white w-10/12 m-auto gap-10 md:gap-0 md:w-screen pt-20 md:pt-36 flex flex-col md:grid grid-cols-12 h-[450px] md:h-[500px]"
+      className="m-auto flex  w-10/12 flex-col gap-10 py-20 md:grid md:w-screen md:auto-rows-auto md:grid-cols-12 md:gap-0 md:py-28"
     >
-      <h2 className="uppercase font-tandem-mono-medium text-xs col-start-3 col-span-1">
+      <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase">
         ■ About
       </h2>
-      <p className="text-gray-500 font-tandem-condensed-medium uppercase text-3xl md:text-4xl max-h-10 text-pretty col-start-5 col-span-7">
+      <p className="col-span-7 col-start-5  text-pretty font-tandem-condensed-medium text-3xl uppercase text-gray-500 md:text-4xl">
         <span className="text-black">We prioritise human-centered design</span>
         &nbsp;to create inclusive solutions. Our commitment to usability and
         accessibility ensures that every user feels valued and understood.
