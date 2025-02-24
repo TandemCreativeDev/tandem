@@ -14,7 +14,15 @@ export default function ProjectsSection() {
 
   return (
     <section id="work" className="relative">
-      <div className="absolute left-0 top-0 h-full w-full ">
+      <div className="absolute left-0 top-0 h-full w-full">
+        <div
+          className={clsx(
+            "absolute left-0 top-0 h-full w-full bg-gradient-to-r from-black via-transparent to-black",
+            projects[selectedProject].title === "things we do"
+              ? ""
+              : "opacity-75"
+          )}
+        ></div>
         <Image
           fill
           sizes="100vw" // Important for responsiveness/fill={true}
@@ -40,7 +48,7 @@ export default function ProjectsSection() {
                     "text-white ": selectedProject === index,
                     "text-gray-300 hover:text-gray-200":
                       selectedProject !== index,
-                  },
+                  }
                 )}
               >
                 {project.title}
