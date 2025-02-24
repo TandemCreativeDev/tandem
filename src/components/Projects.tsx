@@ -13,11 +13,8 @@ export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(0);
 
   return (
-    <section
-      id="work"
-      className="justfy-center relative flex h-screen  grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start"
-    >
-      <div className="absolute left-0 top-0 h-full w-full">
+    <section id="work" className="relative">
+      <div className="absolute left-0 top-0 h-full w-full ">
         <Image
           fill
           sizes="100vw" // Important for responsiveness/fill={true}
@@ -27,7 +24,7 @@ export default function ProjectsSection() {
           src={`/projects/${projects[selectedProject].src}.jpeg`}
         ></Image>
       </div>
-      <div className="w-10/12 m-auto h-full">
+      <div className="w-10/12 m-auto relative flex h-screen  grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start">
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase text-white">
           ■ Projects
         </h2>
