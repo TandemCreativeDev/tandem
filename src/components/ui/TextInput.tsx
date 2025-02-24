@@ -32,7 +32,7 @@ export default function TextInput({
   const baseClasses =
     "block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-300 sm:text-sm/6 mt-2.5";
   return (
-    <div className={className}>
+    <div className={twMerge("col-span-2", className)}>
       <label
         htmlFor={id}
         className={twMerge("block text-sm/6 font-semibold", labelClass)}
