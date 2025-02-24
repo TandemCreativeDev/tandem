@@ -20,13 +20,13 @@ export default function TeamPortrait({
               activeImage === teamMember
                 ? "md:max-w-[500px] md:max-h-[500px]"
                 : activeImage === otherTeamMember
-                  ? "md:max-w-[380px] md:max-h-[380px]"
-                  : "md:max-w-[400px] md:max-h-[400px]"
+                ? "md:max-w-[380px] md:max-h-[380px]"
+                : "md:max-w-[400px] md:max-h-[400px]"
             }`}
           >
             <Image
               src={`/portraits/portrait-[${teamMember}].jpg`}
-              alt={`Portrait of ${teamMember}, one of the Tandem founders`}
+              alt={`Portrait of ${teamMember}, Tandem co-founder`}
               layout="intrinsic"
               width={500}
               height={500}
