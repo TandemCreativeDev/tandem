@@ -63,10 +63,11 @@ export default function ContactSection() {
         className="col-span-5 col-start-7 mx-auto max-w-xl"
       >
         <fieldset className="grid gap-x-8 gap-y-6">
-          <legend className="pb-6 font-tandem-condensed-medium text-4xl uppercase text-gray-500">
+          <legend className="pb-6 font-tandem-condensed-medium text-pretty text-4xl uppercase text-gray-500">
             <span className="text-black">Send us a message,</span> we&apos;d
             love to hear from you.
           </legend>
+          <p className="col-span-2">* indicate a required field</p>
           {contact_form.map((field) => (
             <TextInput
               key={field.id}
