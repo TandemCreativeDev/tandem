@@ -17,7 +17,7 @@ export default function TeamSection() {
             community focused projects.
           </p>
           <div className="col-span-8 col-start-5">
-            <div className="font-tandem-mono mt-20 flex  flex-col items-end gap-10 uppercase text-white md:mt-0 md:flex-row">
+            <div className="font-tandem-mono mt-20 flex  flex-col items-end gap-10 uppercase h-[550px] text-white md:mt-0 md:flex-row">
               <TeamPortrait
                 teamMember={"Jack Casstles-Jones"}
                 otherTeamMember={"Maxime Downe"}
