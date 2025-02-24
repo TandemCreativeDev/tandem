@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Nav from "./Nav";
 import Time from "../ui/Time";
 import { BsList, BsX } from "react-icons/bs";
+import Link from "next/link";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,9 +55,9 @@ export default function Header() {
         <div className="w-1/3 xl:block hidden">
           <Time />
         </div>
-        <div className="w-full xl:w-1/3">
+        <Link className="w-full xl:w-1/3" href={"#home"}>
           <h1 className="text-center">tandem creative dev</h1>
-        </div>
+        </Link>
         <div className="w-1/3 self-end xl:block hidden">
           <Nav setIsOpen={setIsOpen} />
         </div>
