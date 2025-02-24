@@ -38,6 +38,12 @@ export default function TextInput({
         className={twMerge("block text-sm/6 font-semibold", labelClass)}
       >
         {label}
+        {required ? (
+          <>
+            <span aria-hidden="true"> *</span>
+            <span className="hidden"> required</span>
+          </>
+        ) : null}
       </label>
       {long ? (
         <textarea
