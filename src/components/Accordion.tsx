@@ -26,15 +26,16 @@ export default function Accordion() {
               className="border-[1px] border-t-black bg-white text-center text-black "
             >
               <button
-                className={`relative w-full py-10 font-tandem-condensed-medium text-4xl uppercase md:text-7xl overflow-hidden ${
+                className={`${
                   hoveredAccordion === index ? "bg-black text-white" : ""
-                }`}
+                } relative w-full overflow-hidden py-10 font-tandem-condensed-medium text-4xl uppercase
+                md:text-7xl`}
                 onClick={() => handleContentClick(index)}
                 onMouseEnter={() => setHoveredAccordion(index)}
                 onMouseLeave={() => setHoveredAccordion(20)}
               >
                 {hoveredAccordion === index ? (
-                  <div className="whitespace-nowrap animate-marquee">
+                  <div className="animate-marquee whitespace-nowrap">
                     {Array(8).fill(` ${section.title} </> `).join("")}
                   </div>
                 ) : (
