@@ -19,7 +19,7 @@ export default function AboutSection() {
         <div className="relative col-span-6">
           <Image
             src="/itch-laptop-image.jpeg"
-            alt="laptop showcasing different work by Tandem"
+            alt="Laptop showcasing work by Tandem"
             fill
             sizes="100vw"
             style={{ objectFit: "cover", objectPosition: "bottom" }}
