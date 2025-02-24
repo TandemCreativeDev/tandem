@@ -39,7 +39,11 @@ export default function ContactSection() {
       const data = await response.json();
       toast.dismiss(toastId);
       if (response.ok) {
-        toast.success(`Thanks ${formData.firstName}, we’ll be in touch soon!`);
+        toast.success(
+          `Thanks ${
+            formData.name.trim().split(" ")[0]
+          }, we’ll be in touch soon!`
+        );
       } else {
         toast.error(`Something went wrong: ${data.error}`);
       }
