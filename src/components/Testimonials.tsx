@@ -19,7 +19,7 @@ export default function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="m-auto flex  grid-cols-12 flex-col gap-4 pt-20  lg:grid lg:w-full py-28"
+      className="m-auto flex w-10/12 grid-cols-12 flex-col gap-4 py-28  pt-20 lg:grid lg:w-full"
     >
       <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase">
         ■ Testimonials
