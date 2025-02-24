@@ -53,7 +53,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="m-auto flex w-10/12 grid-cols-12 flex-col gap-10  bg-white md:grid md:w-screen md:gap-0 md:py-28"
+      className="m-auto flex w-10/12 grid-cols-12 flex-col gap-10  bg-white py-28 md:grid md:w-screen md:gap-0"
     >
       <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase">
         ■ Contact
@@ -64,8 +64,8 @@ export default function ContactSection() {
       >
         <fieldset className="grid gap-x-8 gap-y-6">
           <legend className="pb-6 font-tandem-condensed-medium text-4xl uppercase text-gray-500">
-            <span className="text-black">Send us a message</span> we&apos;d love
-            to hear from you!
+            <span className="text-black">Send us a message,</span> we&apos;d
+            love to hear from you.
           </legend>
           {contact_form.map((field) => (
             <TextInput
