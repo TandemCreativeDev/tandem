@@ -3,15 +3,15 @@ import { transporter } from "@/utils/nodemailer";
 export async function POST(request: Request) {
   const formData = await request.formData();
   try {
-    const firstName = formData.get("firstName");
-    const lastName = formData.get("lastName");
+    const name = formData.get("name") as string;
+    const firstName = name.trim().split(" ")[0];
     const company = formData.get("company");
     const email = formData.get("email");
     const phoneNumber = formData.get("phoneNumber");
     const message = formData.get("message");
 
     const tandemEmail = await transporter.sendMail({
-      from: `${firstName} ${lastName} <form@runintandem.com>`,
+      from: `${name} <websiteform@runintandem.com>`,
       to: process.env.EMAIL_USER,
       subject: `${firstName} wants to get in touch`,
       html: `
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
             <h2>New Contact Form Submission</h2>
             <p>Someone has submitted a contact form on the Tandem website. Here are the details:</p>
             <div class="details">
-            <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+            <p><strong>Name:</strong> ${name}</p>
             <p><strong>Company:</strong> ${company}</p>
             <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
             <p><strong>Phone Number:</strong> ${phoneNumber}</p>
@@ -54,7 +54,7 @@ export async function POST(request: Request) {
 
     const userEmail = await transporter.sendMail({
       from: `Tandem Creative Dev <${process.env.EMAIL_USER}>`,
-      to: `${firstName} ${lastName} <${email}>`,
+      to: `${name} <${email}>`,
       subject: `Hi ${firstName}, thanks for getting in touch`,
       html: `
         <!DOCTYPE html>
@@ -78,7 +78,7 @@ export async function POST(request: Request) {
             <p>We’ve received your message and appreciate you reaching out. One of our team members will be in touch within 2 working days.</p>
             <p>For your records, here are the details you submitted:</p>
             <div class="details">
-            <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+            <p><strong>Name:</strong> ${name}</p>
             <p><strong>Company:</strong> ${company}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone Number:</strong> ${phoneNumber}</p>
