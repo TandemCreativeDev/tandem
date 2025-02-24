@@ -6,7 +6,7 @@
     "label": "Name",
     "required": true,
     "long": false,
-    "className": "md:col-span-1"
+    "className": "xl:col-span-1"
   },
   {
     "id": "company",
@@ -15,7 +15,7 @@
     "label": "Company",
     "required": false,
     "long": false,
-    "className": "md:col-span-1"
+    "className": "xl:col-span-1"
   },
   {
     "id": "email",
@@ -24,7 +24,7 @@
     "label": "Email",
     "required": true,
     "long": false,
-    "className": "md:col-span-1"
+    "className": "xl:col-span-1"
   },
   {
     "id": "phoneNumber",
@@ -33,7 +33,7 @@
     "label": "Phone Number",
     "required": false,
     "long": false,
-    "className": "md:col-span-1"
+    "className": "xl:col-span-1"
   },
   {
     "id": "message",
