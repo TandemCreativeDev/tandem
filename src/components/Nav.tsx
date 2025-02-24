@@ -5,7 +5,14 @@ interface NavProps {
 }
 
 export default function Nav({ setIsOpen }: NavProps) {
-  const items = ["about", "services", "work", "testimonials", "team"];
+  const items = [
+    "about",
+    "services",
+    "work",
+    "testimonials",
+    "team",
+    "contact",
+  ];
 
   return (
     <nav
