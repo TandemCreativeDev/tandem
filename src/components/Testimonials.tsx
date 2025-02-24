@@ -19,12 +19,12 @@ export default function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="flex flex-col lg:grid grid-cols-12 gap-4 pt-20 h-[1100px] md:h-[1000px] w-10/12 m-auto lg:w-full"
+      className="m-auto flex w-10/12 grid-cols-12 flex-col gap-4 py-28  pt-20 lg:grid lg:w-full"
     >
-      <h2 className="uppercase font-tandem-mono-medium text-xs col-start-3 col-span-1">
+      <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase">
         ■ Testimonials
       </h2>
-      <div className="col-span-5 col-start-7">
+      <div className="col-span-5 col-start-7 flex flex-col gap-20">
         {testimonialsArr.map((testimonial, index) => {
           return (
             <Testimonial

@@ -13,42 +13,41 @@ export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(0);
 
   return (
-    <section
-      id="work"
-      className="h-screen relative w-full pt-10 flex flex-col justfy-center items-center md:grid grid-cols-12"
-    >
-      <div className="absolute top-0 left-0 w-full h-full">
+    <section id="work" className="relative">
+      <div className="absolute left-0 top-0 h-full w-full ">
         <Image
           fill
           sizes="100vw" // Important for responsiveness/fill={true}
-          className="absolute top-0 left-0 -z-50 brightness-50 md:brightness-100"
+          className="absolute left-0 top-0 -z-50 brightness-50 md:brightness-100"
           style={{ objectFit: "cover" }} // Ensures the image covers the entire container
           alt={`Mockup of ${projects[selectedProject].title}`}
           src={`/projects/${projects[selectedProject].src}.jpeg`}
         ></Image>
       </div>
-      <h2 className="uppercase text-white font-tandem-mono-medium text-xs col-start-3 col-span-1">
-        ■ Projects
-      </h2>
-      <div className="pt-10 md:pt-0 md:col-start-10 md:col-span-3 flex flex-col z-30">
-        {projects.map((project, index) => {
-          return (
-            <button
-              key={`project-${index}`}
-              onMouseEnter={() => setSelectedProject(index)}
-              className={clsx(
-                "font-tandem-medium text-start text-3xl uppercase ",
-                {
-                  "text-white ": selectedProject === index,
-                  "text-gray-300 hover:text-gray-200":
-                    selectedProject !== index,
-                },
-              )}
-            >
-              {project.title}
-            </button>
-          );
-        })}
+      <div className="w-10/12 m-auto relative flex h-screen  grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start">
+        <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase text-white">
+          ■ Projects
+        </h2>
+        <div className="z-30 flex flex-col pt-10 md:col-span-3 md:col-start-10 md:pt-0">
+          {projects.map((project, index) => {
+            return (
+              <button
+                key={`project-${index}`}
+                onMouseEnter={() => setSelectedProject(index)}
+                className={clsx(
+                  "font-tandem-medium text-start text-3xl uppercase ",
+                  {
+                    "text-white ": selectedProject === index,
+                    "text-gray-300 hover:text-gray-200":
+                      selectedProject !== index,
+                  },
+                )}
+              >
+                {project.title}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

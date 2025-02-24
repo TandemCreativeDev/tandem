@@ -21,10 +21,10 @@ export default function Accordion() {
           return (
             <div
               key={`accordion-${index}`}
-              className="bg-white text-black text-center border-t-black border-[1px] "
+              className="border-[1px] border-t-black bg-white text-center text-black "
             >
               <button
-                className="md:text-7xl text-4xl uppercase font-tandem-condensed-medium w-full hover:bg-black hover:text-white py-10"
+                className="w-full py-10 font-tandem-condensed-medium text-4xl uppercase hover:bg-black hover:text-white md:text-7xl"
                 onClick={() => handleContentClick(index)}
               >
                 {section.title}
@@ -38,7 +38,7 @@ export default function Accordion() {
                   },
                 )}
               >
-                <div className="lg:w-1/2 text-pretty flex flex-col gap-5">
+                <div className="flex flex-col gap-5 text-pretty lg:w-1/2">
                   <p className="mb-5">{section.content}</p>
                   <h3 className="text-2xl">{section.secondaryTitle}</h3>
                   <p>{section.secondaryContent}</p>
@@ -47,7 +47,7 @@ export default function Accordion() {
                   {section.serviceList.map((item, index) => {
                     return (
                       <p
-                        className="mb-3 md:text-nowrap text-pretty"
+                        className="mb-3 text-pretty md:text-nowrap"
                         key={index}
                       >{`■ ${item}`}</p>
                     );

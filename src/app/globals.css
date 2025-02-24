@@ -75,11 +75,17 @@ body {
   stroke-linejoin: round;
   stroke-width: 2px;
   top: 0;
-  transition: stroke-dasharray var(--dur), stroke-dashoffset var(--dur);
+  transition:
+    stroke-dasharray var(--dur),
+    stroke-dashoffset var(--dur);
 }
 .checkbox-wrapper-30 .checkbox svg,
 .checkbox-wrapper-30 .checkbox input {
   display: block;
   height: 100%;
   width: 100%;
+}
+
+section {
+  scroll-margin-top: 4rem;
 }
