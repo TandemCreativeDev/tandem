@@ -3,8 +3,8 @@
 import { FormEvent, useState } from "react";
 import { toast } from "react-hot-toast";
 
-import TextInput from "./ui/TextInput";
-import Checkbox from "./ui/Checkbox";
+import TextInput from "../ui/TextInput";
+import Checkbox from "../ui/Checkbox";
 
 import contact_form from "@/data/contact_form.json";
 
@@ -14,7 +14,7 @@ export default function ContactSection() {
       acc[field.id] = "";
       return acc;
     },
-    {},
+    {}
   );
 
   const [formData, setFormData] = useState(contactForm);

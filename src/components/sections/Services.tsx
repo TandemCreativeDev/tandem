@@ -1,4 +1,4 @@
-import Accordion from "./Accordion";
+import Accordion from "../ui/Accordion";
 export default function ServicesSection() {
   return (
     <section id="services">

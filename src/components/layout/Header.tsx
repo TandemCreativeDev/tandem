@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Nav from "./Nav";
-import Time from "./Time";
+import Time from "../ui/Time";
 import { BsList, BsX } from "react-icons/bs";
 
 export default function Header() {
@@ -40,7 +40,11 @@ export default function Header() {
         uppercase 
         font-tandem-mono-medium 
         pt-5
-        ${hasScrolledPastHero ? "fixed top-0 left-0 bg-black pb-5" : "absolute top-0 left-0 bg-none"}
+        ${
+          hasScrolledPastHero
+            ? "fixed top-0 left-0 bg-black pb-5"
+            : "absolute top-0 left-0 bg-none"
+        }
         transition-all 
         duration-300 
         z-50

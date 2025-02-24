@@ -1,6 +1,6 @@
 "use client";
 
-import services from "../data/services.json";
+import services from "../../data/services.json";
 import { useState } from "react";
 import clsx from "clsx";
 
@@ -48,7 +48,7 @@ export default function Accordion() {
                   {
                     block: openAccordionSection === index,
                     hidden: openAccordionSection !== index,
-                  },
+                  }
                 )}
               >
                 <div className="flex flex-col gap-5 text-pretty lg:w-1/2">

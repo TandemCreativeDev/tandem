@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Time from "./Time";
+import Time from "../ui/Time";
+
 export default function FooterSection() {
   return (
     <footer

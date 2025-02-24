@@ -1,4 +1,4 @@
-import Testimonial from "./Testimonial";
+import Testimonial from "../ui/Testimonial";
 export default function TestimonialsSection() {
   const testimonialsArr = [
     {

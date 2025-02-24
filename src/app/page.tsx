@@ -1,12 +1,12 @@
-import AboutSection from "@/components/About";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import ServicesSection from "@/components/Services";
-import ProjectsSection from "@/components/Projects";
-import TestimonialsSection from "@/components/Testimonials";
-import TeamSection from "@/components/Team";
-import FooterSection from "@/components/Footer";
-import ContactSection from "@/components/Contact";
+import AboutSection from "@/components/sections/About";
+import Header from "@/components/layout/Header";
+import Hero from "@/components/sections/Hero";
+import ServicesSection from "@/components/sections/Services";
+import ProjectsSection from "@/components/sections/Projects";
+import TestimonialsSection from "@/components/sections/Testimonials";
+import TeamSection from "@/components/sections/Team";
+import FooterSection from "@/components/layout/Footer";
+import ContactSection from "@/components/sections/Contact";
 export default function HeroPage() {
   return (
     <>
