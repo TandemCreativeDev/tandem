@@ -5,7 +5,7 @@ export default function Hero() {
       <div className="absolute h-screen w-screen top-0 left-0 -z-40">
         <Image
           src={"/hero-img.jpg"}
-          alt="Our hero image"
+          alt=""
           fill
           sizes="100vw"
           className="absolute top-0 left-0 -z-50  brightness-50"
