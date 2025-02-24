@@ -1,5 +1,4 @@
 import AboutSection from "@/components/About";
-import DescriptionSection from "@/components/Description";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ServicesSection from "@/components/Services";
@@ -14,7 +13,6 @@ export default function HeroPage() {
       <Header />
       <Hero />
       <AboutSection />
-      <DescriptionSection />
       <ServicesSection />
       <ProjectsSection />
       <TestimonialsSection />
