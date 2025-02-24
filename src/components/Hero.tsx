@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Hero() {
   return (
-    <section>
+    <section id="home">
       <div className="absolute h-screen w-screen top-0 left-0 -z-40">
         <Image
           src={"/hero-img.jpg"}
