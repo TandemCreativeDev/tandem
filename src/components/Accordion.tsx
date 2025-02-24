@@ -6,6 +6,7 @@ import clsx from "clsx";
 
 export default function Accordion() {
   const [openAccordionSection, setOpenAccordionSection] = useState(20);
+  const [hoveredAccordion, setHoveredAccordion] = useState(20);
 
   const handleContentClick = (index: number) => {
     if (openAccordionSection === index) {
@@ -14,6 +15,7 @@ export default function Accordion() {
       setOpenAccordionSection(index);
     }
   };
+
   return (
     <>
       <div className="flex flex-col">
@@ -24,10 +26,21 @@ export default function Accordion() {
               className="border-[1px] border-t-black bg-white text-center text-black "
             >
               <button
-                className="w-full py-10 font-tandem-condensed-medium text-4xl uppercase hover:bg-black hover:text-white md:text-7xl"
+                className={`${
+                  hoveredAccordion === index ? "bg-black text-white" : ""
+                } relative w-full overflow-hidden py-10 font-tandem-condensed-medium text-4xl uppercase
+                md:text-7xl`}
                 onClick={() => handleContentClick(index)}
+                onMouseEnter={() => setHoveredAccordion(index)}
+                onMouseLeave={() => setHoveredAccordion(20)}
               >
-                {section.title}
+                {hoveredAccordion === index ? (
+                  <div className="animate-marquee whitespace-nowrap">
+                    {Array(8).fill(` ${section.title} </> `).join("")}
+                  </div>
+                ) : (
+                  section.title
+                )}
               </button>
               <div
                 className={clsx(
