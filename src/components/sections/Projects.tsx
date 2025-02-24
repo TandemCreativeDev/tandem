@@ -26,13 +26,13 @@ export default function ProjectsSection() {
         <Image
           fill
           sizes="100vw" // Important for responsiveness/fill={true}
-          className="absolute left-0 top-0 -z-50 brightness-50 md:brightness-100"
+          className="absolute left-0 top-0 -z-50"
           style={{ objectFit: "cover" }} // Ensures the image covers the entire container
           alt={`Mockup of ${projects[selectedProject].title}`}
           src={`/projects/${projects[selectedProject].src}.jpeg`}
         ></Image>
       </div>
-      <div className="w-10/12 m-auto relative flex h-screen  grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start">
+      <div className="w-10/12 m-auto relative flex h-screen grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start">
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase text-white">
           ■ Projects
         </h2>
