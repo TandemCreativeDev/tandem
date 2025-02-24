@@ -35,11 +35,11 @@ export default function Accordion() {
                 onMouseLeave={() => setHoveredAccordion(20)}
               >
                 {hoveredAccordion === index ? (
-                  <div className="animate-marquee whitespace-nowrap">
+                  <h3 className="animate-marquee whitespace-nowrap">
                     {Array(8).fill(` ${section.title} </> `).join("")}
-                  </div>
+                  </h3>
                 ) : (
-                  section.title
+                  <h3>{section.title}</h3>
                 )}
               </button>
               <div
@@ -53,7 +53,7 @@ export default function Accordion() {
               >
                 <div className="flex flex-col gap-5 text-pretty lg:w-1/2">
                   <p className="mb-5">{section.content}</p>
-                  <h3 className="text-2xl">{section.secondaryTitle}</h3>
+                  <h4 className="text-2xl">{section.secondaryTitle}</h4>
                   <p>{section.secondaryContent}</p>
                 </div>
                 <div className="flex flex-col md:w-1/4">
