@@ -11,14 +11,16 @@ export default function HeroPage() {
   return (
     <>
       <Header />
-      <Hero />
-      <AboutSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <TestimonialsSection />
-      <TeamSection />
-      <ContactSection />
-      <FooterSection />
+      <main>
+        <Hero />
+        <AboutSection />
+        <ServicesSection />
+        <ProjectsSection />
+        <TestimonialsSection />
+        <TeamSection />
+        <ContactSection />
+        <FooterSection />
+      </main>
     </>
   );
 }
