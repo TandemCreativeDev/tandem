@@ -72,7 +72,7 @@ export default function Checkbox({
           </svg>
         </div>
       )}
-      <label htmlFor={id} className={twMerge("text-sm/6", labelClass)}>
+      <label htmlFor={id} className={twMerge(labelClass, "text-sm/6")}>
         {label}{" "}
         <a target="_blank" href={url} className="font-bold text-blue-600">
           {urlText}
