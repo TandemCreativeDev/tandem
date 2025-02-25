@@ -29,14 +29,12 @@ export default function SectionLinks({
             <Link
               href={`#${item}`}
               className={clsx(
-                `
-                relative z-10
+                `relative z-10
                 before:absolute before:top-0 before:left-0 before:w-full before:h-full
                 before:bg-white before:z-[-1] before:transition-transform motion-reduce:before:transition-none before:duration-500
                 before:origin-right before:scale-x-0 before:scale-y-75
                 hover:before:origin-left hover:before:scale-x-100 hover:!text-black
-                px-1
-              `,
+                px-1`,
                 padded && "py-[2px]"
               )}
               onClick={() => onClick(false)}

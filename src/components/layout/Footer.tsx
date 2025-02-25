@@ -11,7 +11,7 @@ export default function FooterSection() {
       <h2 className="col-span-2 col-start-1 mb-10 pl-20 md:mb-0 md:pl-10">
         tandem creative dev
       </h2>
-      <div className="col-span-1 col-start-8 h-full pl-20 md:pl-0">
+      <div className="col-span-1 col-start-8 overflow-visible whitespace-nowrap h-full pl-20 md:pl-0">
         <h3 className="mb-5 md:mb-20">index</h3>
         <SectionLinks
           className="flex flex-col font-tandem-condensed-medium text-5xl"
