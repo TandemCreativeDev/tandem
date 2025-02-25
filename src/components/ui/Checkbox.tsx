@@ -49,7 +49,13 @@ export default function Checkbox({
       ) : (
         <div className="checkbox-wrapper-30">
           <span className="checkbox">
-            <input id={id} name={name} type="checkbox" required={required} />
+            <input
+              id={id}
+              name={name}
+              type="checkbox"
+              required={required}
+              className="block focus:ring-2 focus:ring-blue-600 focus:outline-none"
+            />
             <svg>
               <use xlinkHref="#checkbox-30" className="checkbox"></use>
             </svg>

@@ -1,21 +1,12 @@
 [
   {
-    "id": "firstName",
-    "name": "firstName",
+    "id": "name",
+    "name": "name",
     "type": "text",
-    "label": "First Name",
+    "label": "Name",
     "required": true,
     "long": false,
-    "className": ""
-  },
-  {
-    "id": "lastName",
-    "name": "lastName",
-    "type": "text",
-    "label": "Last Name",
-    "required": true,
-    "long": false,
-    "className": ""
+    "className": "xl:col-span-1"
   },
   {
     "id": "company",
@@ -24,7 +15,7 @@
     "label": "Company",
     "required": false,
     "long": false,
-    "className": "col-span-2"
+    "className": "xl:col-span-1"
   },
   {
     "id": "email",
@@ -33,7 +24,7 @@
     "label": "Email",
     "required": true,
     "long": false,
-    "className": "col-span-2"
+    "className": "xl:col-span-1"
   },
   {
     "id": "phoneNumber",
@@ -42,7 +33,7 @@
     "label": "Phone Number",
     "required": false,
     "long": false,
-    "className": "col-span-2"
+    "className": "xl:col-span-1"
   },
   {
     "id": "message",
@@ -51,6 +42,6 @@
     "label": "Message",
     "required": true,
     "long": true,
-    "className": "col-span-2"
+    "className": ""
   }
 ]
