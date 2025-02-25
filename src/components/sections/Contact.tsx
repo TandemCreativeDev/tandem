@@ -98,7 +98,7 @@ export default function ContactSection() {
         </fieldset>
         <button
           type="submit"
-          className="block w-full rounded-md bg-black px-3.5 py-2.5 text-center font-tandem-mono-regular text-sm font-semibold uppercase text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-300"
+          className="block w-full rounded-md bg-black px-3.5 py-2.5 text-center font-tandem-mono-regular text-sm font-semibold uppercase text-white shadow-sm hover:bg-gray-800 focus:ring-2 focus:ring-inset focus:ring-gray-300"
         >
           Let&apos;s talk
         </button>
