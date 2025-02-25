@@ -16,7 +16,7 @@ export default function Nav({ setIsOpen }: NavProps) {
 
   return (
     <nav className="justify-end gap-5 text-black xl:text-white">
-      <ul className="flex flex-col gap-6 group md:flex-row">
+      <ul className="flex flex-col gap-6 group xl:flex-row">
         {items.map((item, index) => (
           <li
             key={index}
