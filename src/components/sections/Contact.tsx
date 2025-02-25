@@ -61,7 +61,7 @@ export default function ContactSection() {
       className="m-auto flex w-10/12 grid-cols-12 flex-col gap-10  bg-white py-28 md:grid md:w-screen md:gap-0"
     >
       <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase">
-        ■ {nav_items[4]}
+        ■ {nav_items[6]}
       </h2>
       <form
         onSubmit={handleSubmit}
