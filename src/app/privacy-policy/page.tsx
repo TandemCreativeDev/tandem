@@ -1,6 +1,6 @@
 export default function PrivacyPolicy() {
   return (
-    <section className="max-w-3xl mx-auto px-6 py-12 text-gray-800">
+    <main className="max-w-3xl mx-auto px-6 py-12 text-gray-800">
       <h1 className="font-tandem-mono-medium uppercase text-3xl font-bold text-center mb-6">
         Privacy Policy
       </h1>
@@ -175,6 +175,6 @@ export default function PrivacyPolicy() {
           </div>
         </section>
       </div>
-    </section>
+    </main>
   );
 }
