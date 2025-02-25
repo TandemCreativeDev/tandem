@@ -6,10 +6,11 @@ interface NavProps {
 
 export default function Nav({ setIsOpen }: NavProps) {
   return (
-    <nav className="justify-end gap-5 text-black xl:text-white">
+    <nav className="justify-end gap-1 text-black xl:text-white">
       <SectionLinks
         className="flex flex-col gap-6 xl:flex-row"
         onClick={() => setIsOpen(false)}
+        padded
       />
     </nav>
   );
