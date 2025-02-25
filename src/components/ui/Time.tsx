@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 export default function Time() {
   const [currentTime, setCurrentTime] = useState<string>("");
