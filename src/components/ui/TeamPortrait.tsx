@@ -1,10 +1,12 @@
 import Image from "next/image";
+
 interface TeamPortraitProps {
   teamMember: string;
   otherTeamMember: string;
   activeImage: string;
   setActiveImage: (arg: string) => void;
 }
+
 export default function TeamPortrait({
   teamMember,
   otherTeamMember,
