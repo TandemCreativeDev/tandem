@@ -56,19 +56,19 @@ export default function Header() {
       `}
     >
       <div className="m-auto w-11/12 flex xl:justify-between items-center justify-center">
-        <div className="w-1/3 xl:block hidden">
+        <div className="xl:block hidden">
           <Time />
         </div>
         <Link
           className={clsx(
-            "w-full xl:w-1/3 justify-center z-10",
+            "absolute left-1/2 top-5 transform -translate-x-1/2 z-10",
             isOpen ? "text-black" : "text-white"
           )}
           href={"#home"}
         >
           <h1 className="text-center">tandem creative dev</h1>
         </Link>
-        <div className="w-1/3 self-end xl:block hidden">
+        <div className="self-end xl:block hidden">
           <Nav setIsOpen={setIsOpen} />
         </div>
         <button
