@@ -1,7 +1,11 @@
 import Image from "next/image";
+
+import nav_items from "@/data/nav_items.json";
+
 export default function Hero() {
   return (
-    <section id="home">
+    <section id={nav_items[0]}>
+      <h2 className="hidden">{nav_items[0]}</h2>
       <div className="absolute h-screen w-screen top-0 left-0 -z-40">
         <Image
           src={"/hero-img.jpg"}

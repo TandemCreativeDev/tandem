@@ -1,11 +1,13 @@
 import Image from "next/image";
 
+import nav_items from "@/data/nav_items.json";
+
 export default function AboutSection() {
   return (
-    <section id="about">
+    <section id={nav_items[1]}>
       <div className="m-auto flex w-10/12 flex-col gap-10 py-20 md:grid md:w-screen md:auto-rows-auto md:grid-cols-12 md:gap-0 md:py-28">
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase">
-          ■ About
+          ■ {nav_items[1]}
         </h2>
         <p className="col-span-7 col-start-5 text-pretty font-tandem-condensed-medium text-3xl uppercase text-gray-500 md:text-4xl">
           <span className="text-black">

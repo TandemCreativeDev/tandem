@@ -1,14 +1,16 @@
 "use client";
-import TeamPortrait from "./TeamPortrait";
+import TeamPortrait from "../ui/TeamPortrait";
 import { useState } from "react";
+
+import nav_items from "@/data/nav_items.json";
 
 export default function TeamSection() {
   const [activeImage, setActiveImage] = useState("");
   return (
-    <section id="team" className="bg-black">
+    <section id={nav_items[5]} className="bg-black">
       <div className="m-auto flex  w-10/12 grid-cols-12 flex-col py-28 md:grid  md:w-full">
         <h2 className="col-span-1 col-start-3 mb-10 font-tandem-mono-medium text-xs uppercase text-white md:mb-0">
-          ■ Team
+          ■ {nav_items[5]}
         </h2>
         <div className="col-span-8 col-start-5">
           <p className="font-tandem-condensed-medium text-4xl uppercase text-gray-400 md:mb-20">

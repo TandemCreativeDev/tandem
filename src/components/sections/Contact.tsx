@@ -7,6 +7,7 @@ import TextInput from "../ui/TextInput";
 import Checkbox from "../ui/Checkbox";
 
 import contact_form from "@/data/contact_form.json";
+import nav_items from "@/data/nav_items.json";
 
 export default function ContactSection() {
   const contactForm = contact_form.reduce<{ [key: string]: string }>(
@@ -56,11 +57,11 @@ export default function ContactSection() {
 
   return (
     <section
-      id="contact"
+      id={nav_items[6]}
       className="m-auto flex w-10/12 grid-cols-12 flex-col gap-10  bg-white py-28 md:grid md:w-screen md:gap-0"
     >
       <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase">
-        ■ Contact
+        ■ {nav_items[4]}
       </h2>
       <form
         onSubmit={handleSubmit}

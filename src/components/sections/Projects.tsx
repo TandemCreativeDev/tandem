@@ -2,6 +2,9 @@
 import Image from "next/image";
 import clsx from "clsx";
 import { useState } from "react";
+
+import nav_items from "@/data/nav_items.json";
+
 export default function ProjectsSection() {
   const projects = [
     { title: "clark's bowling club", src: "cbc" },
@@ -13,7 +16,7 @@ export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(0);
 
   return (
-    <section id="work" className="relative">
+    <section id={nav_items[3]} className="relative">
       <div className="absolute left-0 top-0 h-full w-full">
         <div
           className={clsx(
@@ -34,7 +37,7 @@ export default function ProjectsSection() {
       </div>
       <div className="w-10/12 m-auto relative flex h-screen grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start">
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase text-white">
-          ■ Projects
+          ■ {nav_items[3]}
         </h2>
         <div className="z-30 flex flex-col pt-10 md:col-span-3 md:col-start-10 md:pt-0">
           {projects.map((project, index) => {

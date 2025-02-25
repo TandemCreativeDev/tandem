@@ -1,4 +1,7 @@
 import Testimonial from "../ui/Testimonial";
+
+import nav_items from "@/data/nav_items.json";
+
 export default function TestimonialsSection() {
   const testimonialsArr = [
     {
@@ -18,11 +21,11 @@ export default function TestimonialsSection() {
   ];
   return (
     <section
-      id="testimonials"
+      id={nav_items[4]}
       className="m-auto flex w-10/12 grid-cols-12 flex-col gap-4 py-28  pt-20 lg:grid lg:w-full"
     >
       <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase">
-        ■ Testimonials
+        ■ {nav_items[4]}
       </h2>
       <div className="col-span-5 col-start-7 flex flex-col gap-20">
         {testimonialsArr.map((testimonial, index) => {
