@@ -63,7 +63,15 @@ export default function Header() {
           )}
           href={"#home"}
         >
-          <h1 className="text-center">tandem creative dev</h1>
+          <h1 className="text-center flex gap-1 group">
+            <span className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
+              &lt;
+            </span>
+            tandem creative dev
+            <span className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
+              /&gt;
+            </span>
+          </h1>
         </Link>
         <div className="self-end xl:block hidden">
           <Nav setIsOpen={setIsOpen} />
