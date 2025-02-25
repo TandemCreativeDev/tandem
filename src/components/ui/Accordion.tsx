@@ -35,7 +35,7 @@ export default function Accordion() {
                 onMouseLeave={() => setHoveredAccordion(20)}
               >
                 {hoveredAccordion === index ? (
-                  <h3 className="animate-marquee whitespace-nowrap">
+                  <h3 className="motion-safe:animate-marquee whitespace-nowrap">
                     {Array(8).fill(` ${section.title} </> `).join("")}
                   </h3>
                 ) : (
