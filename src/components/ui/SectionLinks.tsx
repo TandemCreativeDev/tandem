@@ -19,7 +19,7 @@ export default function SectionLinks({
   padded = false,
 }: SectionLinksProps) {
   return (
-    <ul className={twMerge(className, "group pointer-events-none")}>
+    <ul className={twMerge("group pointer-events-none", className)}>
       {nav_items.map((item, index) => (
         <li
           key={index}
