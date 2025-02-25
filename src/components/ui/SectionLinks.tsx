@@ -19,11 +19,11 @@ export default function SectionLinks({
   padded = false,
 }: SectionLinksProps) {
   return (
-    <ul className={twMerge(className, "group")}>
+    <ul className={twMerge(className, "group pointer-events-none")}>
       {nav_items.map((item, index) => (
         <li
           key={index}
-          className="relative list-none transition-all motion-reduce:transition-none duration-500 group-hover:text-gray-500 hover:!text-black"
+          className="relative list-none transition-all motion-reduce:transition-none duration-500 group-hover:text-gray-500 pointer-events-auto"
         >
           {index >= startIndex && (
             <Link
@@ -34,7 +34,7 @@ export default function SectionLinks({
                 before:absolute before:top-0 before:left-0 before:w-full before:h-full
                 before:bg-white before:z-[-1] before:transition-transform motion-reduce:before:transition-none before:duration-500
                 before:origin-right before:scale-x-0 before:scale-y-75
-                hover:before:origin-left hover:before:scale-x-100
+                hover:before:origin-left hover:before:scale-x-100 hover:!text-black
                 px-1
               `,
                 padded && "py-[2px]"
