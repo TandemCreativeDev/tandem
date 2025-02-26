@@ -7,8 +7,9 @@ export default function Hero() {
           src={"/hero-img.jpg"}
           alt="Our hero image"
           fill
-          sizes="100vw"
-          className="absolute top-0 left-0 -z-50  brightness-50"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+          priority
+          className="absolute top-0 left-0 -z-50 brightness-50"
           style={{ objectFit: "cover" }}
         />
       </div>

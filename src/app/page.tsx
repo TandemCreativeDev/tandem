@@ -1,13 +1,17 @@
-import AboutSection from "@/components/About";
-import DescriptionSection from "@/components/Description";
+import dynamic from 'next/dynamic';
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import ServicesSection from "@/components/Services";
-import ProjectsSection from "@/components/Projects";
-import TestimonialsSection from "@/components/Testimonials";
-import TeamSection from "@/components/Team";
-import FooterSection from "@/components/Footer";
-import ContactSection from "@/components/Contact";
+import AboutSection from "@/components/About";
+import DescriptionSection from "@/components/Description";
+
+// Dynamically import components that aren't needed for initial render
+const ServicesSection = dynamic(() => import("@/components/Services"));
+const ProjectsSection = dynamic(() => import("@/components/Projects"));
+const TestimonialsSection = dynamic(() => import("@/components/Testimonials"));
+const TeamSection = dynamic(() => import("@/components/Team"));
+const ContactSection = dynamic(() => import("@/components/Contact"));
+const FooterSection = dynamic(() => import("@/components/Footer"));
+
 export default function HeroPage() {
   return (
     <>
