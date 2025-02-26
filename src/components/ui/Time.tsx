@@ -1,8 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import stateCapitals from "@/data/state_capitals.json";
-import countryCapitals from "@/data/country_capitals.json";
+import stateCapitalsData from "@/data/state_capitals.json";
+import countryCapitalsData from "@/data/country_capitals.json";
+
+// Type definitions for the imported JSON data
+type StateCapitals = Record<string, string>;
+type CountryCapitals = Record<string, string>;
+
+// Type assertion for the imported data
+const stateCapitals = stateCapitalsData as StateCapitals;
+const countryCapitals = countryCapitalsData as CountryCapitals;
 
 interface GeoLocation {
   country_code: string;
@@ -29,11 +37,13 @@ export default function Time() {
         
         // For US, use state capitals
         if (data.country_code === "US" && data.state) {
-          locationName = stateCapitals[data.state] || data.city;
+          const stateKey = data.state as keyof typeof stateCapitals;
+          locationName = stateCapitals[stateKey] || data.city;
         } 
         // For other countries, use country capitals
-        else if (data.country_name && countryCapitals[data.country_name]) {
-          locationName = countryCapitals[data.country_name];
+        else if (data.country_name) {
+          const countryKey = data.country_name as keyof typeof countryCapitals;
+          locationName = countryCapitals[countryKey] || data.city;
         }
         
         setLocation(locationName);
