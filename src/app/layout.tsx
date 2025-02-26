@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   title: "Tandem Creative Dev",
   description:
     "Tandem is a creative development agency who prioritise human-centered design, based in London.",
+  viewport: "width=device-width, initial-scale=1",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
