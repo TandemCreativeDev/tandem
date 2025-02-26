@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import stateCapitals from "@/data/state_capitals.json";
+import countryCapitals from "@/data/country_capitals.json";
 
 interface GeoLocation {
   country_code: string;
@@ -12,79 +14,6 @@ interface GeoLocation {
   IPv4: string;
   state: string;
 }
-
-// Map of US states to their capitals
-const stateCapitals: Record<string, string> = {
-  "Alabama": "Montgomery",
-  "Alaska": "Juneau",
-  "Arizona": "Phoenix",
-  "Arkansas": "Little Rock",
-  "California": "Sacramento",
-  "Colorado": "Denver",
-  "Connecticut": "Hartford",
-  "Delaware": "Dover",
-  "Florida": "Tallahassee",
-  "Georgia": "Atlanta",
-  "Hawaii": "Honolulu",
-  "Idaho": "Boise",
-  "Illinois": "Springfield",
-  "Indiana": "Indianapolis",
-  "Iowa": "Des Moines",
-  "Kansas": "Topeka",
-  "Kentucky": "Frankfort",
-  "Louisiana": "Baton Rouge",
-  "Maine": "Augusta",
-  "Maryland": "Annapolis",
-  "Massachusetts": "Boston",
-  "Michigan": "Lansing",
-  "Minnesota": "Saint Paul",
-  "Mississippi": "Jackson",
-  "Missouri": "Jefferson City",
-  "Montana": "Helena",
-  "Nebraska": "Lincoln",
-  "Nevada": "Carson City",
-  "New Hampshire": "Concord",
-  "New Jersey": "Trenton",
-  "New Mexico": "Santa Fe",
-  "New York": "Albany",
-  "North Carolina": "Raleigh",
-  "North Dakota": "Bismarck",
-  "Ohio": "Columbus",
-  "Oklahoma": "Oklahoma City",
-  "Oregon": "Salem",
-  "Pennsylvania": "Harrisburg",
-  "Rhode Island": "Providence",
-  "South Carolina": "Columbia",
-  "South Dakota": "Pierre",
-  "Tennessee": "Nashville",
-  "Texas": "Austin",
-  "Utah": "Salt Lake City",
-  "Vermont": "Montpelier",
-  "Virginia": "Richmond",
-  "Washington": "Olympia",
-  "West Virginia": "Charleston",
-  "Wisconsin": "Madison",
-  "Wyoming": "Cheyenne",
-  "District of Columbia": "Washington D.C."
-};
-
-// Map of countries to their capitals
-const countryCapitals: Record<string, string> = {
-  "United States": "Washington D.C.",
-  "United Kingdom": "London",
-  "France": "Paris",
-  "Germany": "Berlin",
-  "Italy": "Rome",
-  "Spain": "Madrid",
-  "Canada": "Ottawa",
-  "Australia": "Canberra",
-  "Japan": "Tokyo",
-  "China": "Beijing",
-  "India": "New Delhi",
-  "Brazil": "Brasília",
-  "Russia": "Moscow",
-  // Add more as needed
-};
 
 export default function Time() {
   const [currentTime, setCurrentTime] = useState<string>("");
