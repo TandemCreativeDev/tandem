@@ -7,7 +7,7 @@ const GeoLocationSchema = z.object({
   country_code: z.string().optional(),
   country_name: z.string().optional(),
   city: z.string().optional(),
-  postal: z.number().optional(),
+  postal: z.union([z.string(), z.number()]).optional(),
   latitude: z.number().optional(),
   longitude: z.number().optional(),
   IPv4: z.string().optional(),
