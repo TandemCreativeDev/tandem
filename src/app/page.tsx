@@ -5,12 +5,24 @@ import AboutSection from "@/components/About";
 import DescriptionSection from "@/components/Description";
 
 // Dynamically import components that aren't needed for initial render
-const ServicesSection = dynamic(() => import("@/components/Services"));
-const ProjectsSection = dynamic(() => import("@/components/Projects"));
-const TestimonialsSection = dynamic(() => import("@/components/Testimonials"));
-const TeamSection = dynamic(() => import("@/components/Team"));
-const ContactSection = dynamic(() => import("@/components/Contact"));
-const FooterSection = dynamic(() => import("@/components/Footer"));
+const ServicesSection = dynamic(() => import("@/components/Services"), { 
+  loading: () => <div className="min-h-[200px]"></div> 
+});
+const ProjectsSection = dynamic(() => import("@/components/Projects"), { 
+  loading: () => <div className="min-h-[200px]"></div> 
+});
+const TestimonialsSection = dynamic(() => import("@/components/Testimonials"), { 
+  loading: () => <div className="min-h-[200px]"></div> 
+});
+const TeamSection = dynamic(() => import("@/components/Team"), { 
+  loading: () => <div className="min-h-[200px]"></div> 
+});
+const ContactSection = dynamic(() => import("@/components/Contact"), { 
+  loading: () => <div className="min-h-[200px]"></div> 
+});
+const FooterSection = dynamic(() => import("@/components/Footer"), { 
+  loading: () => <div className="min-h-[50px]"></div> 
+});
 
 export default function HeroPage() {
   return (

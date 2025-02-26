@@ -9,6 +9,8 @@ export default function Hero() {
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           priority
+          fetchPriority="high"
+          loading="eager"
           className="absolute top-0 left-0 -z-50 brightness-50"
           style={{ objectFit: "cover" }}
         />
