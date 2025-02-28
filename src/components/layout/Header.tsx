@@ -52,14 +52,14 @@ export default function Header() {
         z-50
       `}
     >
-      <div className="m-auto w-11/12 flex justify-between items-center h-6">
+      <div className="m-auto w-[98%] flex justify-between items-center h-6">
         <div className="md:block hidden">
           <Time />
         </div>
         <Link
           className={clsx(
             "absolute left-1/2 top-5 transform -translate-x-1/2 z-10",
-            isOpen ? "text-black" : "text-white"
+            isOpen ? "text-black" : "text-white",
           )}
           href={"#home"}
           onClick={() => setIsOpen(false)}
