@@ -20,7 +20,7 @@ export default function AboutSection() {
       <div className="grid-cols-12 flex-col border-b-[1px] border-t-2 border-black md:grid ">
         <div className="relative col-span-6">
           <Image
-            src="/itch-laptop-image.jpeg"
+            src="/itch-laptop-image.jpg"
             alt="Laptop showcasing work by Tandem"
             fill
             sizes="100vw"
