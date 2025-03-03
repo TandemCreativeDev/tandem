@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 import stateCapitals from "@/data/state_capitals.json";
 import countryCapitals from "@/data/country_capitals.json";
-import getTimeOffset from "@/utils/getTimeOffset";
 
 export default function Time() {
   const [currentTime, setCurrentTime] = useState<string>("");
@@ -27,7 +26,7 @@ export default function Time() {
           setLocation(countryCapitals[countryKey]);
         }
 
-        setTimeZoneOffset(getTimeOffset(data.longitude));
+        setTimeZoneOffset(data.longitude ? Math.round(data.longitude / 15) : 0);
 
         if (data.error) {
           setError(data.error);
