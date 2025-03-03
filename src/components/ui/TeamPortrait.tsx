@@ -29,7 +29,6 @@ export default function TeamPortrait({
             <Image
               src={`/portraits/portrait-[${teamMember}].jpg`}
               alt={`Portrait of ${teamMember}, Tandem co-founder`}
-              layout="intrinsic"
               width={500}
               height={500}
               onMouseEnter={() => setActiveImage(teamMember)}
