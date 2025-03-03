@@ -1,32 +1,53 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
 import stateCapitals from "@/data/state_capitals.json";
 import countryCapitals from "@/data/country_capitals.json";
+import { getTimezoneForLocation, formatTimeForTimezone } from "@/utils/timezoneHelper";
+
+const DEFAULT_TIMEZONE = "Europe/London";
 
 export default function Time() {
   const [currentTime, setCurrentTime] = useState<string>("");
   const [location, setLocation] = useState<string>("Loading...");
-  const [timeZoneOffset, setTimeZoneOffset] = useState<number>(0);
+  const [timezone, setTimezone] = useState<string>(DEFAULT_TIMEZONE);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Use the server action to get location data
     const fetchLocationData = async () => {
       try {
         const response = await fetch("https://geolocation-db.com/json/");
+        
+        if (!response.ok) {
+          throw new Error(`API responded with status: ${response.status}`);
+        }
+        
         const data = await response.json();
-
+        console.log("Location API response:", data);
+        
+        let detectedLocation = "London";
+        
         if (data.country_code === "US" && data.state) {
           const stateKey = data.state as keyof typeof stateCapitals;
-          setLocation(stateCapitals[stateKey]);
-        } else {
+          if (stateCapitals[stateKey]) {
+            detectedLocation = stateCapitals[stateKey];
+          } else {
+            console.warn(`State capital not found for: ${data.state}`);
+          }
+        } else if (data.country_name) {
           const countryKey = data.country_name as keyof typeof countryCapitals;
-          setLocation(countryCapitals[countryKey]);
+          if (countryCapitals[countryKey]) {
+            detectedLocation = countryCapitals[countryKey];
+          } else {
+            console.warn(`Country capital not found for: ${data.country_name}`);
+          }
         }
-
-        setTimeZoneOffset(data.longitude ? Math.round(data.longitude / 15) : 0);
+        
+        setLocation(detectedLocation);
+        
+        const detectedTimezone = getTimezoneForLocation(detectedLocation);
+        setTimezone(detectedTimezone);
+        console.log(`Location: ${detectedLocation}, Timezone: ${detectedTimezone}`);
 
         if (data.error) {
           setError(data.error);
@@ -36,29 +57,20 @@ export default function Time() {
         console.error("Failed to fetch location data:", err);
         setError("Failed to load location data");
         setLocation("London");
+        setTimezone(DEFAULT_TIMEZONE);
       }
     };
 
     fetchLocationData();
 
-    // Update time every 100ms
     const interval = setInterval(() => {
       const now = new Date();
-
-      // Apply timezone offset if available
-      if (timeZoneOffset !== 0) {
-        // Get UTC time and add the estimated offset
-        const utcTime = now.getTime() + now.getTimezoneOffset() * 60000;
-        const offsetTime = new Date(utcTime + 3600000 * timeZoneOffset);
-        setCurrentTime(offsetTime.toLocaleTimeString());
-      } else {
-        // Just use local time if no offset available
-        setCurrentTime(now.toLocaleTimeString());
-      }
-    }, 100);
+      const formattedTime = formatTimeForTimezone(now, timezone);
+      setCurrentTime(formattedTime);
+    }, 1000);
 
     return () => clearInterval(interval);
-  }, [timeZoneOffset]);
+  }, [timezone]);
 
   return (
     <div className="flex justify-start gap-5">
