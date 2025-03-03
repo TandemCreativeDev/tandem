@@ -27,10 +27,18 @@ export default function FooterSection() {
         </div>
         <div className="w-5/12">
           <h3 className="text-gray-400">social</h3>
-          <div className="flex flex-col gap-4 text-white">
+          <div className="flex flex-col w-fit gap-4 text-white">
             <Link
               target="_blank"
               href={"https://www.linkedin.com/company/tandemcreativedev/"}
+              className={`
+                relative z-10
+                before:absolute before:top-0 before:left-0 before:w-full before:h-full
+                before:bg-white before:z-[-1] before:transition-transform motion-reduce:before:transition-none before:duration-500
+                before:origin-right before:scale-x-0 before:scale-y-75
+                hover:before:origin-left hover:before:scale-x-100 hover:!text-black
+                px-1
+                `}
             >
               linkedin
             </Link>
