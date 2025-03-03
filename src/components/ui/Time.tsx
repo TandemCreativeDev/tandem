@@ -3,7 +3,10 @@
 import { useState, useEffect } from "react";
 import stateCapitals from "@/data/state_capitals.json";
 import countryCapitals from "@/data/country_capitals.json";
-import { getTimezoneForLocation, formatTimeForTimezone } from "@/utils/timezoneHelper";
+import {
+  getTimezoneForLocation,
+  formatTimeForTimezone,
+} from "@/utils/timezoneHelper";
 
 const DEFAULT_TIMEZONE = "Europe/London";
 
@@ -17,16 +20,15 @@ export default function Time() {
     const fetchLocationData = async () => {
       try {
         const response = await fetch("https://geolocation-db.com/json/");
-        
+
         if (!response.ok) {
           throw new Error(`API responded with status: ${response.status}`);
         }
-        
+
         const data = await response.json();
-        console.log("Location API response:", data);
-        
+
         let detectedLocation = "London";
-        
+
         if (data.country_code === "US" && data.state) {
           const stateKey = data.state as keyof typeof stateCapitals;
           if (stateCapitals[stateKey]) {
@@ -42,12 +44,14 @@ export default function Time() {
             console.warn(`Country capital not found for: ${data.country_name}`);
           }
         }
-        
+
         setLocation(detectedLocation);
-        
+
         const detectedTimezone = getTimezoneForLocation(detectedLocation);
         setTimezone(detectedTimezone);
-        console.log(`Location: ${detectedLocation}, Timezone: ${detectedTimezone}`);
+        console.log(
+          `Location: ${detectedLocation}, Timezone: ${detectedTimezone}`
+        );
 
         if (data.error) {
           setError(data.error);
