@@ -27,7 +27,7 @@ export default function ProjectsSection() {
           className="absolute left-0 top-0 -z-50"
           style={{ objectFit: "cover" }} // Ensures the image covers the entire container
           alt={`Mockup of ${projects[selectedProject].title}`}
-          src={`/projects/${projects[selectedProject].src}.jpeg`}
+          src={`/projects/${projects[selectedProject].src}.jpg`}
         ></Image>
       </div>
       <div className="w-10/12 m-auto relative flex h-screen grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start">
