@@ -14,6 +14,7 @@ export default function Hero() {
           sizes="100vw"
           className="absolute top-0 left-0 -z-50  brightness-50"
           style={{ objectFit: "cover" }}
+          priority={true}
         />
       </div>
       <div className="h-screen w-screen flex flex-col justify-center items-center">
