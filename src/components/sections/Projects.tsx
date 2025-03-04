@@ -4,15 +4,10 @@ import clsx from "clsx";
 import { useState } from "react";
 
 import nav_items from "@/data/nav_items.json";
+import projects from "@/data/projects.json";
+import Link from "next/link";
 
 export default function ProjectsSection() {
-  const projects = [
-    { title: "clark's bowling club", src: "cbc" },
-    { title: "itch film", src: "itch" },
-    { title: "wedgy music", src: "wedgy" },
-    { title: "things we do", src: "twd" },
-    //{ title: "ruby kiwinda", src: "ruby" },
-  ];
   const [selectedProject, setSelectedProject] = useState(0);
 
   return (
@@ -32,7 +27,7 @@ export default function ProjectsSection() {
           className="absolute left-0 top-0 -z-50"
           style={{ objectFit: "cover" }} // Ensures the image covers the entire container
           alt={`Mockup of ${projects[selectedProject].title}`}
-          src={`/projects/${projects[selectedProject].src}.jpeg`}
+          src={`/projects/${projects[selectedProject].src}.jpg`}
         ></Image>
       </div>
       <div className="w-10/12 m-auto relative flex h-screen grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start">
@@ -42,9 +37,11 @@ export default function ProjectsSection() {
         <div className="z-30 flex flex-col pt-10 md:col-span-3 md:col-start-10 md:pt-0">
           {projects.map((project, index) => {
             return (
-              <button
+              <Link
                 key={`project-${index}`}
                 onMouseEnter={() => setSelectedProject(index)}
+                href={project.href}
+                target="_blank"
                 className={clsx(
                   "font-tandem-medium text-start text-3xl uppercase ",
                   {
@@ -55,7 +52,7 @@ export default function ProjectsSection() {
                 )}
               >
                 {project.title}
-              </button>
+              </Link>
             );
           })}
         </div>

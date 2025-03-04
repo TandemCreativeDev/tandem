@@ -72,7 +72,6 @@ export default function ContactSection() {
             <span className="text-black">Send us a message,</span> we&apos;d
             love to hear from you.
           </legend>
-          <p className="col-span-2">* indicate a required field</p>
           {contact_form.map((field) => (
             <TextInput
               key={field.id}
