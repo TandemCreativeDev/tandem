@@ -11,7 +11,7 @@ export default function LoadingScreen() {
     const handleLoad = () => {
       setTimeout(() => {
         setIsLoading(false);
-      }, 500); // Small delay to ensure smooth transition
+      }, 800); // Small delay to ensure smooth transition
     };
 
     // Check if document is already loaded
