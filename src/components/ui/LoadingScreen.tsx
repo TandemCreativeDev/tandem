@@ -33,10 +33,10 @@ export default function LoadingScreen() {
         {
           "opacity-100": isLoading,
           "opacity-0 pointer-events-none": !isLoading,
-        }
+        },
       )}
     >
-      <h1 className="font-tandem-condensed-medium text-8xl uppercase text-white">
+      <h1 className="text-8xl uppercase text-white font-tandem-mono-regular ">
         loading
       </h1>
     </div>
