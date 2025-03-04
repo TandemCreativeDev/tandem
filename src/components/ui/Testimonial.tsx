@@ -19,7 +19,7 @@ export default function Testimonial({
       <div className="flex mt-5 border-t-2 border-t-gray-500 pt-4">
         <div className="relative h-10 w-10 overflow-hidden rounded-full mr-5">
           <Image
-            src={`/clients/${src}.jpeg`}
+            src={`/clients/${src}.jpg`}
             alt={`Portrait of ${client}`}
             fill
             className="object-cover"

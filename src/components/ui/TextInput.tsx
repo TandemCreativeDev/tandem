@@ -40,7 +40,7 @@ export default function TextInput({
         {label}
         {required ? (
           <>
-            <span aria-hidden="true"> *</span>
+            <span aria-hidden="true"> (required)</span>
             <span className="hidden"> required</span>
           </>
         ) : null}

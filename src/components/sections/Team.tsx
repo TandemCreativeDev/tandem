@@ -25,12 +25,14 @@ export default function TeamSection() {
                 otherTeamMember={"Maxime Downe"}
                 activeImage={activeImage}
                 setActiveImage={setActiveImage}
+                href="https://www.linkedin.com/in/jackcasstlesjones/"
               />
               <TeamPortrait
                 teamMember={"Maxime Downe"}
                 otherTeamMember={"Jack Casstles-Jones"}
                 activeImage={activeImage}
                 setActiveImage={setActiveImage}
+                href="https://linkedin.com/in/maxime-downe-642ba74b"
               />
             </div>
           </div>

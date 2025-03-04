@@ -1,9 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface TeamPortraitProps {
   teamMember: string;
   otherTeamMember: string;
   activeImage: string;
+  href: string;
   setActiveImage: (arg: string) => void;
 }
 
@@ -12,10 +14,11 @@ export default function TeamPortrait({
   otherTeamMember,
   activeImage,
   setActiveImage,
+  href,
 }: TeamPortraitProps) {
   return (
     <>
-      <div className="flex flex-col">
+      <Link target="_blank" className="flex flex-col" href={href}>
         <button>
           <div
             className={`transition-all duration-700 ${
@@ -29,7 +32,6 @@ export default function TeamPortrait({
             <Image
               src={`/portraits/portrait-[${teamMember}].jpg`}
               alt={`Portrait of ${teamMember}, Tandem co-founder`}
-              layout="intrinsic"
               width={500}
               height={500}
               onMouseEnter={() => setActiveImage(teamMember)}
@@ -38,7 +40,7 @@ export default function TeamPortrait({
         </button>
         <p className="mt-5 md:mt-0">{teamMember}</p>
         <p>Co-Founder \ Full-Stack Developer</p>
-      </div>
+      </Link>
     </>
   );
 }
