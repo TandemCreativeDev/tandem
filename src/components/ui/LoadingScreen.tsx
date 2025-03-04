@@ -7,14 +7,12 @@ export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Hide loading screen after the page has fully loaded
     const handleLoad = () => {
       setTimeout(() => {
         setIsLoading(false);
-      }, 800); // Small delay to ensure smooth transition
+      }, 800);
     };
 
-    // Check if document is already loaded
     if (document.readyState === "complete") {
       handleLoad();
     } else {
