@@ -34,9 +34,9 @@ export default function LoadingScreen() {
         },
       )}
     >
-      <h1 className="text-8xl uppercase text-white font-tandem-mono-regular ">
+      <span className="text-8xl uppercase text-white font-tandem-mono-regular ">
         loading
-      </h1>
+      </span>
     </div>
   );
 }
