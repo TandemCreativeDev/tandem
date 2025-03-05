@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import clsx from "clsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import nav_items from "@/data/nav_items.json";
 import projects from "@/data/projects.json";
@@ -9,6 +9,20 @@ import Link from "next/link";
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(0);
+
+  useEffect(() => {
+    const projectImage = `/projects/${projects[selectedProject].src}.jpg`;
+
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.href = projectImage;
+    link.as = "image";
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, [selectedProject]);
 
   return (
     <section id={nav_items[3]} className="relative">
@@ -18,10 +32,11 @@ export default function ProjectsSection() {
             "absolute left-0 top-0 h-full w-full bg-gradient-to-r from-black via-transparent to-black",
             projects[selectedProject].title === "things we do"
               ? ""
-              : "opacity-75"
+              : "opacity-75",
           )}
         ></div>
         <Image
+          priority={true}
           fill
           sizes="100vw" // Important for responsiveness/fill={true}
           className="absolute left-0 top-0 -z-50"
@@ -48,7 +63,7 @@ export default function ProjectsSection() {
                     "text-white ": selectedProject === index,
                     "text-gray-300 hover:text-gray-200":
                       selectedProject !== index,
-                  }
+                  },
                 )}
               >
                 {project.title}
