@@ -97,6 +97,9 @@ export default function ContactSection() {
         </fieldset>
         <button
           type="submit"
+          rel="noopener noreferrer"
+          aria-label="Submit message"
+          role="button"
           className="block w-full rounded-md bg-black px-3.5 py-2.5 text-center font-tandem-mono-regular text-sm font-semibold uppercase text-white shadow-sm hover:bg-gray-800 focus:ring-2 focus:ring-inset focus:ring-gray-300"
         >
           Let&apos;s talk
