@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -74,9 +75,16 @@ export default function Checkbox({
       )}
       <label htmlFor={id} className={twMerge("text-sm/6", labelClass)}>
         {label}{" "}
-        <a target="_blank" href={url} className="font-bold text-blue-600">
+        <Link
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="See our Privacy policy"
+          role="link"
+          className="font-bold text-blue-600 focus:ring-blue-600 focus-visible:ring-2 focus:outline-none hover:underline"
+        >
           {urlText}
-        </a>
+        </Link>
       </label>
     </div>
   );
