@@ -42,6 +42,9 @@ export default function ProjectsSection() {
                 onMouseEnter={() => setSelectedProject(index)}
                 href={project.href}
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Website for ${project.title}`}
+                role="link"
                 className={clsx(
                   "font-tandem-medium text-start text-3xl uppercase ",
                   {
