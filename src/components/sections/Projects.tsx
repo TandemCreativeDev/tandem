@@ -5,10 +5,20 @@ import { useState } from "react";
 
 import nav_items from "@/data/nav_items.json";
 import projects from "@/data/projects.json";
-import Link from "next/link";
+import ProjectModal from "@/components/ui/ProjectModal";
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(0);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <section id={nav_items[3]} className="relative">
@@ -37,12 +47,10 @@ export default function ProjectsSection() {
         <div className="z-30 flex flex-col pt-10 md:col-span-3 md:col-start-10 md:pt-0">
           {projects.map((project, index) => {
             return (
-              <Link
+              <button
                 key={`project-${index}`}
                 onMouseEnter={() => setSelectedProject(index)}
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={openModal}
                 aria-label={`Website for ${project.title}`}
                 role="link"
                 className={clsx(
@@ -55,11 +63,20 @@ export default function ProjectsSection() {
                 )}
               >
                 {project.title}
-              </Link>
+              </button>
             );
           })}
         </div>
       </div>
+      <ProjectModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title={projects[selectedProject].title}
+        description={projects[selectedProject].description}
+        services={projects[selectedProject].services}
+        githubUrl={projects[selectedProject].githubUrl}
+        websiteUrl={projects[selectedProject].websiteUrl}
+      />
     </section>
   );
 }
