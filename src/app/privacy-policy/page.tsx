@@ -124,6 +124,10 @@ export default function PrivacyPolicy() {
             To exercise these rights, please contact us at{" "}
             <Link
               href="mailto:hello@runintandem.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email us"
+              role="link"
               className="text-blue-600 hover:underline"
             >
               hello@runintandem.com
@@ -165,6 +169,10 @@ export default function PrivacyPolicy() {
               📧 <strong>Email:</strong>{" "}
               <Link
                 href="mailto:hello@runintandem.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Email us"
+                role="link"
                 className="text-blue-600 hover:underline"
               >
                 hello@runintandem.com
