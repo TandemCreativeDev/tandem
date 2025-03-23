@@ -30,6 +30,8 @@ export default function Accordion() {
                   hoveredAccordion === index ? "bg-black text-white" : ""
                 } relative w-full overflow-hidden py-10 font-tandem-condensed-medium text-4xl uppercase
                 md:text-7xl`}
+                role="button"
+                aria-label="Open section to find out more about ${section.title} services"
                 onClick={() => handleContentClick(index)}
                 onMouseEnter={() => setHoveredAccordion(index)}
                 onMouseLeave={() => setHoveredAccordion(20)}
