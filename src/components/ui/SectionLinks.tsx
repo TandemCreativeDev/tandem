@@ -19,7 +19,10 @@ export default function SectionLinks({
   padded = false,
 }: SectionLinksProps) {
   return (
-    <ul className={twMerge("group pointer-events-none", className)}>
+    <ul
+      role="navigation"
+      className={twMerge("group pointer-events-none", className)}
+    >
       {nav_items.map((item, index) => (
         <li
           key={index}
@@ -28,6 +31,7 @@ export default function SectionLinks({
           {index >= startIndex && (
             <Link
               href={`#${item}`}
+              aria-label={`Scroll to ${item}`}
               className={clsx(
                 `relative z-10
                 before:absolute before:top-0 before:left-0 before:w-full before:h-full
