@@ -24,7 +24,7 @@
   },
   {
     "title": "things we do",
-    "description": "Mobile app providing therapy and symptom-relief for users suffering from behaviour control conditions such as Tourette syndrome. Built with Typescript, Next.js, Tailwind, RxDB, DexieDB, IndexedDB, NoSQL, Plotly.js, DND.",
+    "description": "Mobile app providing therapy and symptom-relief for users suffering from behaviour control conditions such as Tourette syndrome. Built with Typescript, Next.js, Tailwind, RxDB, Plotly.js, DND.",
     "services": [
       "web design",
       "full-stack development",
