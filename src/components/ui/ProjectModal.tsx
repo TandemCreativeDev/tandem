@@ -196,13 +196,13 @@ export default function ProjectModal({
       <div
         ref={modalRef}
         className={clsx(
-          "relative bg-gray-900 bg-opacity-50 rounded-md overflow-hidden shadow-blue-900 shadow-glow border border-blue-500",
+          "relative bg-gray-900 bg-opacity-50 rounded-md overflow-hidden shadow-gray-700 shadow-glow border border-gray-500",
           "w-11/12 md:w-9/12 lg:w-7/12 h-4/5 md:h-auto max-h-[85vh]",
           "flex flex-col"
         )}
       >
         {/* Terminal header */}
-        <div className="px-4 py-2 flex items-center justify-between">
+        <div className="bg-gray-800 px-4 py-2 flex items-center justify-between">
           <div
             id="modal-title"
             className="font-tandem-mono-regular uppercase text-white text-xs"
@@ -214,6 +214,7 @@ export default function ProjectModal({
             className="w-3 h-3 rounded-full bg-gray-400 border border-white hover:bg-gray-500"
             onClick={onClose}
             aria-label="Close modal"
+            role="button"
             tabIndex={0}
           ></button>
         </div>
@@ -250,7 +251,7 @@ export default function ProjectModal({
           {/* Interactive prompt */}
           {websiteUrl && showPrompt && (
             <form onSubmit={handleSubmit} className="flex flex-col items-start">
-              <p className="flex items-center mb-2">
+              <p className="flex items-center mb-2" aria-hidden="true">
                 <span className="text-black bg-gray-400 px-2">
                   ~/tandem/{title.toLowerCase().replace(/\s+/g, "-")}
                 </span>
