@@ -177,7 +177,7 @@ export default function ProjectModal({
       className="fixed inset-0 flex items-center justify-center z-50 font-tandem-mono-regular"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="modal-title"
+      aria-labelledby={`Project details: ${title}`}
     >
       <div
         className="absolute inset-0 bg-black bg-opacity-70 backdrop-blur-sm"
@@ -194,13 +194,16 @@ export default function ProjectModal({
         )}
       >
         {/* Terminal header */}
-        <div className="bg-gray-800 px-4 py-2 flex items-center justify-between">
-          <div
+        <div
+          id="modal-header"
+          className="bg-gray-800 px-4 py-2 flex items-center justify-between"
+        >
+          <h2
             id="modal-title"
             className="font-tandem-mono-regular uppercase text-white text-xs"
           >
             tandem/{title}
-          </div>
+          </h2>
           <button
             ref={closeButtonRef}
             className="w-3 h-3 rounded-full bg-gray-400 border border-white hover:bg-gray-500"
@@ -211,7 +214,7 @@ export default function ProjectModal({
         </div>
 
         {/* Terminal body */}
-        <div className="p-4 md:p-6 text-white flex-col">
+        <div id="modal-body" className="p-4 md:p-6 text-white flex-col">
           <p className="text-white mb-4">
             ❯
             <span className="text-gray-400 aria-hidden=true">
@@ -248,11 +251,12 @@ export default function ProjectModal({
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                const normalizedInput = userInput.trim().toLowerCase();
+                const normalisedInput = userInput.trim().toLowerCase();
 
-                if (["y", "yes"].includes(normalizedInput) && websiteUrl) {
+                if (["y", "yes"].includes(normalisedInput) && websiteUrl) {
                   window.open(websiteUrl, "_blank", "noopener,noreferrer");
-                } else if (["n", "no"].includes(normalizedInput)) {
+                  onClose();
+                } else if (["n", "no"].includes(normalisedInput)) {
                   onClose();
                 }
 
