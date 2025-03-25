@@ -88,7 +88,7 @@ export default function ProjectsSection() {
                     onFocus={() => setSelectedProject(index)}
                     onClick={openModal}
                     aria-label={`Website for ${project.title}`}
-                    role="link"
+                    role="button"
                     className={clsx(
                       "font-tandem-medium text-start text-3xl uppercase ",
                       {
