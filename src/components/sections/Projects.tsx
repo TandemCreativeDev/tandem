@@ -85,6 +85,7 @@ export default function ProjectsSection() {
                   <button
                     key={`project-${index}`}
                     onMouseEnter={() => setSelectedProject(index)}
+                    onFocus={() => setSelectedProject(index)}
                     onClick={openModal}
                     aria-label={`Website for ${project.title}`}
                     role="link"
