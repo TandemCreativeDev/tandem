@@ -18,8 +18,15 @@ export default function TeamPortrait({
 }: TeamPortraitProps) {
   return (
     <>
-      <Link target="_blank" className="flex flex-col" href={href}>
-        <button>
+      <Link
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${teamMember}'s linkedin profile`}
+        role="link"
+        className="flex flex-col"
+      >
+        <button role="link">
           <div
             className={`transition-all duration-700 ${
               activeImage === teamMember

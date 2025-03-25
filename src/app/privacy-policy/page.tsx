@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function PrivacyPolicy() {
   return (
     <main className="max-w-3xl mx-auto px-6 py-12 text-gray-800">
@@ -120,12 +122,16 @@ export default function PrivacyPolicy() {
           </ul>
           <p className="mt-2">
             To exercise these rights, please contact us at{" "}
-            <a
-              href="mailto:[Insert Email]"
+            <Link
+              href="mailto:hello@runintandem.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email us"
+              role="link"
               className="text-blue-600 hover:underline"
             >
               hello@runintandem.com
-            </a>
+            </Link>
             .
           </p>
         </section>
@@ -161,12 +167,16 @@ export default function PrivacyPolicy() {
           <div className="mt-4">
             <p>
               📧 <strong>Email:</strong>{" "}
-              <a
-                href="mailto:[Insert Email]"
+              <Link
+                href="mailto:hello@runintandem.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Email us"
+                role="link"
                 className="text-blue-600 hover:underline"
               >
                 hello@runintandem.com
-              </a>
+              </Link>
             </p>
             <p>
               📍 <strong>Address:</strong> 2nd Floor, 113-115 Fonthill Rd,

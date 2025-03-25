@@ -12,6 +12,7 @@ export default function Burger({ isOpen, onClick }: BurgerProps) {
   return (
     <button
       className="mr-2 xl:hidden flex flex-col justify-between w-8 h-6 cursor-pointer z-50 absolute right-5 top-5"
+      role="button"
       onClick={onClick}
       aria-label="Toggle navigation"
     >

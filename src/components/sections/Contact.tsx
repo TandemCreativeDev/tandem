@@ -8,6 +8,7 @@ import Checkbox from "../ui/Checkbox";
 
 import contact_form from "@/data/contact_form.json";
 import nav_items from "@/data/nav_items.json";
+import Button from "../ui/Button";
 
 export default function ContactSection() {
   const contactForm = contact_form.reduce<{ [key: string]: string }>(
@@ -95,12 +96,13 @@ export default function ContactSection() {
             required
           />
         </fieldset>
-        <button
+        <Button
           type="submit"
-          className="block w-full rounded-md bg-black px-3.5 py-2.5 text-center font-tandem-mono-regular text-sm font-semibold uppercase text-white shadow-sm hover:bg-gray-800 focus:ring-2 focus:ring-inset focus:ring-gray-300"
-        >
-          Let&apos;s talk
-        </button>
+          rel="noopener noreferrer"
+          label="Let's talk"
+          aria-label="Submit message"
+          role="button"
+        />
       </form>
     </section>
   );
