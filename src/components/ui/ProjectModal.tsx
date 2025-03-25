@@ -181,6 +181,7 @@ export default function ProjectModal({
     >
       <div
         className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"
+        aria-hidden="true"
         onClick={onClose}
         tabIndex={-1}
       />
