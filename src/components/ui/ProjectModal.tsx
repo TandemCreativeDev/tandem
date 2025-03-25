@@ -203,7 +203,7 @@ export default function ProjectModal({
             id="modal-title"
             className="font-tandem-mono-regular uppercase text-white text-xs"
           >
-            tandem/{title}
+            tandem/{title.replace(/'/g, "")}
           </h2>
           <button
             ref={closeButtonRef}
@@ -242,7 +242,8 @@ export default function ProjectModal({
           </ul>
           <p className="flex items-center mb-2" aria-hidden="true">
             <span className="text-black bg-gray-400 px-2">
-              ~/tandem/{title.toLowerCase().replace(/\s+/g, "-")}
+              ~/tandem/
+              {title.toLowerCase().replace(/\s+/g, "-").replace(/'/g, "")}
             </span>
             <span className="text-black bg-green-600 px-2">main</span>{" "}
           </p>
