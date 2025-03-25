@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { clsx } from "clsx";
+import Link from "next/link";
 
 interface ModalProps {
   isOpen: boolean;
@@ -23,9 +24,21 @@ export default function ProjectModal({
   const [userInput, setUserInput] = useState("");
   const [showPrompt, setShowPrompt] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   // Handle terminal cursor blinking
   useEffect(() => {
@@ -74,7 +87,6 @@ export default function ProjectModal({
 
     // Set initial focus after a small delay to ensure the modal is fully rendered
     setTimeout(() => {
-      // Always prioritize the input field if prompt is shown
       if (showPrompt && inputRef.current) {
         inputRef.current.focus();
       } else if (closeButtonRef.current) {
@@ -88,7 +100,6 @@ export default function ProjectModal({
     }, 50);
 
     const handleTabKey = (e: KeyboardEvent) => {
-      // Only process tab navigation if the modal is open
       if (!isOpen) return;
 
       if (e.key === "Tab") {
@@ -133,7 +144,6 @@ export default function ProjectModal({
     };
   }, [isOpen, showPrompt]);
 
-  // Handle escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -148,7 +158,6 @@ export default function ProjectModal({
     };
   }, [isOpen, onClose]);
 
-  // Manage document body overflow
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -162,23 +171,6 @@ export default function ProjectModal({
   }, [isOpen]);
 
   if (!isOpen) return null;
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUserInput(e.target.value);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const normalizedInput = userInput.trim().toLowerCase();
-
-    if (["y", "yes"].includes(normalizedInput) && websiteUrl) {
-      window.open(websiteUrl, "_blank", "noopener,noreferrer");
-    } else if (["n", "no"].includes(normalizedInput)) {
-      onClose();
-    }
-
-    setUserInput("");
-  };
 
   return (
     <div
@@ -197,7 +189,7 @@ export default function ProjectModal({
         ref={modalRef}
         className={clsx(
           "relative bg-gray-900 bg-opacity-50 rounded-md overflow-hidden shadow-gray-700 shadow-glow border border-gray-400",
-          "w-11/12 md:w-9/12 lg:w-7/12 h-4/5 md:h-auto max-h-[85vh]",
+          "w-11/12 md:w-9/12 lg:w-7/12 h-auto max-h-[85vh]",
           "flex flex-col"
         )}
       >
@@ -214,7 +206,6 @@ export default function ProjectModal({
             className="w-3 h-3 rounded-full bg-gray-400 border border-white hover:bg-gray-500"
             onClick={onClose}
             aria-label="Close modal"
-            role="button"
             tabIndex={0}
           ></button>
         </div>
@@ -224,8 +215,7 @@ export default function ProjectModal({
           <p className="text-white mb-4">
             ❯
             <span className="text-gray-400 aria-hidden=true">
-              {" "}
-              cat project_details.txt{" "}
+              {` cat project${isMobile ? "" : "_details"}.txt `}
             </span>
             --description
           </p>
@@ -235,8 +225,7 @@ export default function ProjectModal({
           <p className="text-white mb-4">
             ❯
             <span className="text-gray-400 aria-hidden=true">
-              {" "}
-              cat project_details.txt{" "}
+              {` cat project${isMobile ? "" : "_details"}.txt `}
             </span>
             --services
           </p>
@@ -247,22 +236,37 @@ export default function ProjectModal({
               </li>
             ))}
           </ul>
+          <p className="flex items-center mb-2" aria-hidden="true">
+            <span className="text-black bg-gray-400 px-2">
+              ~/tandem/{title.toLowerCase().replace(/\s+/g, "-")}
+            </span>
+            <span className="text-black bg-green-600 px-2">main</span>{" "}
+          </p>
 
-          {/* Interactive prompt */}
-          {websiteUrl && showPrompt && (
-            <form onSubmit={handleSubmit} className="flex flex-col items-start">
-              <p className="flex items-center mb-2" aria-hidden="true">
-                <span className="text-black bg-gray-400 px-2">
-                  ~/tandem/{title.toLowerCase().replace(/\s+/g, "-")}
-                </span>
-                <span className="text-black bg-green-600 px-2">main</span>{" "}
-              </p>
+          {/* Interactive prompt for desktop */}
+          {websiteUrl && showPrompt && !isMobile && (
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const normalizedInput = userInput.trim().toLowerCase();
+
+                if (["y", "yes"].includes(normalizedInput) && websiteUrl) {
+                  window.open(websiteUrl, "_blank", "noopener,noreferrer");
+                } else if (["n", "no"].includes(normalizedInput)) {
+                  onClose();
+                }
+
+                setUserInput("");
+              }}
+              className="flex flex-col items-start"
+            >
               <div className="flex items-left">
                 <label htmlFor="visit-website" className="text-white pr-2">
                   ❯ Would you like to visit the website? [y/n]
                 </label>
                 <div className="relative flex items-center">
                   <span
+                    aria-hidden="true"
                     className={`h-4 w-2 bg-white my-1 absolute left-0 ${
                       cursorVisible &&
                       document.activeElement === inputRef.current
@@ -275,13 +279,27 @@ export default function ProjectModal({
                     id="visit-website"
                     type="text"
                     value={userInput}
-                    onChange={handleInputChange}
+                    onChange={(e) => setUserInput(e.target.value)}
                     className="bg-transparent border-none outline-none text-gray-400 w-12 focus:ring-0 pl-3"
                     autoFocus
                   />
                 </div>
               </div>
             </form>
+          )}
+
+          {/* Simple button for mobile */}
+          {websiteUrl && showPrompt && isMobile && (
+            <p className="mt-4">
+              ❯{" "}
+              <Link
+                role="link"
+                href={websiteUrl}
+                className="text-gray-200 pr-2 underline"
+              >
+                visit website
+              </Link>
+            </p>
           )}
         </div>
       </div>
