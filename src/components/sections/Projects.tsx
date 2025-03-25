@@ -77,7 +77,7 @@ export default function ProjectsSection() {
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase text-white">
           ■ {nav_items[3]}
         </h2>
-        <div className="z-30 flex flex-col pt-10 md:col-span-1 overflow-visible whitespace-nowrap md:col-start-10 md:pt-0">
+        <div className="z-30 flex flex-col pt-10 md:col-span-3 md:col-start-10 md:pt-0">
           <ul role="navigation">
             {projects.map((project, index) => {
               return (
