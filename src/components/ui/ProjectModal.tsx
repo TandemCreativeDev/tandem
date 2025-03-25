@@ -1,15 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {
-  FaArrowLeft,
-  FaArrowRight,
-  FaGithub,
-  FaExternalLinkAlt,
-  FaTimes,
-} from "react-icons/fa";
-import { twMerge } from "tailwind-merge";
+import React, { useState, useEffect, useRef } from "react";
 import { clsx } from "clsx";
-import Image from "next/image";
-import Link from "next/link";
 
 interface ModalProps {
   isOpen: boolean;
@@ -22,21 +12,49 @@ interface ModalProps {
   websiteUrl?: string;
 }
 
-export default function Modal({
+export default function ProjectModal({
   isOpen,
   onClose,
   title,
-  imageUrls = [],
   description,
   services,
-  githubUrl,
   websiteUrl,
 }: ModalProps) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [userInput, setUserInput] = useState("");
+  const [showPrompt, setShowPrompt] = useState(false);
+  const [cursorVisible, setCursorVisible] = useState(true);
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const linkClasses =
-    "flex items-center gap-2 rounded-md bg-black border-2 border-black px-3.5 py-2 font-tandem-mono-regular text-sm font-semibold uppercase text-white shadow-sm hover:bg-white hover:text-black focus:ring-2 focus:ring-inset focus:ring-gray-300 md:w-1/2";
+  // Handle terminal cursor blinking
+  useEffect(() => {
+    if (!isOpen) return;
 
+    const cursorInterval = setInterval(() => {
+      setCursorVisible((prev) => !prev);
+    }, 530);
+
+    return () => clearInterval(cursorInterval);
+  }, [isOpen]);
+
+  // Auto-focus the input when prompt appears
+  useEffect(() => {
+    if (showPrompt && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [showPrompt]);
+
+  // Show the website prompt after a delay
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const promptTimer = setTimeout(() => {
+      setShowPrompt(true);
+    }, 500);
+
+    return () => clearTimeout(promptTimer);
+  }, [isOpen]);
+
+  // Handle escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -65,152 +83,98 @@ export default function Modal({
 
   if (!isOpen) return null;
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) =>
-      prev === imageUrls.length - 1 ? 0 : prev + 1
-    );
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUserInput(e.target.value);
   };
 
-  const prevImage = () => {
-    setCurrentImageIndex((prev) =>
-      prev === 0 ? imageUrls.length - 1 : prev - 1
-    );
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const normalisedInput = userInput.trim().toLowerCase();
+
+    if (["y", "yes"].includes(normalisedInput) && websiteUrl) {
+      window.open(websiteUrl, "_blank", "noopener,noreferrer");
+    } else if (["n", "no"].includes(normalisedInput)) {
+      onClose();
+    }
+
+    setUserInput("");
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div className="fixed inset-0 flex items-center justify-center z-50 font-tandem-mono-regular">
       <div
-        className="absolute inset-0 bg-black bg-opacity-50"
+        className="absolute inset-0 bg-black bg-opacity-70 backdrop-blur-sm"
         onClick={onClose}
       />
 
       <div
         className={clsx(
-          "relative bg-black bg-opacity-50 rounded-lg overflow-y-auto",
-          "w-10/12 h-10/12 md:w-8/12 md:h-auto max-h-screen"
+          "relative bg-black bg-opacity-50 rounded-md overflow-hidden shadow-blue-800 shadow-glow border border-blue-500",
+          "w-11/12 md:w-9/12 lg:w-7/12 h-4/5 md:h-auto max-h-[85vh]",
+          "flex flex-col"
         )}
       >
-        <button
-          onClick={onClose}
-          className={twMerge(
-            "absolute top-4 right-4 text-white",
-            "hover:text-gray-300 transition-colors"
-          )}
-          aria-label="Close modal"
-        >
-          <FaTimes size={24} />
-        </button>
-
-        <div className="p-6 md:p-8 text-white">
-          <h3 className="text-2xl font-tandem-condensed-medium uppercase md:text-3xl font-bold mb-6">
-            {title}
-          </h3>
-
-          <div className="flex flex-col md:flex-row gap-6 mb-6">
-            {imageUrls.length > 0 && (
-              <div className="md:w-1/2 relative">
-                <div className="relative w-full aspect-video bg-gray-800 rounded-lg overflow-hidden">
-                  <Image
-                    src={imageUrls[currentImageIndex]}
-                    alt={`${title} image ${currentImageIndex + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-
-                  {imageUrls.length > 1 && (
-                    <>
-                      <button
-                        onClick={prevImage}
-                        className={twMerge(
-                          "absolute left-2 top-1/2 -translate-y-1/2",
-                          "bg-black bg-opacity-50 rounded-full p-2 text-white",
-                          "hover:bg-opacity-70 transition-all"
-                        )}
-                        aria-label="Previous image"
-                      >
-                        <FaArrowLeft size={20} />
-                      </button>
-                      <button
-                        onClick={nextImage}
-                        className={twMerge(
-                          "absolute right-2 top-1/2 -translate-y-1/2",
-                          "bg-black bg-opacity-50 rounded-full p-2 text-white",
-                          "hover:bg-opacity-70 transition-all"
-                        )}
-                        aria-label="Next image"
-                      >
-                        <FaArrowRight size={20} />
-                      </button>
-
-                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
-                        {imageUrls.map((_, index) => (
-                          <div
-                            key={index}
-                            className={clsx(
-                              "w-2 h-2 rounded-full",
-                              index === currentImageIndex
-                                ? "bg-white"
-                                : "bg-gray-400"
-                            )}
-                          />
-                        ))}
-                      </div>
-                    </>
-                  )}
-                </div>
-              </div>
-            )}
-
-            <div
-              className={clsx(
-                "text-gray-400",
-                imageUrls.length > 0 ? "md:w-1/2" : "w-full"
-              )}
-            >
-              <p>{description}</p>
-              <br />
-              <ul>
-                {services.map((service, index) => (
-                  <li
-                    className="font-tandem-mono-regular uppercase"
-                    key={index}
-                  >
-                    ■ {service}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        {/* Terminal header */}
+        <div className="bg-blue-900 px-4 py-2 flex items-center justify-between">
+          <div className="font-tandem-mono-regular uppercase text-white text-xs">
+            tandem/{title}
           </div>
+          <button
+            className="w-3 h-3 rounded-full bg-gray-400 border border-white hover:bg-black"
+            onClick={onClose}
+          ></button>
+        </div>
 
-          {(githubUrl || websiteUrl) && (
-            <div className="flex flex-col md:flex-row gap-4">
-              {githubUrl && (
-                <Link
-                  href={githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Repo for ${title}`}
-                  role="link"
-                  className={linkClasses}
-                >
-                  <FaGithub size={20} />
-                  <span>GitHub Repository</span>
-                </Link>
-              )}
+        {/* Terminal body */}
+        <div className="p-4 md:p-6 text-white flex-col">
+          <p className="text-white mb-4">
+            ❯<span className="text-gray-400"> cat project_details.txt </span>
+            --description
+          </p>
+          <p className="mt-1 pl-2 border-l-2 border-white mb-6">
+            {description}
+          </p>
+          <p className="text-white mb-4">
+            ❯<span className="text-gray-400"> cat project_details.txt </span>
+            --services
+          </p>
+          <ul className="uppercase pl-2 mb-6">
+            {services.map((service, index) => (
+              <li key={index} className="text-white mb-1">
+                ■ {service}
+              </li>
+            ))}
+          </ul>
 
-              {websiteUrl && (
-                <Link
-                  href={websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Website for ${title}`}
-                  role="link"
-                  className={linkClasses}
-                >
-                  <FaExternalLinkAlt size={20} />
-                  <span>Visit Website</span>
-                </Link>
-              )}
-            </div>
+          {/* Interactive prompt */}
+          {websiteUrl && showPrompt && (
+            <form onSubmit={handleSubmit} className="flex flex-col items-start">
+              <p className="flex items-center mb-2">
+                <span className="text-black bg-gray-400 px-2">
+                  ~/tandem/{title.toLowerCase().replace(/\s+/g, "-")}
+                </span>
+                <span className="text-black bg-green-600 px-2">main</span>{" "}
+              </p>
+              <div className="flex items-left">
+                <label htmlFor="visit-website" className="text-white pr-2">
+                  ❯ Would you like to visit the website? [y/n]
+                </label>
+                <span
+                  className={`h-4 w-2 bg-white my-1 ${
+                    cursorVisible ? "opacity-100" : "opacity-0"
+                  }`}
+                ></span>
+                <input
+                  ref={inputRef}
+                  id="visit-website"
+                  type="text"
+                  value={userInput}
+                  onChange={handleInputChange}
+                  className="bg-transparent border-none outline-none text-gray-400 w-12 focus:ring-0"
+                  autoFocus
+                />
+              </div>
+            </form>
           )}
         </div>
       </div>
