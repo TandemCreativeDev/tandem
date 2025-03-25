@@ -180,7 +180,7 @@ export default function ProjectModal({
       aria-labelledby={`Project details: ${title}`}
     >
       <div
-        className="absolute inset-0 bg-black bg-opacity-70 backdrop-blur-sm"
+        className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"
         onClick={onClose}
         tabIndex={-1}
       />
