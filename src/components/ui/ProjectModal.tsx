@@ -196,7 +196,7 @@ export default function ProjectModal({
       <div
         ref={modalRef}
         className={clsx(
-          "relative bg-gray-900 bg-opacity-50 rounded-md overflow-hidden shadow-gray-700 shadow-glow border border-gray-500",
+          "relative bg-gray-900 bg-opacity-50 rounded-md overflow-hidden shadow-gray-700 shadow-glow border border-gray-400",
           "w-11/12 md:w-9/12 lg:w-7/12 h-4/5 md:h-auto max-h-[85vh]",
           "flex flex-col"
         )}
