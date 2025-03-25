@@ -189,7 +189,7 @@ export default function ProjectModal({
       <div
         ref={modalRef}
         className={clsx(
-          "relative bg-gray-900 bg-opacity-50 rounded-md overflow-hidden shadow-blue-900 shadow-glow border border-blue-700",
+          "relative bg-gray-900 bg-opacity-50 rounded-md overflow-hidden shadow-gray-700 shadow-glow border border-gray-500",
           "w-11/12 md:w-9/12 lg:w-7/12 h-auto max-h-[85vh]",
           "flex flex-col"
         )}
@@ -197,7 +197,7 @@ export default function ProjectModal({
         {/* Terminal header */}
         <div
           id="modal-header"
-          className="bg-blue-950 px-4 py-2 flex items-center justify-between"
+          className="bg-gray-800 px-4 py-2 flex items-center justify-between"
         >
           <h2
             id="modal-title"
