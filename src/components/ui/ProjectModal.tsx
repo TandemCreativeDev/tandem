@@ -221,14 +221,22 @@ export default function ProjectModal({
         {/* Terminal body */}
         <div className="p-4 md:p-6 text-white flex-col">
           <p className="text-white mb-4">
-            ❯<span className="text-gray-400"> cat project_details.txt </span>
+            ❯
+            <span className="text-gray-400 aria-hidden=true">
+              {" "}
+              cat project_details.txt{" "}
+            </span>
             --description
           </p>
           <p className="mt-1 pl-2 border-l-2 border-white mb-6">
             {description}
           </p>
           <p className="text-white mb-4">
-            ❯<span className="text-gray-400"> cat project_details.txt </span>
+            ❯
+            <span className="text-gray-400 aria-hidden=true">
+              {" "}
+              cat project_details.txt{" "}
+            </span>
             --services
           </p>
           <ul className="uppercase pl-2 mb-6">
