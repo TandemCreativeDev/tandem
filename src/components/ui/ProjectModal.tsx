@@ -24,6 +24,8 @@ export default function ProjectModal({
   const [showPrompt, setShowPrompt] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   // Handle terminal cursor blinking
   useEffect(() => {
@@ -54,6 +56,83 @@ export default function ProjectModal({
     return () => clearTimeout(promptTimer);
   }, [isOpen]);
 
+  // Focus trap implementation
+  useEffect(() => {
+    if (!isOpen) return;
+
+    // Store the element that had focus before opening the modal
+    const previouslyFocusedElement = document.activeElement as HTMLElement;
+
+    const getFocusableElements = () => {
+      // This function ensures we get the latest DOM state
+      return Array.from(
+        modalRef.current?.querySelectorAll(
+          'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        ) || []
+      ) as HTMLElement[];
+    };
+
+    // Set initial focus after a small delay to ensure the modal is fully rendered
+    setTimeout(() => {
+      // Always prioritize the input field if prompt is shown
+      if (showPrompt && inputRef.current) {
+        inputRef.current.focus();
+      } else if (closeButtonRef.current) {
+        closeButtonRef.current.focus();
+      } else {
+        const elements = getFocusableElements();
+        if (elements.length > 0) {
+          elements[0].focus();
+        }
+      }
+    }, 50);
+
+    const handleTabKey = (e: KeyboardEvent) => {
+      // Only process tab navigation if the modal is open
+      if (!isOpen) return;
+
+      if (e.key === "Tab") {
+        // Get fresh references to focusable elements
+        const elements = getFocusableElements();
+        if (elements.length === 0) return;
+
+        const firstElement = elements[0];
+        const lastElement = elements[elements.length - 1];
+
+        // If shift + tab and focus is on first element, move to last element
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+        // If tab and focus is on last element, move to first element
+        else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+        // If we detect focus is outside the modal, bring it back
+        else if (!modalRef.current?.contains(document.activeElement)) {
+          e.preventDefault();
+          // If tab was going forward, focus first element; otherwise focus last
+          if (e.shiftKey) {
+            lastElement.focus();
+          } else {
+            firstElement.focus();
+          }
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleTabKey);
+
+    return () => {
+      document.removeEventListener("keydown", handleTabKey);
+      // Restore focus when modal closes
+      if (previouslyFocusedElement && previouslyFocusedElement.focus) {
+        previouslyFocusedElement.focus();
+      }
+    };
+  }, [isOpen, showPrompt]);
+
   // Handle escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -69,6 +148,7 @@ export default function ProjectModal({
     };
   }, [isOpen, onClose]);
 
+  // Manage document body overflow
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -89,11 +169,11 @@ export default function ProjectModal({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const normalisedInput = userInput.trim().toLowerCase();
+    const normalizedInput = userInput.trim().toLowerCase();
 
-    if (["y", "yes"].includes(normalisedInput) && websiteUrl) {
+    if (["y", "yes"].includes(normalizedInput) && websiteUrl) {
       window.open(websiteUrl, "_blank", "noopener,noreferrer");
-    } else if (["n", "no"].includes(normalisedInput)) {
+    } else if (["n", "no"].includes(normalizedInput)) {
       onClose();
     }
 
@@ -101,13 +181,20 @@ export default function ProjectModal({
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 font-tandem-mono-regular">
+    <div
+      className="fixed inset-0 flex items-center justify-center z-50 font-tandem-mono-regular"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
       <div
         className="absolute inset-0 bg-black bg-opacity-70 backdrop-blur-sm"
         onClick={onClose}
+        tabIndex={-1}
       />
 
       <div
+        ref={modalRef}
         className={clsx(
           "relative bg-black bg-opacity-50 rounded-md overflow-hidden shadow-blue-800 shadow-glow border border-blue-500",
           "w-11/12 md:w-9/12 lg:w-7/12 h-4/5 md:h-auto max-h-[85vh]",
@@ -116,12 +203,18 @@ export default function ProjectModal({
       >
         {/* Terminal header */}
         <div className="bg-blue-900 px-4 py-2 flex items-center justify-between">
-          <div className="font-tandem-mono-regular uppercase text-white text-xs">
+          <div
+            id="modal-title"
+            className="font-tandem-mono-regular uppercase text-white text-xs"
+          >
             tandem/{title}
           </div>
           <button
-            className="w-3 h-3 rounded-full bg-gray-400 border border-white hover:bg-black"
+            ref={closeButtonRef}
+            className="w-3 h-3 rounded-full bg-gray-400 border border-white hover:bg-gray-500"
             onClick={onClose}
+            aria-label="Close modal"
+            tabIndex={0}
           ></button>
         </div>
 
@@ -159,20 +252,25 @@ export default function ProjectModal({
                 <label htmlFor="visit-website" className="text-white pr-2">
                   ❯ Would you like to visit the website? [y/n]
                 </label>
-                <span
-                  className={`h-4 w-2 bg-white my-1 ${
-                    cursorVisible ? "opacity-100" : "opacity-0"
-                  }`}
-                ></span>
-                <input
-                  ref={inputRef}
-                  id="visit-website"
-                  type="text"
-                  value={userInput}
-                  onChange={handleInputChange}
-                  className="bg-transparent border-none outline-none text-gray-400 w-12 focus:ring-0"
-                  autoFocus
-                />
+                <div className="relative flex items-center">
+                  <span
+                    className={`h-4 w-2 bg-white my-1 absolute left-0 ${
+                      cursorVisible &&
+                      document.activeElement === inputRef.current
+                        ? "opacity-100"
+                        : "opacity-0"
+                    }`}
+                  ></span>
+                  <input
+                    ref={inputRef}
+                    id="visit-website"
+                    type="text"
+                    value={userInput}
+                    onChange={handleInputChange}
+                    className="bg-transparent border-none outline-none text-gray-400 w-12 focus:ring-0 pl-3"
+                    autoFocus
+                  />
+                </div>
               </div>
             </form>
           )}
