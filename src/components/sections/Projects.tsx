@@ -69,8 +69,8 @@ export default function ProjectsSection() {
             priority
             sizes="100vw"
             className={clsx(
-              "absolute left-0 top-0 -z-50 transition-opacity duration-300",
-              selectedProject === index ? "opacity-100" : "opacity-0"
+              "absolute left-0 top-0 -z-50",
+              selectedProject === index ? "opacity-100" : "opacity-0",
             )}
             style={{
               objectFit: "cover",
