@@ -23,7 +23,7 @@ export default function ProjectsSection() {
     if (isModalOpen) {
       // When modal is open, set all focusable elements outside the modal to not focusable
       const mainContent = document.querySelectorAll(
-        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
       );
 
       // Store the original tabindex values
@@ -59,19 +59,26 @@ export default function ProjectsSection() {
             "absolute left-0 top-0 h-full w-full bg-gradient-to-r from-black via-transparent to-black",
             projects[selectedProject].title === "things we do"
               ? ""
-              : "opacity-75"
+              : "opacity-75",
           )}
         ></div>
-        <Image
-          fill
-          sizes="100vw"
-          className="absolute left-0 top-0 -z-50"
-          style={{
-            objectFit: "cover",
-          }}
-          alt={`Mockup of ${projects[selectedProject].title}`}
-          src={`/projects/${projects[selectedProject].src}.jpg`}
-        ></Image>
+        {projects.map((project, index) => (
+          <Image
+            key={`project-image-${index}`}
+            fill
+            priority
+            sizes="100vw"
+            className={clsx(
+              "absolute left-0 top-0 -z-50",
+              selectedProject === index ? "opacity-100" : "opacity-0",
+            )}
+            style={{
+              objectFit: "cover",
+            }}
+            alt={`Mockup of ${project.title}`}
+            src={`/projects/${project.src}.jpg`}
+          />
+        ))}
       </div>
       <div className="w-10/12 m-auto relative flex h-screen grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start">
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase text-white">
@@ -95,7 +102,7 @@ export default function ProjectsSection() {
                         "text-white ": selectedProject === index,
                         "text-gray-300 hover:text-gray-200":
                           selectedProject !== index,
-                      }
+                      },
                     )}
                   >
                     {project.title}
