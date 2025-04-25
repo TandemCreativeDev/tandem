@@ -5,6 +5,7 @@ import clsx from "clsx";
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
+  const [dots, setDots] = useState("");
 
   useEffect(() => {
     const handleLoad = () => {
@@ -24,6 +25,16 @@ export default function LoadingScreen() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isLoading) return;
+    
+    const interval = setInterval(() => {
+      setDots(prev => (prev.length >= 3 ? "" : prev + "."));
+    }, 300);
+    
+    return () => clearInterval(interval);
+  }, [isLoading]);
+
   return (
     <div
       className={clsx(
@@ -34,9 +45,10 @@ export default function LoadingScreen() {
         },
       )}
     >
-      <span className="text-8xl uppercase text-white font-tandem-mono-regular ">
-        loading
-      </span>
+      <div className="relative inline-block">
+        <span className="text-4xl md:text-6xl lg:text-8xl uppercase text-white font-tandem-mono-regular">loading</span>
+        <span className="text-4xl md:text-6xl lg:text-8xl uppercase text-white font-tandem-mono-regular absolute left-full">{dots}</span>
+      </div>
     </div>
   );
 }
