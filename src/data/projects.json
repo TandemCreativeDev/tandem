@@ -1,13 +1,5 @@
 [
   {
-    "title": "wedgy music",
-    "description": "Website for Leeds-based alt-rock band Wedgy Music. Built with Typescript, React, Tailwind, Google sheet automation.",
-    "services": ["web design", "full-stack development", "accessibility"],
-    "src": "wedgy",
-    "githubUrl": "https://github.com/TandemCreativeDev/wedgy-fe",
-    "websiteUrl": "https://wedgymusic.co.uk/"
-  },
-  {
     "title": "things we do",
     "description": "Mobile app providing therapy and symptom-relief for users suffering from behaviour control conditions such as Tourette syndrome. Built with Typescript, Next.js, Tailwind, RxDB, Plotly.js, DND.",
     "services": [
@@ -19,6 +11,14 @@
     "src": "twd",
     "githubUrl": "https://github.com/fac30/things-we-do",
     "websiteUrl": "https://things-we-do.netlify.app/"
+  },
+  {
+    "title": "wedgy music",
+    "description": "Website for Leeds-based alt-rock band Wedgy Music. Built with Typescript, React, Tailwind, Google sheet automation.",
+    "services": ["web design", "full-stack development", "accessibility"],
+    "src": "wedgy",
+    "githubUrl": "https://github.com/TandemCreativeDev/wedgy-fe",
+    "websiteUrl": "https://wedgymusic.co.uk/"
   },
   {
     "title": "clark's bowling club",
