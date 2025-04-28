@@ -18,7 +18,7 @@ export default function AboutSection() {
         </p>
       </div>
       <div className="grid-cols-12 flex-col border-b-[1px] border-t-2 border-black md:grid ">
-        <div className="relative col-span-6">
+        <div className="relative col-span-6 h-[300px] md:h-full">
           <Image
             src="/jackandmax.jpg"
             alt="Laptop showcasing work by Tandem"
