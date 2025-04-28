@@ -27,7 +27,7 @@ export default function AboutSection() {
             style={{ objectFit: "cover", objectPosition: "bottom" }}
           ></Image>
         </div>
-        <div className="col-span-5 col-start-8  bg-white py-28 flex flex-col gap-10">
+        <div className="col-span-5 col-start-8  bg-white md:py-28 py-10 flex flex-col gap-10">
           <p className="m-auto  w-10/12 text-lg text-black md:w-1/2">
             Tandem Creative Dev was started by Jack and Max, two full-stack
             developers who met at Founders and Coders and have a shared passion
