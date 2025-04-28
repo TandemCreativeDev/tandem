@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Link from "next/link";
+import UrlButton from "./UrlButton";
 
 interface ModalProps {
   isOpen: boolean;
@@ -8,6 +8,7 @@ interface ModalProps {
   description: string;
   services: string[];
   websiteUrl?: string;
+  githubUrl?: string;
 }
 
 export default function ProjectModal({
@@ -17,6 +18,7 @@ export default function ProjectModal({
   description,
   services,
   websiteUrl,
+  githubUrl,
 }: ModalProps) {
   useEffect(() => {
     if (isOpen) {
@@ -70,15 +72,14 @@ export default function ProjectModal({
         </div>
 
         {websiteUrl && (
-          <button className="flex mt-4 font-tandem-mono-regular">
-            <Link
-              href={websiteUrl}
-              target="_blank"
-              className="bg-zinc-700 text-white px-8 py-2 rounded-full uppercase mr-4 hover:bg-zinc-800"
-            >
-              Visit Website
-            </Link>
-          </button>
+          <UrlButton label="Visit Website" url={websiteUrl} project={title} />
+        )}
+        {githubUrl && (
+          <UrlButton
+            label="Inspect Code Repo"
+            url={githubUrl}
+            project={title}
+          />
         )}
       </div>
     </div>
