@@ -1,28 +1,5 @@
 [
   {
-    "title": "clark's bowling club",
-    "description": "Website for Lyon-based 6-piece funk/pop band Clark’s Bowling Club. Built with Typescript, Next.js, Tailwind, Three.js, Spotify API, Nodemailer, Google sheets automation.",
-    "services": ["web design", "full-stack development", "accessibility"],
-    "src": "cbc",
-    "githubUrl": "https://github.com/TandemCreativeDev/cbc",
-    "websiteUrl": "https://clarksbowlingclub.com/"
-  },
-  {
-    "title": "itch film",
-    "description": "Website for reputable London-based film studio Itch Film, famous for films such as For No Good Reason starring Johnny Depp.",
-    "services": ["web design", "frontend development", "accessibility"],
-    "src": "itch",
-    "websiteUrl": "https://itchfilm.com/"
-  },
-  {
-    "title": "wedgy music",
-    "description": "Website for Leeds-based alt-rock band Wedgy Music. Built with Typescript, React, Tailwind, Google sheet automation.",
-    "services": ["web design", "full-stack development", "accessibility"],
-    "src": "wedgy",
-    "githubUrl": "https://github.com/TandemCreativeDev/wedgy-fe",
-    "websiteUrl": "https://wedgymusic.co.uk/"
-  },
-  {
     "title": "things we do",
     "description": "Mobile app providing therapy and symptom-relief for users suffering from behaviour control conditions such as Tourette syndrome. Built with Typescript, Next.js, Tailwind, RxDB, Plotly.js, DND.",
     "services": [
@@ -36,11 +13,26 @@
     "websiteUrl": "https://things-we-do.netlify.app/"
   },
   {
-    "title": "ruby kiwinda",
-    "description": "Website for visual artist Ruby Kiwinda. Built with Typescript, Next.js, Tailwind, Three.js, Spotify API, Nodemailer, Google sheet automation.",
+    "title": "wedgy music",
+    "description": "Website for Leeds-based alt-rock band Wedgy Music. Built with Typescript, React, Tailwind, Google sheet automation.",
     "services": ["web design", "full-stack development", "accessibility"],
-    "src": "ruby",
-    "githubUrl": "https://github.com/TandemCreativeDev/ruby",
-    "websiteUrl": "https://rubykiwinda.com/"
+    "src": "wedgy",
+    "githubUrl": "https://github.com/TandemCreativeDev/wedgy-fe",
+    "websiteUrl": "https://wedgymusic.co.uk/"
+  },
+  {
+    "title": "clark's bowling club",
+    "description": "Website for Lyon-based 6-piece funk/pop band Clark’s Bowling Club. Built with Typescript, Next.js, Tailwind, Three.js, Spotify API, Nodemailer, Google sheets automation.",
+    "services": ["web design", "full-stack development", "accessibility"],
+    "src": "cbc",
+    "githubUrl": "https://github.com/TandemCreativeDev/cbc",
+    "websiteUrl": "https://clarksbowlingclub.com/"
+  },
+  {
+    "title": "itch film",
+    "description": "Website for reputable London-based film studio Itch Film, famous for films such as For No Good Reason starring Johnny Depp.",
+    "services": ["web design", "frontend development", "accessibility"],
+    "src": "itch",
+    "websiteUrl": "https://itchfilm.com/"
   }
 ]
