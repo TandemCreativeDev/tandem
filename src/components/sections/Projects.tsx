@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import nav_items from "@/data/nav_items.json";
 import projects from "@/data/projects.json";
 import ProjectModal from "@/components/ui/ProjectModal";
+import MobileProjectImages from "../ui/MobileProjectImages";
+import DesktopProjectImages from "../ui/DesktopProjectImages";
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(0);
@@ -53,33 +55,7 @@ export default function ProjectsSection() {
 
   return (
     <section id={nav_items[3]} className="relative">
-      <div className="absolute left-0 top-0 h-full w-full">
-        <div
-          className={clsx(
-            "absolute left-0 top-0 h-full w-full bg-gradient-to-r from-black via-transparent to-black",
-            projects[selectedProject].title === "things we do"
-              ? ""
-              : "opacity-75",
-          )}
-        ></div>
-        {projects.map((project, index) => (
-          <Image
-            key={`project-image-${index}`}
-            fill
-            priority
-            sizes="100vw"
-            className={clsx(
-              "absolute left-0 top-0 -z-50",
-              selectedProject === index ? "opacity-100" : "opacity-0",
-            )}
-            style={{
-              objectFit: "cover",
-            }}
-            alt={`Mockup of ${project.title}`}
-            src={`/projects/${project.src}.jpg`}
-          />
-        ))}
-      </div>
+      <DesktopProjectImages selectedProject={selectedProject} />
       <div className="w-10/12 m-auto relative flex h-screen grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start">
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase text-white">
           ■ {nav_items[3]}
