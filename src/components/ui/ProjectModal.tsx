@@ -87,7 +87,7 @@ export default function ProjectModal({
 
       <div
         className={clsx(
-          "relative bg-zinc-950/90 rounded-xl overflow-hidden",
+          "relative bg-zinc-950/90 rounded-xl overflow-hidden backdrop-blur-lg",
           "w-11/12 md:w-9/12 lg:w-7/12 max-h-[85vh] p-8 shadow-glow shadow-zinc-900",
           "transition-all duration-300 ease-in-out",
           "motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:transform-none",
