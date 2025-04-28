@@ -64,6 +64,7 @@ export default function ProjectsSection() {
           openModal={openModal}
           setSelectedProject={setSelectedProject}
         />
+        <MobileProjectImages selectedProject={selectedProject} />
       </div>
       <ProjectModal
         isOpen={isModalOpen}
