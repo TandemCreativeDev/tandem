@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import UrlButton from "./UrlButton";
+import { twMerge } from "tailwind-merge";
 
 interface ModalProps {
   isOpen: boolean;
@@ -20,6 +21,23 @@ export default function ProjectModal({
   websiteUrl,
   githubUrl,
 }: ModalProps) {
+  const baseClasses =
+    "absolute left-1/2 top-1/2 transform -translate-x-1/2 origin-center bg-white h-[1px] w-3 transition-all motion-reduce:transition-none duration-500 ease-in-out bg-white group-hover:bg-zinc-950/90";
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -54,11 +72,16 @@ export default function ProjectModal({
           </h2>
           <div className="flex-shrink-0">
             <button
-              className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-transparent border-[0.75px] text-white hover:bg-white hover:text-zinc-950/90"
+              className="group relative flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-transparent border-[0.75px] hover:bg-white hover:text-zinc-950/90"
               onClick={onClose}
               aria-label="Close modal"
             >
-              <span className="text-lg">X</span>
+              <div
+                className={twMerge(baseClasses, "group-hover:rotate-45")}
+              ></div>
+              <div
+                className={twMerge(baseClasses, "group-hover:-rotate-45")}
+              ></div>
             </button>
           </div>
         </div>
