@@ -7,31 +7,21 @@ import projects from "@/data/projects.json";
 import ProjectModal from "@/components/ui/ProjectModal";
 export default function MobileProjectImages({ selectedProject }) {
   return (
-    <div className="absolute left-0 top-0 h-full w-full">
-      <div
-        className={clsx(
-          "absolute left-0 top-0 h-full w-full bg-gradient-to-r from-black via-transparent to-black",
-          projects[selectedProject].title === "things we do"
-            ? ""
-            : "opacity-75",
-        )}
-      ></div>
+    <div className="block md:hidden text-white">
       {projects.map((project, index) => (
-        <Image
-          key={`project-image-${index}`}
-          fill
-          priority
-          sizes="100vw"
-          className={clsx(
-            "absolute left-0 top-0 -z-50",
-            selectedProject === index ? "opacity-100" : "opacity-0",
-          )}
-          style={{
-            objectFit: "cover",
-          }}
-          alt={`Mockup of ${project.title}`}
-          src={`/projects/${project.src}.jpg`}
-        />
+        <div key={index} className="pt-10">
+          <h3 className="text-black uppercase text-2xl font-tandem-medium mb-2">
+            {project.title}
+          </h3>
+          <Image
+            priority
+            sizes="100vw"
+            height={300}
+            width={300}
+            alt={`Mockup of ${project.title}`}
+            src={`/mobile/${project.src}.png`}
+          />
+        </div>
       ))}
     </div>
   );
