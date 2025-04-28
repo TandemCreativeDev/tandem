@@ -10,11 +10,21 @@ export default {
     extend: {
       animation: {
         marquee: "marquee 15s linear infinite",
+        "scale-in": "scaleIn 0.3s ease-out forwards",
+        "scale-out": "scaleOut 0.4s ease-in forwards",
       },
       keyframes: {
         marquee: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
+        },
+        scaleIn: {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+        scaleOut: {
+          "0%": { transform: "scale(1)", opacity: "1" },
+          "100%": { transform: "scale(0.95)", opacity: "0" },
         },
       },
       colors: {

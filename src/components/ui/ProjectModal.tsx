@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import UrlButton from "./UrlButton";
 import { twMerge } from "tailwind-merge";
+import clsx from "clsx";
 
 interface ModalProps {
   isOpen: boolean;
@@ -24,19 +25,32 @@ export default function ProjectModal({
   const baseClasses =
     "absolute left-1/2 top-1/2 transform -translate-x-1/2 origin-center bg-white h-[1px] w-3 transition-all motion-reduce:transition-none duration-500 ease-in-out bg-white group-hover:bg-zinc-950/90";
 
+  const [isClosing, setIsClosing] = useState(false);
+
+  // Custom close function to handle animation
+  const handleClose = useCallback(() => {
+    setIsClosing(true);
+    // Wait for animation to complete before unmounting
+    setTimeout(() => {
+      onClose();
+      setIsClosing(false);
+    }, 300);
+  }, [onClose]);
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") handleClose();
     };
 
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
+      setIsClosing(false);
     }
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, handleClose]);
 
   useEffect(() => {
     if (isOpen) {
@@ -49,7 +63,9 @@ export default function ProjectModal({
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
-  if (!isOpen) return null;
+
+  // This is important - we need to render even if isOpen is false to show exit animation
+  if (!isOpen && !isClosing) return null;
 
   return (
     <div
@@ -59,13 +75,30 @@ export default function ProjectModal({
       aria-labelledby={`Project details: ${title}`}
     >
       <div
-        className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm"
+        className={clsx(
+          "absolute inset-0 bg-transparent bg-opacity-60",
+          "transition-all duration-1000",
+          "motion-reduce:transition-none motion-reduce:backdrop-blur-sm",
+          isClosing
+            ? "opacity-0 backdrop-blur-none"
+            : "opacity-100 backdrop-blur-sm"
+        )}
         aria-hidden="true"
-        onClick={onClose}
+        onClick={handleClose}
         tabIndex={-1}
       />
 
-      <div className="relative bg-zinc-950/90 rounded-xl overflow-hidden w-11/12 md:w-9/12 lg:w-7/12 max-h-[85vh] p-8 shadow-glow shadow-zinc-900">
+      <div
+        className={clsx(
+          "relative bg-zinc-950/90 rounded-xl overflow-hidden",
+          "w-11/12 md:w-9/12 lg:w-7/12 max-h-[85vh] p-8 shadow-glow shadow-zinc-900",
+          "transition-all duration-300 ease-in-out",
+          "motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:transform-none",
+          isClosing
+            ? "opacity-0 scale-95 animate-scale-out motion-reduce:animate-none"
+            : "opacity-100 scale-100 animate-scale-in motion-reduce:animate-none"
+        )}
+      >
         <div className="flex justify-between">
           <h2 className="text-white text-3xl uppercase mb-8 font-tandem-condensed-medium truncate">
             {title}
@@ -73,7 +106,7 @@ export default function ProjectModal({
           <div className="flex-shrink-0">
             <button
               className="group relative flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-transparent border-[0.75px] hover:bg-white hover:text-zinc-950/90"
-              onClick={onClose}
+              onClick={handleClose}
               aria-label="Close modal"
             >
               <div
@@ -97,21 +130,23 @@ export default function ProjectModal({
           ))}
         </div>
 
-        {websiteUrl && (
-          <UrlButton
-            label="Visit Website"
-            url={websiteUrl}
-            project={title}
-            className="mb-4 md:mb-0"
-          />
-        )}
-        {githubUrl && (
-          <UrlButton
-            label="Inspect Code Repo"
-            url={githubUrl}
-            project={title}
-          />
-        )}
+        <div>
+          {websiteUrl && (
+            <UrlButton
+              label="Visit Website"
+              url={websiteUrl}
+              project={title}
+              className="mb-4 md:mb-0"
+            />
+          )}
+          {githubUrl && (
+            <UrlButton
+              label="Inspect Code Repo"
+              url={githubUrl}
+              project={title}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
