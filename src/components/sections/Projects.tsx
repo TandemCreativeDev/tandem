@@ -55,12 +55,12 @@ export default function ProjectsSection() {
 
   return (
     <section id={nav_items[3]} className="relative">
-      <DesktopProjectImages
-        selectedProject={selectedProject}
-        openModal={openModal}
-        setSelectedProject={setSelectedProject}
-      />
       <div className="w-10/12 m-auto relative flex h-screen grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start">
+        <DesktopProjectImages
+          selectedProject={selectedProject}
+          openModal={openModal}
+          setSelectedProject={setSelectedProject}
+        />
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase text-white">
           ■ {nav_items[3]}
         </h2>
