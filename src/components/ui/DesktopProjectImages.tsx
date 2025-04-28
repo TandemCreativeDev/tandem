@@ -15,7 +15,7 @@ export default function MobileProjectImages({
       <div className="absolute left-0 top-0 h-full w-full">
         <div
           className={clsx(
-            "absolute left-0 top-0 h-full w-full bg-gradient-to-r from-black via-transparent to-black",
+            "absolute left-0 top-0 h-full w-full bg-gradient-to-r from-black via-transparent to-black -z-10",
             projects[selectedProject].title === "things we do"
               ? ""
               : "opacity-75",
