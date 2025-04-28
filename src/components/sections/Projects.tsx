@@ -55,7 +55,7 @@ export default function ProjectsSection() {
 
   return (
     <section id={nav_items[3]} className="relative">
-      <div className="w-10/12 m-auto relative flex h-screen grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start">
+      <div className="w-10/12 m-auto relative flex md:h-screen grid-cols-12 flex-col py-28 md:grid md:w-full md:items-start">
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase text-white">
           ■ {nav_items[3]}
         </h2>
