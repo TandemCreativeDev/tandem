@@ -27,10 +27,8 @@ export default function ProjectModal({
 
   const [isClosing, setIsClosing] = useState(false);
 
-  // Custom close function to handle animation
   const handleClose = useCallback(() => {
     setIsClosing(true);
-    // Wait for animation to complete before unmounting
     setTimeout(() => {
       onClose();
       setIsClosing(false);
@@ -64,7 +62,6 @@ export default function ProjectModal({
     };
   }, [isOpen]);
 
-  // This is important - we need to render even if isOpen is false to show exit animation
   if (!isOpen && !isClosing) return null;
 
   return (
