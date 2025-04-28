@@ -5,14 +5,14 @@ import { useState, useEffect } from "react";
 import nav_items from "@/data/nav_items.json";
 import projects from "@/data/projects.json";
 import ProjectModal from "@/components/ui/ProjectModal";
-export default function MobileProjectImages({
+export default function DesktopProjectImages({
   selectedProject,
   setSelectedProject,
   openModal,
 }) {
   return (
     <>
-      <div className="absolute left-0 top-0 h-full w-full">
+      <div className="absolute left-0 top-0 h-full w-full hidden md:block z-30">
         <div
           className={clsx(
             "absolute left-0 top-0 h-full w-full bg-gradient-to-r from-black via-transparent to-black -z-10",
@@ -40,7 +40,7 @@ export default function MobileProjectImages({
         ))}
       </div>
 
-      <div className="z-30 flex flex-col pt-10 md:col-span-3 md:col-start-10 md:pt-0">
+      <div className="z-50 flex-col pt-10 md:col-span-3 md:col-start-10 md:pt-0 hidden md:flex">
         <ul role="navigation">
           {projects.map((project, index) => {
             return (
