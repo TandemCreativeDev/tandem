@@ -5,11 +5,17 @@ import { useState, useEffect } from "react";
 import nav_items from "@/data/nav_items.json";
 import projects from "@/data/projects.json";
 import ProjectModal from "@/components/ui/ProjectModal";
+interface DesktopProjectImagesProps {
+  selectedProject: number;
+  setSelectedProject: (index: number) => void;
+  openModal: () => void;
+}
+
 export default function DesktopProjectImages({
   selectedProject,
   setSelectedProject,
   openModal,
-}) {
+}: DesktopProjectImagesProps) {
   return (
     <>
       <div className="absolute left-0 top-0 h-full w-full hidden md:block z-30">

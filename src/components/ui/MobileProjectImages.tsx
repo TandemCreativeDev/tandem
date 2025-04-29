@@ -5,11 +5,17 @@ import { useState, useEffect } from "react";
 import nav_items from "@/data/nav_items.json";
 import projects from "@/data/projects.json";
 import ProjectModal from "@/components/ui/ProjectModal";
+interface MobileProjectImagesProps {
+  selectedProject: number;
+  openModal: () => void;
+  setSelectedProject: (index: number) => void;
+}
+
 export default function MobileProjectImages({
   selectedProject,
   openModal,
   setSelectedProject,
-}) {
+}: MobileProjectImagesProps) {
   return (
     <div className="md:hidden text-white flex flex-col justify-center items-center">
       {projects.map((project, index) => (
