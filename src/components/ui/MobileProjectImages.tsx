@@ -1,10 +1,6 @@
 "use client";
 import Image from "next/image";
-import clsx from "clsx";
-import { useState, useEffect } from "react";
-import nav_items from "@/data/nav_items.json";
 import projects from "@/data/projects.json";
-import ProjectModal from "@/components/ui/ProjectModal";
 interface MobileProjectImagesProps {
   selectedProject: number;
   openModal: () => void;
@@ -12,7 +8,6 @@ interface MobileProjectImagesProps {
 }
 
 export default function MobileProjectImages({
-  selectedProject,
   openModal,
   setSelectedProject,
 }: MobileProjectImagesProps) {

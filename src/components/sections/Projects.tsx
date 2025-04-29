@@ -1,6 +1,4 @@
 "use client";
-import Image from "next/image";
-import clsx from "clsx";
 import { useState, useEffect, useCallback } from "react";
 import nav_items from "@/data/nav_items.json";
 import projects from "@/data/projects.json";
@@ -29,7 +27,7 @@ export default function ProjectsSection() {
   useEffect(() => {
     if (isModalOpen) {
       const mainContent = document.querySelectorAll(
-        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
       );
 
       const originalTabIndices = new Map();
@@ -65,8 +63,8 @@ export default function ProjectsSection() {
           openModal={openModal}
           setSelectedProject={setSelectedProject}
         />
-        <MobileProjectImages 
-          selectedProject={selectedProject} 
+        <MobileProjectImages
+          selectedProject={selectedProject}
           openModal={openModal}
           setSelectedProject={setSelectedProject}
         />
