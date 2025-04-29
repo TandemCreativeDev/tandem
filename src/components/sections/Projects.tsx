@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import clsx from "clsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import nav_items from "@/data/nav_items.json";
 import projects from "@/data/projects.json";
 import ProjectModal from "@/components/ui/ProjectModal";
@@ -11,35 +11,36 @@ import DesktopProjectImages from "../ui/DesktopProjectImages";
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
+    setModalVisible(true);
   };
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsModalOpen(false);
-  };
 
-  // Add this effect to handle focus management at the page level
+    setTimeout(() => {
+      setModalVisible(false);
+    }, 300);
+  }, []);
+
   useEffect(() => {
     if (isModalOpen) {
-      // When modal is open, set all focusable elements outside the modal to not focusable
       const mainContent = document.querySelectorAll(
-        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
       );
 
-      // Store the original tabindex values
       const originalTabIndices = new Map();
 
       mainContent.forEach((element) => {
-        // Skip elements inside the modal
         if (element.closest('[role="dialog"]')) return;
 
         originalTabIndices.set(element, element.getAttribute("tabindex"));
         element.setAttribute("tabindex", "-1");
       });
 
-      // Restore original tabindex values when modal closes
       return () => {
         mainContent.forEach((element) => {
           const originalValue = originalTabIndices.get(element);
@@ -70,15 +71,17 @@ export default function ProjectsSection() {
           setSelectedProject={setSelectedProject}
         />
       </div>
-      <ProjectModal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        title={projects[selectedProject].title}
-        description={projects[selectedProject].description}
-        services={projects[selectedProject].services}
-        githubUrl={projects[selectedProject].githubUrl}
-        websiteUrl={projects[selectedProject].websiteUrl}
-      />
+      {modalVisible && (
+        <ProjectModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          title={projects[selectedProject].title}
+          description={projects[selectedProject].description}
+          services={projects[selectedProject].services}
+          githubUrl={projects[selectedProject].githubUrl}
+          websiteUrl={projects[selectedProject].websiteUrl}
+        />
+      )}
     </section>
   );
 }
