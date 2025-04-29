@@ -17,7 +17,7 @@ export default function MobileProjectImages({ selectedProject }) {
             priority
             sizes="100vw"
             height={300}
-            width={300}
+            width={380}
             alt={`Mockup of ${project.title}`}
             src={`/mobile/${project.src}.png`}
           />
