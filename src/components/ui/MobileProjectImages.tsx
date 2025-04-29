@@ -7,7 +7,7 @@ import projects from "@/data/projects.json";
 import ProjectModal from "@/components/ui/ProjectModal";
 export default function MobileProjectImages({ selectedProject }) {
   return (
-    <div className="block md:hidden text-white">
+    <div className="md:hidden text-white flex flex-col justify-center items-center">
       {projects.map((project, index) => (
         <div key={index} className="pt-10">
           <h3 className="uppercase text-2xl font-tandem-medium mb-2">
