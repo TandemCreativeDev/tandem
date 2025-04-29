@@ -40,7 +40,7 @@ export default function DesktopProjectImages({
         ))}
       </div>
 
-      <div className="z-50 flex-col pt-10 md:col-span-3 md:col-start-10 md:pt-0 hidden md:flex">
+      <div className="z-40 flex-col pt-10 md:col-span-3 md:col-start-10 md:pt-0 hidden md:flex">
         <ul role="navigation">
           {projects.map((project, index) => {
             return (

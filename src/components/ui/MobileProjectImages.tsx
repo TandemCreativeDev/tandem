@@ -10,7 +10,7 @@ export default function MobileProjectImages({ selectedProject }) {
     <div className="block md:hidden text-white">
       {projects.map((project, index) => (
         <div key={index} className="pt-10">
-          <h3 className="text-black uppercase text-2xl font-tandem-medium mb-2">
+          <h3 className="uppercase text-2xl font-tandem-medium mb-2">
             {project.title}
           </h3>
           <Image
