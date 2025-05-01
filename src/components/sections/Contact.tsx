@@ -16,7 +16,7 @@ export default function ContactSection() {
       acc[field.id] = "";
       return acc;
     },
-    {}
+    {},
   );
 
   const [formData, setFormData] = useState(contactForm);
@@ -44,7 +44,7 @@ export default function ContactSection() {
         toast.success(
           `Thanks ${
             formData.name.trim().split(" ")[0]
-          }, we’ll be in touch soon!`
+          }, we’ll be in touch soon!`,
         );
       } else {
         toast.error(`Something went wrong: ${data.error}`);
@@ -59,7 +59,7 @@ export default function ContactSection() {
   return (
     <section
       id={nav_items[6]}
-      className="m-auto flex w-10/12 grid-cols-12 flex-col gap-10  bg-white py-28 md:grid md:w-screen md:gap-0"
+      className="m-auto flex w-10/12 grid-cols-12 flex-col gap-10  bg-white py-20 md:grid md:w-screen md:gap-0 md:py-28"
     >
       <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase">
         ■ {nav_items[6]}
@@ -69,7 +69,7 @@ export default function ContactSection() {
         className="col-span-5 col-start-7 mx-auto max-w-xl"
       >
         <fieldset className="grid gap-x-8 gap-y-6">
-          <legend className="pb-6 font-tandem-condensed-medium text-pretty text-4xl uppercase text-gray-500">
+          <legend className="text-pretty pb-6 font-tandem-condensed-medium text-4xl uppercase text-gray-500">
             <span className="text-black">Send us a message,</span> we&apos;d
             love to hear from you.
           </legend>

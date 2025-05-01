@@ -15,7 +15,7 @@ export default function DesktopProjectImages({
 }: DesktopProjectImagesProps) {
   return (
     <>
-      <div className="absolute left-0 top-0 h-full w-full hidden md:block z-30">
+      <div className="absolute left-0 top-0 z-30 hidden h-full w-full md:block">
         <div
           className={clsx(
             "absolute left-0 top-0 h-full w-full bg-gradient-to-r from-black via-transparent to-black -z-10",
@@ -43,11 +43,11 @@ export default function DesktopProjectImages({
         ))}
       </div>
 
-      <div className="z-40 flex-col pt-10 md:col-span-3 md:col-start-10 md:pt-0 hidden md:flex">
+      <div className="z-40 mr-6 hidden flex-col pt-10 md:col-span-3 md:col-start-10 md:flex md:pt-0">
         <ul role="navigation">
           {projects.map((project, index) => {
             return (
-              <li key={index} className="relative list-non">
+              <li key={index} className="list-non relative">
                 <button
                   key={`project-${index}`}
                   onMouseEnter={() => setSelectedProject(index)}
