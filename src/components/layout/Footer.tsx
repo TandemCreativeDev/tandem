@@ -6,7 +6,7 @@ export default function FooterSection() {
   return (
     <footer
       id="footer"
-      className="flex grid-cols-12 flex-col border-t-2 border-t-gray-700 bg-black py-10 font-tandem-mono-medium uppercase text-white md:grid"
+      className="flex grid-cols-12 flex-col border-t-2 border-t-gray-700 bg-black py-20 md:py-28 font-tandem-mono-medium uppercase text-white md:grid"
     >
       <h2 className="col-span-2 col-start-1 mb-10 pl-20 md:mb-0 md:pl-10">
         tandem creative dev
