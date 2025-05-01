@@ -54,7 +54,7 @@ export default function ProjectsSection() {
 
   return (
     <section id={nav_items[3]} className="relative z-20 bg-black">
-      <div className="w-10/12 m-auto relative flex md:h-screen grid-cols-12 flex-col py-10 md:py-28 md:grid md:w-full md:items-start">
+      <div className="relative m-auto flex w-10/12 grid-cols-12 flex-col py-20 md:grid md:h-screen md:w-full md:items-start md:py-28">
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase text-white">
           ■ {nav_items[3]}
         </h2>
