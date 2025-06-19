@@ -7,7 +7,7 @@ interface InputProps {
   type: string;
   value: string;
   onChange: (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
   className?: string;
   labelClass?: string;
@@ -30,7 +30,7 @@ export default function TextInput({
   long = false,
 }: InputProps) {
   const baseClasses =
-    "block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm/6 mt-2.5 focus:outline-none ";
+    "block w-full border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm/6 mt-2.5 focus:outline-none ";
   return (
     <div className={twMerge("col-span-2 xl:col-span-1", className)}>
       <label

@@ -14,7 +14,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "rounded-md bg-black border-2 border-black px-3.5 py-2 text-center font-tandem-mono-regular text-sm font-semibold uppercase text-white shadow-sm hover:bg-white hover:text-black";
+    "bg-black border-2 border-black px-3.5 py-2 text-center font-tandem-mono-regular text-sm font-semibold uppercase text-white shadow-sm hover:bg-white hover:text-black";
   const widthStyles = fullWidth ? "w-full" : "";
 
   return (
