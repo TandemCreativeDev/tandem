@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import AboutSection from "@/components/sections/About";
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
