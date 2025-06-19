@@ -9,9 +9,6 @@ import TeamSection from "@/components/sections/Team";
 import FooterSection from "@/components/layout/Footer";
 import ContactSection from "@/components/sections/Contact";
 
-export const metadata: Metadata = {
-  title: "Home",
-};
 export default function HeroPage() {
   return (
     <>
