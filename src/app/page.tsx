@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AboutSection from "@/components/sections/About";
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
@@ -7,11 +8,15 @@ import TestimonialsSection from "@/components/sections/Testimonials";
 import TeamSection from "@/components/sections/Team";
 import FooterSection from "@/components/layout/Footer";
 import ContactSection from "@/components/sections/Contact";
+
+export const metadata: Metadata = {
+  title: "Home",
+};
 export default function HeroPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main">
         <Hero />
         <AboutSection />
         <ServicesSection />

@@ -11,7 +11,10 @@ import {
 } from "@/fonts/fonts";
 
 export const metadata: Metadata = {
-  title: "Tandem Creative Dev",
+  title: {
+    default: "Tandem Creative Dev",
+    template: "%s | Tandem Creative Dev",
+  },
   description:
     "Tandem is a creative development agency who prioritise human-centered design, based in London.",
 };
@@ -27,6 +30,7 @@ export default function RootLayout({
       className={`${diatypeRegular.variable} ${diatypeMedium.variable} ${diatypeMonoRegular.variable} ${diatypeMonoMedium.variable} ${diatypeCondensedMedium.variable} scroll-smooth`}
     >
       <body className="font-tandem-regular antialiased relative">
+        <a href="#main" className="skip-link">Skip to main content</a>
         <LoadingScreen />
         <Toaster position="bottom-center" />
         {children}
