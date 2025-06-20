@@ -7,11 +7,12 @@ import TestimonialsSection from "@/components/sections/Testimonials";
 import TeamSection from "@/components/sections/Team";
 import FooterSection from "@/components/layout/Footer";
 import ContactSection from "@/components/sections/Contact";
+
 export default function HeroPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main">
         <Hero />
         <AboutSection />
         <ServicesSection />

@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+};
 
 export default function PrivacyPolicy() {
   return (
-    <main className="max-w-3xl mx-auto px-6 py-12 text-gray-800">
+    <main id="main" className="max-w-3xl mx-auto px-6 py-12 text-gray-800">
       <h1 className="font-tandem-mono-medium uppercase text-3xl font-bold text-center mb-6">
         Privacy Policy
       </h1>
