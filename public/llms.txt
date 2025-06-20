@@ -1,0 +1,30 @@
+# Tandem Creative Dev
+
+> London-based creative development agency specialising in human-centred design for arts, music, and community-focused projects. We provide full-stack development, web design, AI integration, data analytics, accessibility consulting, and technical consultations.
+
+Founded by Jack Casstles-Jones and Maxime Downe, full-stack developers who met at Founders and Coders. We prioritise accessibility, usability, and thoughtful design to create inclusive digital solutions with meaningful impact.
+
+Key services include custom web applications, API development, UI/UX design, responsive design, strategic AI consulting, workflow automation, WCAG audits, and compliance consultation.
+
+## Portfolio
+
+- [Things We Do](https://things-we-do.netlify.app/): Mobile therapy app for behaviour control conditions using TypeScript, Next.js, Tailwind, RxDB, Plotly.js
+- [Wedgy Music](https://wedgymusic.co.uk/): Leeds alt-rock band website with TypeScript, React, Tailwind, Google Sheets automation
+- [Clark's Bowling Club](https://clarksbowlingclub.com/): Lyon funk/pop band site featuring TypeScript, Next.js, Tailwind, Three.js, Spotify API, Nodemailer
+- [Itch Film](https://itchfilm.com/): London film studio website for reputable studio famous for "For No Good Reason" starring Johnny Depp
+
+## Company Information
+
+- [Main Website](https://runintandem.com/index.md): Complete agency overview including services, portfolio, testimonials, and team information
+- [Privacy Policy](https://runintandem.com/privacy-policy.md): GDPR compliance and data protection information
+
+## Testimonials
+
+Client feedback from Lucy Paul (Managing Director at Itch Film): "Tandem were super lovely to work with. They showed an excellent understanding of our brief, interpreting our vision into a new website that we are immensely happy and proud of."
+
+Client feedback from Will Wedgwood (Founder at Wedgy Music): "Working with the team at Tandem was a fantastic experience. The site looks amazing, runs smoothly, and perfectly captures our vision."
+
+## Optional
+
+- [Contact Information](https://runintandem.com/#contact): Direct inquiry form and company contact details
+- [Team Profiles](https://runintandem.com/#team): Jack Casstles-Jones and Maxime Downe LinkedIn profiles and backgrounds
