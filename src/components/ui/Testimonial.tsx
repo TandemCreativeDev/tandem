@@ -14,9 +14,11 @@ export default function Testimonial({
   src,
 }: TestimonialProps) {
   return (
-    <div className="flex flex-col">
-      <p>{content}</p>
-      <div className="flex mt-5 border-t-2 border-t-gray-500 pt-4">
+    <figure className="flex flex-col">
+      <blockquote cite="testimonial">
+        <p>{content}</p>
+      </blockquote>
+      <figcaption className="flex mt-5 border-t-2 border-t-gray-500 pt-4">
         <div className="relative h-10 w-10 overflow-hidden rounded-full mr-5">
           <Image
             src={`/clients/${src}.jpg`}
@@ -29,7 +31,7 @@ export default function Testimonial({
           <p className="text-sm xl:text-base">{client}</p>
           <p className="text-gray-500 text-sm xl:text-base">{clientPosition}</p>
         </div>
-      </div>
-    </div>
+      </figcaption>
+    </figure>
   );
 }

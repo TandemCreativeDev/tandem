@@ -10,6 +10,7 @@ export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
+  const [projectAnnouncement, setProjectAnnouncement] = useState('');
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -23,6 +24,12 @@ export default function ProjectsSection() {
       setModalVisible(false);
     }, 300);
   }, []);
+
+  useEffect(() => {
+    if (selectedProject >= 0) {
+      setProjectAnnouncement(`Now viewing ${projects[selectedProject].title}`);
+    }
+  }, [selectedProject]);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -58,6 +65,9 @@ export default function ProjectsSection() {
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase text-white">
           ■ {nav_items[3]}
         </h2>
+        <div aria-live="polite" className="sr-only">
+          {projectAnnouncement}
+        </div>
         <DesktopProjectImages
           selectedProject={selectedProject}
           openModal={openModal}

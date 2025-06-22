@@ -44,7 +44,8 @@ export default function DesktopProjectImages({
       </div>
 
       <div className="z-40 mr-6 hidden flex-col pt-10 md:col-span-3 md:col-start-10 md:flex md:pt-0">
-        <ul role="navigation">
+        <nav aria-label="Project selection">
+          <ul>
           {projects.map((project, index) => {
             return (
               <li key={index} className="list-non relative">
@@ -69,7 +70,8 @@ export default function DesktopProjectImages({
               </li>
             );
           })}
-        </ul>
+          </ul>
+        </nav>
       </div>
     </>
   );

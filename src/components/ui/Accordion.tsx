@@ -30,8 +30,9 @@ export default function Accordion() {
                   hoveredAccordion === index ? "bg-black text-white" : ""
                 } relative w-full overflow-hidden py-10 font-tandem-condensed-medium text-4xl uppercase
                 md:text-7xl`}
-                role="button"
-                aria-label="Open section to find out more about ${section.title} services"
+                aria-expanded={openAccordionSection === index}
+                aria-controls={`panel-${index}`}
+                id={`button-${index}`}
                 onClick={() => handleContentClick(index)}
                 onMouseEnter={() => setHoveredAccordion(index)}
                 onMouseLeave={() => setHoveredAccordion(20)}
@@ -45,6 +46,8 @@ export default function Accordion() {
                 )}
               </button>
               <div
+                id={`panel-${index}`}
+                aria-labelledby={`button-${index}`}
                 className={clsx(
                   "text-lg w-10/12 md:w-3/4 m-auto flex flex-col lg:flex-row justify-start py-10 text-left md:gap-20 gap-10",
                   {

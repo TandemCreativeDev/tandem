@@ -32,6 +32,7 @@ export default function Header() {
 
   return (
     <header
+      role="banner"
       className={`
         text-white
         flex 
