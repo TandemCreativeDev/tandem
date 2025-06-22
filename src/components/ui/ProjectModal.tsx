@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
+import FocusTrap from "focus-trap-react";
 import UrlButton from "./UrlButton";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
@@ -26,6 +27,15 @@ export default function ProjectModal({
     "absolute left-1/2 top-1/2 transform -translate-x-1/2 origin-center bg-white h-[1px] w-3 transition-all motion-reduce:transition-none duration-500 ease-in-out bg-white group-hover:bg-zinc-950/90";
 
   const [isClosing, setIsClosing] = useState(false);
+  const modalClasses = clsx(
+    "relative bg-zinc-950/90 rounded-xl overflow-hidden backdrop-blur-lg",
+    "w-11/12 md:w-9/12 lg:w-7/12 max-h-[85vh] p-8 shadow-glow shadow-zinc-900",
+    "transition-all duration-300 ease-in-out",
+    "motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:transform-none",
+    isClosing
+      ? "opacity-0 scale-95 animate-scale-out motion-reduce:animate-none"
+      : "opacity-100 scale-100 animate-scale-in motion-reduce:animate-none",
+  );
 
   const handleClose = useCallback(() => {
     setIsClosing(true);
@@ -85,17 +95,14 @@ export default function ProjectModal({
         tabIndex={-1}
       />
 
-      <div
-        className={clsx(
-          "relative bg-zinc-950/90 rounded-xl overflow-hidden backdrop-blur-lg",
-          "w-11/12 md:w-9/12 lg:w-7/12 max-h-[85vh] p-8 shadow-glow shadow-zinc-900",
-          "transition-all duration-300 ease-in-out",
-          "motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:transform-none",
-          isClosing
-            ? "opacity-0 scale-95 animate-scale-out motion-reduce:animate-none"
-            : "opacity-100 scale-100 animate-scale-in motion-reduce:animate-none"
-        )}
+      <FocusTrap
+        focusTrapOptions={{
+          initialFocus: false,
+          allowOutsideClick: true,
+          returnFocusOnDeactivate: true,
+        }}
       >
+        <div className={modalClasses}>
         <div className="flex justify-between">
           <h2 className="text-white text-3xl uppercase mb-8 font-tandem-condensed-medium truncate">
             {title}
@@ -144,7 +151,8 @@ export default function ProjectModal({
             />
           )}
         </div>
-      </div>
+        </div>
+      </FocusTrap>
     </div>
   );
 }

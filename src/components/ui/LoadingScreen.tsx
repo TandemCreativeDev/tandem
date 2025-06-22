@@ -6,6 +6,7 @@ import clsx from "clsx";
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
   const [dots, setDots] = useState("");
+  const [loadingAnnouncement, setLoadingAnnouncement] = useState("");
 
   useEffect(() => {
     const handleLoad = () => {
@@ -27,13 +28,19 @@ export default function LoadingScreen() {
 
   useEffect(() => {
     if (!isLoading) return;
-    
+
     const interval = setInterval(() => {
       setDots(prev => (prev.length >= 3 ? "" : prev + "."));
     }, 300);
-    
+
     return () => clearInterval(interval);
   }, [isLoading]);
+
+  useEffect(() => {
+    if (isLoading) {
+      setLoadingAnnouncement(`Loading${dots}`);
+    }
+  }, [dots, isLoading]);
 
   return (
     <div
@@ -48,6 +55,9 @@ export default function LoadingScreen() {
       <div className="relative inline-block">
         <span className="text-4xl md:text-6xl lg:text-8xl uppercase text-white font-tandem-mono-regular">loading</span>
         <span className="text-4xl md:text-6xl lg:text-8xl uppercase text-white font-tandem-mono-regular absolute left-full">{dots}</span>
+      </div>
+      <div aria-live="polite" className="sr-only">
+        {loadingAnnouncement}
       </div>
     </div>
   );

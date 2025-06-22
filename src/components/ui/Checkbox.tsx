@@ -45,6 +45,7 @@ export default function Checkbox({
           name={name}
           type="checkbox"
           required={required}
+          aria-describedby={`${id}-description`}
           className="block"
         />
       ) : (
@@ -55,6 +56,7 @@ export default function Checkbox({
               name={name}
               type="checkbox"
               required={required}
+              aria-describedby={`${id}-description`}
               className="block focus:ring-2 focus:ring-blue-600 focus:outline-none"
             />
             <svg>

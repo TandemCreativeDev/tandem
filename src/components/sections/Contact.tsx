@@ -20,6 +20,7 @@ export default function ContactSection() {
   );
 
   const [formData, setFormData] = useState(contactForm);
+  const [errorAnnouncement, setErrorAnnouncement] = useState("");
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
@@ -34,6 +35,13 @@ export default function ContactSection() {
     }
     const toastId = toast.loading("Sending message...");
     try {
+      // Add confirmation dialog
+      const confirmed = window.confirm('Send message? This will share your contact details with Tandem.');
+      if (!confirmed) {
+        toast.dismiss(toastId);
+        return;
+      }
+
       const response = await fetch("/api/contact", {
         method: "POST",
         body: fd,
@@ -47,12 +55,16 @@ export default function ContactSection() {
           }, we’ll be in touch soon!`,
         );
       } else {
-        toast.error(`Something went wrong: ${data.error}`);
+        const errorMessage = `Something went wrong: ${data.error}`;
+        toast.error(errorMessage);
+        setErrorAnnouncement(errorMessage);
       }
     } catch (error) {
       console.error(error);
       toast.dismiss(toastId);
-      toast.error("Failed to send message. Please try again later.");
+      const errorMessage = "Failed to send message. Please try again later.";
+      toast.error(errorMessage);
+      setErrorAnnouncement(errorMessage);
     }
   }
 
@@ -103,6 +115,9 @@ export default function ContactSection() {
           aria-label="Submit message"
           role="button"
         />
+        <div aria-live="assertive" className="sr-only">
+          {errorAnnouncement}
+        </div>
       </form>
     </section>
   );

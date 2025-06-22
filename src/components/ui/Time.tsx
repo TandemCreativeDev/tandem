@@ -12,11 +12,18 @@ const DEFAULT_TIMEZONE = "Europe/London";
 
 export default function Time() {
   const [currentTime, setCurrentTime] = useState<string>("");
-  const [location, setLocation] = useState<string>("Loading...");
+  const [location, setLocation] = useState<string>("");
+  const [isClient, setIsClient] = useState(false);
   const [timezone, setTimezone] = useState<string>(DEFAULT_TIMEZONE);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
     const fetchLocationData = async () => {
       try {
         const response = await fetch("https://geolocation-db.com/json/");
@@ -74,7 +81,7 @@ export default function Time() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [timezone]);
+  }, [timezone, isClient]);
 
   return (
     <div className="flex justify-start gap-5">
