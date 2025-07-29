@@ -10,15 +10,17 @@
     ],
     "src": "twd",
     "githubUrl": "https://github.com/fac30/things-we-do",
-    "websiteUrl": "https://things-we-do.netlify.app/"
+    "websiteUrl": "https://things-we-do.netlify.app/",
+    "renderOnMobile": false
   },
   {
-    "title": "wedgy music",
-    "description": "Website for Leeds-based alt-rock band Wedgy Music. Built with Typescript, React, Tailwind, Google sheet automation.",
-    "services": ["web design", "full-stack development", "accessibility"],
-    "src": "wedgy",
-    "githubUrl": "https://github.com/TandemCreativeDev/wedgy-fe",
-    "websiteUrl": "https://wedgymusic.co.uk/"
+    "title": "gatbot",
+    "description": "AI-powered interview platform for researchers developed for UK charity Gatsby. Instead of conducting dozens of individual interviews, you create one AI chatbot that can interview hundreds of participants consistently. Ideal for academics, UX researchers, and market researchers who need to gather structured qualitative data at scale.",
+    "services": ["web design", "full-stack development", "ai integration", "data analytics"],
+    "src": "gatbot",
+    "githubUrl": "",
+    "websiteUrl": "",
+    "renderOnMobile": true
   },
   {
     "title": "clark's bowling club",
@@ -26,13 +28,42 @@
     "services": ["web design", "full-stack development", "accessibility"],
     "src": "cbc",
     "githubUrl": "https://github.com/TandemCreativeDev/cbc",
-    "websiteUrl": "https://clarksbowlingclub.com/"
+    "websiteUrl": "https://clarksbowlingclub.com/",
+    "renderOnMobile": true
+  },
+  {
+    "title": "yapli",
+    "description": "A minimalist chatroom platform designed for educators and workshop facilitators. Create temporary chat spaces where participants can join instantly without accounts, share links and collaborate in real-time using any alias they choose. Ideal for workshops, training sessions, and educational events where you need quick participant engagement without the friction of user registration and long urls.",
+    "services": ["web design", "full-stack development", "accessibility"],
+    "src": "yapli",
+    "githubUrl": "https://github.com/TandemCreativeDev/yapli",
+    "websiteUrl": "https://yapli.chat",
+    "renderOnMobile": true
+  },
+  {
+    "title": "ai helpdesk",
+    "description": "An intelligent automated IT helpdesk system developed for the Sainsbury Family Charitable Trusts, to automate the process by which their employees access help from the IT department. It can answer employee's questions about documented procedures, company policies, technical questions that require research and identify when an IT professional is required to raise a ticket.",
+    "services": ["full-stack development", "ai integration", "data analytics", "technical consultancy"],
+    "src": "sfct",
+    "githubUrl": "",
+    "websiteUrl": "",
+    "renderOnMobile": true
+  },
+  {
+    "title": "wedgy music",
+    "description": "Website for Leeds-based alt-rock band Wedgy Music. Built with Typescript, React, Tailwind, Google sheet automation.",
+    "services": ["web design", "full-stack development", "accessibility"],
+    "src": "wedgy",
+    "githubUrl": "https://github.com/TandemCreativeDev/wedgy-fe",
+    "websiteUrl": "https://wedgymusic.co.uk/",
+    "renderOnMobile": true
   },
   {
     "title": "itch film",
     "description": "Website for reputable London-based film studio Itch Film, famous for films such as For No Good Reason starring Johnny Depp.",
     "services": ["web design", "frontend development", "accessibility"],
     "src": "itch",
-    "websiteUrl": "https://itchfilm.com/"
+    "websiteUrl": "https://itchfilm.com/",
+    "renderOnMobile": true
   }
 ]
