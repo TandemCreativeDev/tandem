@@ -14,6 +14,10 @@ export async function POST(request: Request) {
       from: `${name} <websiteform@runintandem.com>`,
       to: process.env.EMAIL_USER,
       subject: `${firstName} wants to get in touch`,
+      headers: {
+        "List-Unsubscribe": `<mailto:hello@runintandem.com?subject=Unsubscribe>, <https://runintandem.com/unsubscribe>`,
+        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+      },
       html: `
         <!DOCTYPE html>
         <html>
@@ -56,6 +60,10 @@ export async function POST(request: Request) {
       from: `Tandem Creative Dev <${process.env.EMAIL_USER}>`,
       to: `${name} <${email}>`,
       subject: `Hi ${firstName}, thanks for getting in touch`,
+      headers: {
+        "List-Unsubscribe": `<mailto:hello@runintandem.com?subject=Unsubscribe>, <https://runintandem.com/unsubscribe>`,
+        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+      },
       html: `
         <!DOCTYPE html>
         <html>
