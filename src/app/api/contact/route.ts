@@ -12,7 +12,7 @@ export async function POST(request: Request) {
 
     const tandemEmail = await transporter.sendMail({
       from: `${name} <websiteform@runintandem.com>`,
-      to: process.env.EMAIL_USER,
+      to: "Max <max@runintandem.com>, Jack <jack@runintandem.com>",
       subject: `${firstName} wants to get in touch`,
       headers: {
         "List-Unsubscribe": `<mailto:hello@runintandem.com?subject=Unsubscribe>, <https://runintandem.com/unsubscribe>`,
