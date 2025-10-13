@@ -1,36 +1,8 @@
-"use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { decode } from "blurhash";
 
 import nav_items from "@/data/nav_items.json";
 
-const HERO_BLURHASH = "LQFq2y}uGE5REMNawJn%RQaeso$*";
-
-function blurhashToBase64(blurhash: string, width = 32, height = 32): string {
-  const pixels = decode(blurhash, width, height);
-
-  const canvas = document.createElement("canvas");
-  canvas.width = width;
-  canvas.height = height;
-
-  const ctx = canvas.getContext("2d");
-  if (!ctx) return "";
-
-  const imageData = ctx.createImageData(width, height);
-  imageData.data.set(pixels);
-  ctx.putImageData(imageData, 0, 0);
-
-  return canvas.toDataURL("image/jpeg", 0.5);
-}
-
 export default function Hero() {
-  const [blurDataURL, setBlurDataURL] = useState<string>("");
-
-  useEffect(() => {
-    setBlurDataURL(blurhashToBase64(HERO_BLURHASH, 32, 21));
-  }, []);
-
   return (
     <section id={nav_items[0]}>
       <h2 className="hidden">{nav_items[0]}</h2>
@@ -44,8 +16,6 @@ export default function Hero() {
           style={{ objectFit: "cover" }}
           priority={true}
           fetchPriority="high"
-          placeholder={blurDataURL ? "blur" : "empty"}
-          blurDataURL={blurDataURL || undefined}
         />
       </div>
       <div className="h-screen w-screen flex flex-col justify-center items-center">
