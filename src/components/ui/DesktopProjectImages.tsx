@@ -24,17 +24,23 @@ export default function DesktopProjectImages({
               : "opacity-75",
           )}
         ></div>
-        <Image
-          key={`project-image-${selectedProject}`}
-          fill
-          sizes="100vw"
-          className="absolute left-0 top-0 -z-50 transition-opacity duration-300"
-          style={{
-            objectFit: "cover",
-          }}
-          alt={`Mockup of ${projects[selectedProject].title}`}
-          src={`/projects/${projects[selectedProject].src}.jpg`}
-        />
+        {projects.map((project, index) => (
+          <Image
+            key={`project-image-${index}`}
+            fill
+            priority
+            sizes="100vw"
+            className={clsx(
+              "absolute left-0 top-0 -z-50",
+              selectedProject === index ? "opacity-100" : "opacity-0",
+            )}
+            style={{
+              objectFit: "cover",
+            }}
+            alt={`Mockup of ${project.title}`}
+            src={`/projects/${project.src}.jpg`}
+          />
+        ))}
       </div>
 
       <div className="z-40 mr-6 hidden flex-col pt-10 md:col-span-3 md:col-start-10 md:flex md:pt-0">
