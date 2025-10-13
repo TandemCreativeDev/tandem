@@ -44,6 +44,7 @@ export default function MobileProjectImages({
                 openModal();
               }}
               className="cursor-pointer"
+              fetchPriority="low"
             />
           )}
         </div>

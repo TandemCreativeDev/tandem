@@ -39,6 +39,7 @@ export default function DesktopProjectImages({
             }}
             alt={`Mockup of ${project.title}`}
             src={`/projects/${project.src}.jpg`}
+            fetchPriority="low"
           />
         ))}
       </div>
