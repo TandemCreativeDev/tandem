@@ -33,7 +33,6 @@ export default function MobileProjectImages({
           )}
           {project.renderOnMobile && (
             <Image
-              priority
               sizes="100vw"
               height={300}
               width={380}
