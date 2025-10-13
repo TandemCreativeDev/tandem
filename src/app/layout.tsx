@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
-import LoadingScreen from "@/components/ui/LoadingScreen";
 import "./globals.css";
 import {
   diatypeRegular,
@@ -31,7 +30,6 @@ export default function RootLayout({
     >
       <body className="font-tandem-regular antialiased relative">
         <a href="#main" className="skip-link">Skip to main content</a>
-        <LoadingScreen />
         <Toaster position="bottom-center" />
         {children}
       </body>
