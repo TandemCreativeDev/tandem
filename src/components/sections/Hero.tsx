@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section id={nav_items[0]}>
       <h2 className="hidden">{nav_items[0]}</h2>
-      <div className="absolute h-screen w-screen top-0 left-0 -z-40 bg-white">
+      <div className="absolute h-screen w-screen top-0 left-0 -z-40">
         <Image
           src={"/hero-img.jpg"}
           alt=""
