@@ -42,6 +42,7 @@ export default function TeamPortrait({
               width={500}
               height={500}
               onMouseEnter={() => setActiveImage(teamMember)}
+              loading="lazy"
             />
           </div>
         </button>

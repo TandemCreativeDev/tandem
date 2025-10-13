@@ -1,10 +1,14 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
+import dynamic from "next/dynamic";
 import nav_items from "@/data/nav_items.json";
 import projects from "@/data/projects.json";
-import ProjectModal from "@/components/ui/ProjectModal";
 import MobileProjectImages from "../ui/MobileProjectImages";
 import DesktopProjectImages from "../ui/DesktopProjectImages";
+
+const ProjectModal = dynamic(() => import("@/components/ui/ProjectModal"), {
+  ssr: false,
+});
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(0);

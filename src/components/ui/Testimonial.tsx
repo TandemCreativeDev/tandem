@@ -25,6 +25,7 @@ export default function Testimonial({
             alt={`Portrait of ${client}`}
             fill
             className="object-cover"
+            loading="lazy"
           />
         </div>
         <div className="flex flex-col font-tandem-mono-medium uppercase">
