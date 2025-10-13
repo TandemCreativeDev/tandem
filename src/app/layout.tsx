@@ -9,6 +9,7 @@ import {
   diatypeCondensedMedium,
 } from "@/fonts/fonts";
 
+// This is our metadata woohoo
 export const metadata: Metadata = {
   title: {
     default: "Tandem Creative Dev",
@@ -29,7 +30,9 @@ export default function RootLayout({
       className={`${diatypeRegular.variable} ${diatypeMedium.variable} ${diatypeMonoRegular.variable} ${diatypeMonoMedium.variable} ${diatypeCondensedMedium.variable} scroll-smooth`}
     >
       <body className="font-tandem-regular antialiased relative">
-        <a href="#main" className="skip-link">Skip to main content</a>
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         <Toaster position="bottom-center" />
         {children}
       </body>
