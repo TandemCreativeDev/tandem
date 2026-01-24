@@ -47,30 +47,30 @@ export default function DesktopProjectImages({
       <div className="z-40 mr-6 hidden flex-col pt-10 md:col-span-3 md:col-start-10 md:flex md:pt-0">
         <nav aria-label="Project selection">
           <ul>
-          {projects.map((project, index) => {
-            return (
-              <li key={index} className="list-non relative">
-                <button
-                  key={`project-${index}`}
-                  onMouseEnter={() => setSelectedProject(index)}
-                  onFocus={() => setSelectedProject(index)}
-                  onClick={openModal}
-                  aria-label={`Website for ${project.title}`}
-                  role="button"
-                  className={clsx(
-                    "font-tandem-medium text-start text-3xl uppercase ",
-                    {
-                      "text-white ": selectedProject === index,
-                      "text-gray-300 hover:text-gray-200":
-                        selectedProject !== index,
-                    },
-                  )}
-                >
-                  {project.title}
-                </button>
-              </li>
-            );
-          })}
+            {projects.map((project, index) => {
+              return (
+                <li key={index} className="list-non relative">
+                  <button
+                    key={`project-${index}`}
+                    onMouseEnter={() => setSelectedProject(index)}
+                    onFocus={() => setSelectedProject(index)}
+                    onClick={openModal}
+                    aria-label={`Website for ${project.title}`}
+                    role="button"
+                    className={clsx(
+                      "font-tandem-medium text-start text-3xl uppercase ",
+                      {
+                        "text-white ": selectedProject === index,
+                        "text-gray-300 hover:text-gray-200":
+                          selectedProject !== index,
+                      },
+                    )}
+                  >
+                    {project.title}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>
