@@ -42,6 +42,7 @@ export default function Graph({ isMobile, seed }: GraphProps) {
   const repulseVelocities = useRef<THREE.Vector3[]>([]);
   const _plane = useRef(new THREE.Plane(new THREE.Vector3(0, 0, 1), 0));
   const _cursorLocal = useRef(new THREE.Vector3());
+  const _pointer = useRef(new THREE.Vector2());
   const nodeCount = isMobile ? 30 : 55;
 
   const nodes = useMemo<NodeData[]>(() => {
@@ -144,6 +145,8 @@ export default function Graph({ isMobile, seed }: GraphProps) {
 
     let hasCursor = false;
     if (!isMobile && groupRef.current) {
+      _pointer.current.set(mouseRef.current.x, mouseRef.current.y);
+      state.raycaster.setFromCamera(_pointer.current, state.camera);
       const hit = state.raycaster.ray.intersectPlane(
         _plane.current,
         _cursorLocal.current,
