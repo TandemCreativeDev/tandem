@@ -32,7 +32,7 @@ export default function NodeGraph({ seed }: NodeGraphProps) {
   if (reducedMotion) return null;
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full animate-fade-in">
       <Canvas
         flat
         camera={{ position: [0, 0, 18], fov: 70 }}
