@@ -12,7 +12,11 @@ interface NodeGraphProps {
 
 export default function NodeGraph({ seed }: NodeGraphProps) {
   const [isMobile, setIsMobile] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -23,7 +27,6 @@ export default function NodeGraph({ seed }: NodeGraphProps) {
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
     const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);

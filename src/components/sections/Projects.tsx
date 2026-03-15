@@ -14,7 +14,10 @@ export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
-  const [projectAnnouncement, setProjectAnnouncement] = useState('');
+  const projectAnnouncement =
+    selectedProject >= 0
+      ? `Now viewing ${projects[selectedProject].title}`
+      : "";
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -28,12 +31,6 @@ export default function ProjectsSection() {
       setModalVisible(false);
     }, 300);
   }, []);
-
-  useEffect(() => {
-    if (selectedProject >= 0) {
-      setProjectAnnouncement(`Now viewing ${projects[selectedProject].title}`);
-    }
-  }, [selectedProject]);
 
   useEffect(() => {
     if (isModalOpen) {
