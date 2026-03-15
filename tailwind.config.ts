@@ -13,6 +13,7 @@ export default {
         "scale-in": "scaleIn 0.3s ease-out forwards",
         "scale-out": "scaleOut 0.4s ease-in forwards",
         "fade-in": "fadeIn 1.2s ease-in forwards",
+        "logo-breathe": "logo-expand 0.8s ease-out forwards, logo-pulse 2.8s ease-in-out 0.8s infinite",
       },
       keyframes: {
         fadeIn: {
@@ -30,6 +31,14 @@ export default {
         scaleOut: {
           "0%": { transform: "scale(1)", opacity: "1" },
           "100%": { transform: "scale(0.95)", opacity: "0" },
+        },
+        "logo-expand": {
+          from: { letterSpacing: "0em" },
+          to: { letterSpacing: "0.14em" },
+        },
+        "logo-pulse": {
+          "0%, 100%": { letterSpacing: "0.14em" },
+          "50%": { letterSpacing: "0.19em" },
         },
       },
       colors: {
@@ -54,5 +63,6 @@ export default {
       },
     },
   },
+  safelist: ["animate-logo-breathe"],
   plugins: [],
 } satisfies Config;
