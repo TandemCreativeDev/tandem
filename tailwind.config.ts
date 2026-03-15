@@ -12,8 +12,13 @@ export default {
         marquee: "marquee 15s linear infinite",
         "scale-in": "scaleIn 0.3s ease-out forwards",
         "scale-out": "scaleOut 0.4s ease-in forwards",
+        "fade-in": "fadeIn 1.2s ease-in forwards",
       },
       keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
         marquee: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
