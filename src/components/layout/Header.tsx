@@ -11,6 +11,36 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [hasScrolledPastHero, setHasScrolledPastHero] = useState(false);
   const burgerButtonRef = useRef<HTMLButtonElement>(null);
+  const logoRef = useRef<HTMLHeadingElement>(null);
+
+  const handleLogoMouseEnter = () => {
+    const el = logoRef.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.style.letterSpacing = "0.1em";
+      return;
+    }
+    el.style.transition = "";
+    el.style.animation = "";
+    el.style.letterSpacing = "";
+    el.classList.add("animate-logo-breathe");
+  };
+
+  const handleLogoMouseLeave = () => {
+    const el = logoRef.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.style.letterSpacing = "";
+      return;
+    }
+    const spacing = getComputedStyle(el).letterSpacing;
+    el.style.animation = "none";
+    el.style.letterSpacing = spacing;
+    el.classList.remove("animate-logo-breathe");
+    el.offsetHeight;
+    el.style.transition = "letter-spacing 0.6s ease-out";
+    el.style.letterSpacing = "0em";
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +80,7 @@ export default function Header() {
         escapeDeactivates: true,
         returnFocusOnDeactivate: true,
         allowOutsideClick: true,
-        setReturnFocus: burgerButtonRef.current ?? false,
+        setReturnFocus: () => burgerButtonRef.current ?? false,
       }}
     >
       <header
@@ -75,7 +105,7 @@ export default function Header() {
           z-50
         `}
       >
-        <div className="m-auto w-[98%] flex justify-between items-center h-6">
+        <div className="m-auto w-[95%] flex justify-between items-center h-6">
           <div className="md:block hidden">
             <Time />
           </div>
@@ -87,14 +117,13 @@ export default function Header() {
             href={"#home"}
             onClick={() => setIsOpen(false)}
           >
-            <h1 className="text-center flex gap-1 group">
-              <span className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
-                &lt;
-              </span>
-              tandem creative dev
-              <span className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
-                /&gt;
-              </span>
+            <h1
+              ref={logoRef}
+              className="logo-text lowercase font-tandem-medium text-2xl leading-none m-0 -translate-y-px"
+              onMouseEnter={handleLogoMouseEnter}
+              onMouseLeave={handleLogoMouseLeave}
+            >
+              t<strong>and</strong>em
             </h1>
           </Link>
           <div className="self-end xl:block hidden">
