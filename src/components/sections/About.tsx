@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import nav_items from "@/data/nav_items.json";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
@@ -11,14 +12,13 @@ export default function AboutSection() {
         </h2>
         <p className="col-span-7 col-start-5 text-pretty font-tandem-condensed-medium text-3xl uppercase text-gray-500 md:text-4xl">
           <span className="text-black">
-            We prioritise human-centered design
+            Good software starts with understanding the problem,
           </span>
-          &nbsp;to create inclusive solutions. Our commitment to usability and
-          accessibility ensures that every user feels valued and understood.
+          &nbsp;not estimating the solution.
         </p>
       </div>
-      <div className="grid-cols-12 flex-col border-b-[1px] border-t-2 border-black md:grid ">
-        <div className="relative col-span-6 h-[300px] md:h-full">
+      <div className="grid-cols-12 flex-col border-y border-black md:grid ">
+        <div className="relative col-span-7 h-[300px] md:h-full">
           <Image
             src="/jackandmax.jpg"
             alt="Laptop showcasing work by Tandem"
@@ -27,16 +27,27 @@ export default function AboutSection() {
             style={{ objectFit: "cover", objectPosition: "bottom" }}
           ></Image>
         </div>
-        <div className="col-span-5 col-start-8  bg-white md:py-28 py-10 flex flex-col gap-10">
-          <p className="m-auto  w-10/12 text-lg text-black md:w-1/2">
-            Tandem Creative Dev was started by Jack and Max, two full-stack
-            developers who met at Founders and Coders and have a shared passion
-            for driving positive change through digital innovation.
+        <div className="col-span-6 col-start-8 bg-white md:py-28 py-10 md:px-24 flex flex-col gap-10">
+          <p className="m-auto  w-10/12">
+            We&apos;re a two-person agency. The people you brief are the people
+            who build, and we care deeply about what we hand over. The
+            architecture is considered, the code is maintainable, the design is
+            polished, and everything ships to production standards.
           </p>
-          <p className="m-auto  w-10/12 text-lg text-black md:w-1/2">
-            We believe in the power of thoughtful design to resonate with users.
-            Our approach ensures that every project reflects our commitment to
-            enhancing user experience.
+          <p className="m-auto  w-10/12">
+            We are drawn to problems that live at the intersection of software
+            and the real world — health, safety, education, climate. Every
+            project pulls us into a new domain, forces us to think beyond the
+            code, and brings us back to the architecture with a much clearer
+            picture of what actually needs to exist. If you think we can add
+            value to your project,{" "}
+            <Link
+              href="#contact"
+              className="font-bold text-blue-600 focus:ring-blue-600 focus-visible:ring-2 focus:outline-none hover:underline"
+            >
+              we&apos;d love to hear from you
+            </Link>
+            .
           </p>
         </div>
       </div>
