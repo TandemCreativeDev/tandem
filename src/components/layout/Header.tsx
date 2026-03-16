@@ -50,7 +50,7 @@ export default function Header() {
         escapeDeactivates: true,
         returnFocusOnDeactivate: true,
         allowOutsideClick: true,
-        setReturnFocus: burgerButtonRef.current ?? false,
+        setReturnFocus: () => burgerButtonRef.current ?? false,
       }}
     >
       <header
@@ -75,7 +75,7 @@ export default function Header() {
           z-50
         `}
       >
-        <div className="m-auto w-[98%] flex justify-between items-center h-6">
+        <div className="m-auto w-[95%] flex justify-between items-center h-6">
           <div className="md:block hidden">
             <Time />
           </div>
