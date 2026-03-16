@@ -6,19 +6,19 @@ import Link from "next/link";
 export default function AboutSection() {
   return (
     <section id={nav_items[1]}>
-      <div className="m-auto flex w-10/12 flex-col gap-10 py-20 md:grid md:w-screen md:auto-rows-auto md:grid-cols-12 md:gap-0 md:py-28">
+      <div className="m-auto flex w-10/12 flex-col gap-10 py-20 lg:grid lg:w-screen lg:auto-rows-auto lg:grid-cols-12 lg:gap-0 lg:py-28">
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase">
           ■ {nav_items[1]}
         </h2>
-        <p className="col-span-7 col-start-5 text-pretty font-tandem-condensed-medium text-3xl uppercase text-gray-500 md:text-4xl">
+        <p className="col-span-7 col-start-5 text-pretty font-tandem-condensed-medium text-3xl uppercase text-gray-500 lg:text-4xl">
           <span className="text-black">
             Good software starts with understanding the problem,
           </span>
           &nbsp;not estimating the solution.
         </p>
       </div>
-      <div className="grid-cols-12 flex-col border-y border-black md:grid ">
-        <div className="relative col-span-7 h-[300px] md:h-full">
+      <div className="grid-cols-12 flex-col border-y border-black lg:grid ">
+        <div className="relative col-span-7 h-[300px] md:h-[500px] lg:h-full">
           <Image
             src="/jackandmax.jpg"
             alt="Laptop showcasing work by Tandem"
@@ -27,7 +27,7 @@ export default function AboutSection() {
             style={{ objectFit: "cover", objectPosition: "bottom" }}
           ></Image>
         </div>
-        <div className="col-span-6 col-start-8 bg-white md:py-28 py-10 md:px-24 flex flex-col gap-10">
+        <div className="col-span-6 col-start-8 bg-white lg:py-28 py-10 lg:px-24 flex flex-col gap-10">
           <p className="m-auto  w-10/12">
             We&apos;re a two-person agency. The people you brief are the people
             who build, and we care deeply about what we hand over. The
