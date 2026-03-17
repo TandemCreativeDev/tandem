@@ -78,7 +78,7 @@ export default function Accordion() {
           return (
             <div
               key={`accordion-${index}`}
-              className="border-[1px] border-t-black bg-white text-center text-black "
+              className="border-[1px] border-y-black last:border-b-[2px] bg-white text-center text-black "
             >
               <button
                 className={`${

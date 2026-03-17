@@ -1,20 +1,6 @@
 [
   {
-    "title": "things we do",
-    "description": "Mobile app providing therapy and symptom-relief for users suffering from behaviour control conditions such as Tourette syndrome. Built with Typescript, Next.js, Tailwind, RxDB, Plotly.js, DND.",
-    "services": [
-      "web design",
-      "full-stack development",
-      "data analytics",
-      "accessibility"
-    ],
-    "src": "twd",
-    "githubUrl": "https://github.com/fac30/things-we-do",
-    "websiteUrl": "https://things-we-do.netlify.app/",
-    "renderOnMobile": false
-  },
-  {
-    "title": "skills explorer",
+    "title": "skills england",
     "description": "Search and discover the skills and knowledge related to UK jobs and qualifications. Commissioned by University of Warwick and Department for Education specifically for Skills England. Built with Typescript, Next.js, React, TailwindCSS, FastAPI, Python.",
     "services": [
       "web design",
@@ -28,7 +14,7 @@
     "renderOnMobile": true
   },
   {
-    "title": "gatbot",
+    "title": "gatsby foundation",
     "description": "AI-powered interview platform for researchers developed for UK charity Gatsby. Instead of conducting dozens of individual interviews, you create one AI chatbot that can interview hundreds of participants consistently. Ideal for academics, UX researchers, and market researchers who need to gather structured qualitative data at scale.",
     "services": [
       "web design",
@@ -60,7 +46,7 @@
     "renderOnMobile": true
   },
   {
-    "title": "ai helpdesk",
+    "title": "sainsbury trusts",
     "description": "An intelligent automated IT helpdesk system developed for the Sainsbury Family Charitable Trusts, to automate the process by which their employees access help from the IT department. It can answer employee's questions about documented procedures, company policies, technical questions that require research and identify when an IT professional is required to raise a ticket.",
     "services": [
       "full-stack development",
@@ -89,5 +75,19 @@
     "src": "itch",
     "websiteUrl": "https://itchfilm.com/",
     "renderOnMobile": true
+  },
+  {
+    "title": "things we do",
+    "description": "Mobile app providing therapy and symptom-relief for users suffering from behaviour control conditions such as Tourette syndrome. Built with Typescript, Next.js, Tailwind, RxDB, Plotly.js, DND.",
+    "services": [
+      "web design",
+      "full-stack development",
+      "data analytics",
+      "accessibility"
+    ],
+    "src": "twd",
+    "githubUrl": "https://github.com/fac30/things-we-do",
+    "websiteUrl": "https://things-we-do.netlify.app/",
+    "renderOnMobile": false
   }
 ]

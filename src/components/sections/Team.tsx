@@ -15,8 +15,9 @@ export default function TeamSection() {
         <div className="col-span-8 col-start-5">
           <p className="font-tandem-condensed-medium text-4xl uppercase text-gray-400 md:mb-20">
             <span className="text-white">Our dedicated team specialises</span>{" "}
-            in creating impactful digital solutions for arts, music, and
-            community focused projects.
+            in moving fast, staying close to the problem, and delivering
+            solutions you really need. You work with us directly, from initial
+            brief to final deployment.
           </p>
           <div className="col-span-8 col-start-5">
             <div className="font-tandem-mono mt-20 flex  flex-col items-end gap-10 uppercase text-white md:mt-0 md:h-[550px] md:flex-row">
