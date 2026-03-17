@@ -25,7 +25,7 @@ export default function Hero() {
           From discovery to deployment, <br /> we run in tandem with you.
         </span>
         <span className="pointer-events-auto text-xl text-white w-10/12 xl:w-1/3 text-center mt-5 text-pretty font-tandem-regular">
-          Full-stack development and AI engineering, end to end
+          End to end full-stack development and AI engineering
         </span>
       </div>
     </section>
