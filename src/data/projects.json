@@ -1,19 +1,5 @@
 [
   {
-    "title": "things we do",
-    "description": "Mobile app providing therapy and symptom-relief for users suffering from behaviour control conditions such as Tourette syndrome. Built with Typescript, Next.js, Tailwind, RxDB, Plotly.js, DND.",
-    "services": [
-      "web design",
-      "full-stack development",
-      "data analytics",
-      "accessibility"
-    ],
-    "src": "twd",
-    "githubUrl": "https://github.com/fac30/things-we-do",
-    "websiteUrl": "https://things-we-do.netlify.app/",
-    "renderOnMobile": false
-  },
-  {
     "title": "skills england",
     "description": "Search and discover the skills and knowledge related to UK jobs and qualifications. Commissioned by University of Warwick and Department for Education specifically for Skills England. Built with Typescript, Next.js, React, TailwindCSS, FastAPI, Python.",
     "services": [
@@ -89,5 +75,19 @@
     "src": "itch",
     "websiteUrl": "https://itchfilm.com/",
     "renderOnMobile": true
+  },
+  {
+    "title": "things we do",
+    "description": "Mobile app providing therapy and symptom-relief for users suffering from behaviour control conditions such as Tourette syndrome. Built with Typescript, Next.js, Tailwind, RxDB, Plotly.js, DND.",
+    "services": [
+      "web design",
+      "full-stack development",
+      "data analytics",
+      "accessibility"
+    ],
+    "src": "twd",
+    "githubUrl": "https://github.com/fac30/things-we-do",
+    "websiteUrl": "https://things-we-do.netlify.app/",
+    "renderOnMobile": false
   }
 ]
