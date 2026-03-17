@@ -1,15 +1,21 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { formatTimeForTimezone } from "@/utils/timezoneHelper";
 
 export default function Time() {
   const [currentTime, setCurrentTime] = useState<string>("");
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const now = new Date();
-      setCurrentTime(formatTimeForTimezone(now, "Europe/London"));
+      setCurrentTime(
+        new Date().toLocaleTimeString(undefined, {
+          timeZone: "Europe/London",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+        })
+      );
     }, 1000);
 
     return () => clearInterval(interval);
