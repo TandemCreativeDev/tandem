@@ -16,9 +16,9 @@ export default function HeroPage() {
       <main id="main">
         <Hero />
         <AboutSection />
-        <ServicesSection />
-        <ProjectsSection />
         <ClientsSection />
+        <ProjectsSection />
+        <ServicesSection />
         <TestimonialsSection />
         <TeamSection />
         <ContactSection />
