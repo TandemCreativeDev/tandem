@@ -1,9 +1,30 @@
 [
-  "Department for Education",
-  "Skills England",
-  "University of Warwick",
-  "Sainsbury Family Charitable Trusts",
-  "Gatsby Foundation",
-  "British Red Cross",
-  "Itch Film"
+  {
+    "name": "Department for Education",
+    "url": "https://www.gov.uk/government/organisations/department-for-education"
+  },
+  {
+    "name": "Skills England",
+    "url": "https://www.gov.uk/government/organisations/skills-england"
+  },
+  {
+    "name": "University of Warwick",
+    "url": "https://warwick.ac.uk/fac/soc/ier/"
+  },
+  {
+    "name": "Sainsbury Family Charitable Trusts",
+    "url": "https://www.sfct.org.uk/"
+  },
+  {
+    "name": "Gatsby Foundation",
+    "url": "https://www.gatsby.org.uk/"
+  },
+  {
+    "name": "British Red Cross",
+    "url": "https://www.redcross.org.uk/"
+  },
+  {
+    "name": "Itch Film",
+    "url": "https://www.itchfilm.com/"
+  }
 ]
