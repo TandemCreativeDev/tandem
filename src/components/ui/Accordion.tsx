@@ -1,8 +1,63 @@
 "use client";
 
 import services from "../../data/services.json";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
+
+const PIXELS_PER_SECOND = 100;
+
+function MarqueeTitle({ title }: { title: string }) {
+  const trackRef = useRef<HTMLHeadingElement>(null);
+  const [style, setStyle] = useState<React.CSSProperties>({});
+
+  useEffect(() => {
+    const track = trackRef.current;
+    const container = track?.closest("button") as HTMLButtonElement | null;
+    if (!track || !container) return;
+
+    const trackWidth = track.offsetWidth; // 16 units = 2 copies of 8
+    const copyWidth = trackWidth / 2;
+    const containerWidth = container.offsetWidth;
+    const duration = copyWidth / PIXELS_PER_SECOND;
+
+    const firstTitle = track.querySelector(
+      "[data-title]",
+    ) as HTMLElement | null;
+    if (!firstTitle) return;
+
+    const titleCenter = firstTitle.offsetLeft + firstTitle.offsetWidth / 2;
+    // Translate needed to put title center at container center
+    let startX = containerWidth / 2 - titleCenter;
+    // Normalise to negative value within one copy's range
+    startX = ((startX % copyWidth) - copyWidth) % copyWidth;
+    const delay = (startX / copyWidth) * duration;
+
+    setStyle({
+      animationDuration: `${duration}s`,
+      animationDelay: `${delay}s`,
+    });
+  }, []);
+
+  return (
+    <h3
+      ref={trackRef}
+      className="motion-safe:animate-marquee w-max whitespace-nowrap"
+      style={style}
+    >
+      {Array.from({ length: 16 }, (_, i) => (
+        <span key={i}>
+          {" "}
+          {i === 0 ? (
+            <span data-title="">{title.toUpperCase()}</span>
+          ) : (
+            <span>{title.toUpperCase()}</span>
+          )}{" "}
+          &lt;/&gt;
+        </span>
+      ))}
+    </h3>
+  );
+}
 
 export default function Accordion() {
   const [openAccordionSection, setOpenAccordionSection] = useState(20);
@@ -38,9 +93,7 @@ export default function Accordion() {
                 onMouseLeave={() => setHoveredAccordion(20)}
               >
                 {hoveredAccordion === index ? (
-                  <h3 className="motion-safe:animate-marquee whitespace-nowrap">
-                    {Array(8).fill(` ${section.title} </> `).join("")}
-                  </h3>
+                  <MarqueeTitle title={section.title} />
                 ) : (
                   <h3>{section.title}</h3>
                 )}
@@ -53,7 +106,7 @@ export default function Accordion() {
                   {
                     block: openAccordionSection === index,
                     hidden: openAccordionSection !== index,
-                  }
+                  },
                 )}
               >
                 <div className="flex flex-col gap-5 text-pretty lg:w-1/2">
