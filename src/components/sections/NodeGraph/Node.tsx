@@ -14,8 +14,8 @@ export default function Node({ data, isMobile, meshRef }: NodeProps) {
     <mesh ref={meshRef} position={position}>
       <sphereGeometry args={[radius, segments, segments]} />
       <meshStandardMaterial
-        color={isHub ? "#ffffff" : "#4fffef"}
-        emissive={isHub ? "#ffffff" : "#4fffef"}
+        color={isHub ? "#808080" : "#4fffef"}
+        emissive={isHub ? "#808080" : "#4fffef"}
         emissiveIntensity={isHub ? 4 : 2}
         toneMapped={false}
       />
