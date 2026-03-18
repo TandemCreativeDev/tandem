@@ -12,30 +12,28 @@ export default function TeamSection() {
         <h2 className="col-span-1 col-start-3 mb-10 font-tandem-mono-medium text-xs uppercase text-white md:mb-0">
           ■ {nav_items[5]}
         </h2>
-        <div className="col-span-8 col-start-5">
+        <div className="col-span-7 col-start-5">
           <p className="font-tandem-condensed-medium text-4xl uppercase text-gray-400 md:mb-20">
             <span className="text-white">Our dedicated team specialises</span>{" "}
             in moving fast, staying close to the problem, and delivering
             solutions you really need. You work with us directly, from initial
             brief to final deployment.
           </p>
-          <div className="col-span-8 col-start-5">
-            <div className="font-tandem-mono mt-20 flex  flex-col items-end gap-10 uppercase text-white md:mt-0 md:h-[550px] md:flex-row">
-              <TeamPortrait
-                teamMember={"Jack Casstles-Jones"}
-                otherTeamMember={"Maxime Downe"}
-                activeImage={activeImage}
-                setActiveImage={setActiveImage}
-                href="https://www.linkedin.com/in/jackcasstlesjones/"
-              />
-              <TeamPortrait
-                teamMember={"Maxime Downe"}
-                otherTeamMember={"Jack Casstles-Jones"}
-                activeImage={activeImage}
-                setActiveImage={setActiveImage}
-                href="https://linkedin.com/in/maxime-downe-642ba74b"
-              />
-            </div>
+          <div className="font-tandem-mono mt-20 flex  flex-col items-end gap-10 uppercase text-white md:mt-0 md:h-[550px] md:flex-row">
+            <TeamPortrait
+              teamMember={"Jack Casstles-Jones"}
+              otherTeamMember={"Maxime Downe"}
+              activeImage={activeImage}
+              setActiveImage={setActiveImage}
+              href="https://www.linkedin.com/in/jackcasstlesjones/"
+            />
+            <TeamPortrait
+              teamMember={"Maxime Downe"}
+              otherTeamMember={"Jack Casstles-Jones"}
+              activeImage={activeImage}
+              setActiveImage={setActiveImage}
+              href="https://linkedin.com/in/maxime-downe-642ba74b"
+            />
           </div>
         </div>
       </div>
