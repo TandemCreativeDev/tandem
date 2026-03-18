@@ -27,7 +27,7 @@ export default function FooterSection() {
         </div>
         <div className="w-5/12">
           <h3 className="text-gray-400">social</h3>
-          <div className="flex w-fit flex-col gap-4 text-white">
+          <div className="flex flex-col items-start md:flex-row md:flex-wrap md:gap-4 text-white">
             <Link
               target="_blank"
               href={"https://www.linkedin.com/company/tandemcreativedev/"}
@@ -41,6 +41,20 @@ export default function FooterSection() {
                 `}
             >
               linkedin
+            </Link>
+            <Link
+              target="_blank"
+              href={"https://www.instagram.com/tandemcreativedev/"}
+              className={`
+                relative z-10
+                px-1 before:absolute before:left-0 before:top-0 before:z-[-1]
+                before:h-full before:w-full before:origin-right before:scale-x-0 before:scale-y-75
+                before:bg-white before:transition-transform before:duration-500
+                hover:!text-black hover:before:origin-left hover:before:scale-x-100
+                motion-reduce:before:transition-none
+                `}
+            >
+              instagram
             </Link>
           </div>
         </div>
