@@ -61,10 +61,10 @@ export default function ProjectsSection() {
   }, [isModalOpen]);
 
   return (
-    <section id={nav_items[3]} className="relative z-20 bg-black">
+    <section id={nav_items[2]} className="relative z-20 bg-black">
       <div className="relative m-auto flex w-10/12 grid-cols-12 flex-col py-20 md:grid md:h-screen md:w-full md:items-start md:py-28">
         <h2 className="col-span-1 col-start-3 font-tandem-mono-medium text-xs uppercase text-white">
-          ■ {nav_items[3]}
+          ■ {nav_items[2]}
         </h2>
         <div aria-live="polite" className="sr-only">
           {projectAnnouncement}

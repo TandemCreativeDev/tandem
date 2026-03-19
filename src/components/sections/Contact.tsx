@@ -36,7 +36,9 @@ export default function ContactSection() {
     const toastId = toast.loading("Sending message...");
     try {
       // Add confirmation dialog
-      const confirmed = window.confirm('Send message? This will share your contact details with Tandem.');
+      const confirmed = window.confirm(
+        "Send message? This will share your contact details with Tandem.",
+      );
       if (!confirmed) {
         toast.dismiss(toastId);
         return;
@@ -82,8 +84,10 @@ export default function ContactSection() {
       >
         <fieldset className="grid gap-x-8 gap-y-6">
           <legend className="text-pretty pb-6 font-tandem-condensed-medium text-4xl uppercase text-gray-500">
-            <span className="text-black">Send us a message,</span> we&apos;d
-            love to hear from you.
+            <span className="text-black">
+              Tell us about what you are building,
+            </span>{" "}
+            we will tell you honestly whether we can help.
           </legend>
           {contact_form.map((field) => (
             <TextInput

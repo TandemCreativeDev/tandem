@@ -1,12 +1,12 @@
 [
   {
     "title": "skills england",
-    "description": "Search and discover the skills and knowledge related to UK jobs and qualifications. Commissioned by University of Warwick and Department for Education specifically for Skills England. Built with Typescript, Next.js, React, TailwindCSS, FastAPI, Python.",
+    "description": "A national occupational taxonomy platform and public API, commissioned to standardise how skills are classified across the UK labour market. Built with a full discovery phase and Meilisearch for fast, fuzzy search across a complex hierarchical dataset. Currently in public beta with 300 active users.",
     "services": [
-      "web design",
       "full-stack development",
-      "data analytics",
-      "accessibility"
+      "web design",
+      "accessibility",
+      "data analytics"
     ],
     "src": "ssc",
     "githubUrl": "",
@@ -15,12 +15,12 @@
   },
   {
     "title": "gatsby foundation",
-    "description": "AI-powered interview platform for researchers developed for UK charity Gatsby. Instead of conducting dozens of individual interviews, you create one AI chatbot that can interview hundreds of participants consistently. Ideal for academics, UX researchers, and market researchers who need to gather structured qualitative data at scale.",
+    "description": "An AI-powered qualitative research platform that allows researchers to deploy interview agents capable of conducting hundreds of consistent conversations simultaneously. Under an initial pilot, the platform surveyed 200 students on AI usage in education, with findings directly contributing to a government report on AI strategy in education.",
     "services": [
-      "web design",
       "full-stack development",
-      "ai integration",
-      "data analytics"
+      "web design",
+      "ai engineering",
+      "technical discovery"
     ],
     "src": "gatbot",
     "githubUrl": "",
@@ -28,31 +28,12 @@
     "renderOnMobile": true
   },
   {
-    "title": "clark's",
-    "description": "Website for Lyon-based 6-piece funk/pop band Clark’s Bowling Club. Built with Typescript, Next.js, Tailwind, Three.js, Spotify API, Nodemailer, Google sheets automation.",
-    "services": ["web design", "full-stack development", "accessibility"],
-    "src": "cbc",
-    "githubUrl": "https://github.com/TandemCreativeDev/cbc",
-    "websiteUrl": "https://clarksbowlingclub.com/",
-    "renderOnMobile": true
-  },
-  {
-    "title": "yapli",
-    "description": "A minimalist chatroom platform designed for educators and workshop facilitators. Create temporary chat spaces where participants can join instantly without accounts, share links and collaborate in real-time using any alias they choose. Ideal for workshops, training sessions, and educational events where you need quick participant engagement without the friction of user registration and long urls.",
-    "services": ["web design", "full-stack development", "accessibility"],
-    "src": "yapli",
-    "githubUrl": "https://github.com/TandemCreativeDev/yapli",
-    "websiteUrl": "https://yapli.chat",
-    "renderOnMobile": true
-  },
-  {
     "title": "sainsbury trusts",
-    "description": "An intelligent automated IT helpdesk system developed for the Sainsbury Family Charitable Trusts, to automate the process by which their employees access help from the IT department. It can answer employee's questions about documented procedures, company policies, technical questions that require research and identify when an IT professional is required to raise a ticket.",
+    "description": "A multi-agent IT helpdesk prototype built to automate first-line support across a large internal document estate. The system vectorises and semantically searches 200+ SharePoint policy documents, handles natural-language queries through a conversational interface, and routes complex requests to human agents.",
     "services": [
       "full-stack development",
-      "ai integration",
-      "data analytics",
-      "technical consultancy"
+      "ai engineering",
+      "technical discovery"
     ],
     "src": "sfct",
     "githubUrl": "",
@@ -60,8 +41,43 @@
     "renderOnMobile": true
   },
   {
+    "title": "ozeaon",
+    "description": "An ocean conservation platform connecting project leaders with funding, expertise, and community support. Currently being built from the ground up as an MVP, with blockchain integrations supporting DAO governance and proposal mechanisms for decentralised decision-making around ocean conservation initiatives. Full platform coming soon!",
+    "services": ["full-stack development", "web design", "technical discovery"],
+    "src": "ozeaon",
+    "githubUrl": "",
+    "websiteUrl": "https://ozeaon.com/",
+    "renderOnMobile": true
+  },
+  {
+    "title": "itch film",
+    "description": "Website for reputable London-based film studio Itch Film, known for acclaimed documentaries including For No Good Reason starring Johnny Depp.",
+    "services": ["web design", "accessibility"],
+    "src": "itch",
+    "websiteUrl": "https://itchfilm.com/",
+    "renderOnMobile": true
+  },
+  {
+    "title": "yapli",
+    "description": "A minimalist open-source chatroom platform designed for educators and workshop facilitators. Create temporary chat spaces where participants can join instantly without accounts, share links, and collaborate in real time using any alias they choose.",
+    "services": ["full-stack development", "web design", "accessibility"],
+    "src": "yapli",
+    "githubUrl": "https://github.com/TandemCreativeDev/yapli",
+    "websiteUrl": "https://yapli.chat",
+    "renderOnMobile": true
+  },
+  {
+    "title": "clark's",
+    "description": "Website for Lyon-based 6-piece funk/pop band Clark's Bowling Club, with Spotify API integration, bilingual support with auto-detection, Three.js animations, and Google Sheets as a headless CMS.",
+    "services": ["web design", "full-stack development", "accessibility"],
+    "src": "cbc",
+    "githubUrl": "https://github.com/TandemCreativeDev/cbc",
+    "websiteUrl": "https://clarksbowlingclub.com/",
+    "renderOnMobile": true
+  },
+  {
     "title": "wedgy music",
-    "description": "Website for Leeds-based alt-rock band Wedgy Music. Built with Typescript, React, Tailwind, Google sheet automation.",
+    "description": "Website for Leeds-based alt-rock band Wedgy Music, with Google Sheets automation for content management.",
     "services": ["web design", "full-stack development", "accessibility"],
     "src": "wedgy",
     "githubUrl": "https://github.com/TandemCreativeDev/wedgy-fe",
@@ -69,22 +85,9 @@
     "renderOnMobile": true
   },
   {
-    "title": "itch film",
-    "description": "Website for reputable London-based film studio Itch Film, famous for films such as For No Good Reason starring Johnny Depp.",
-    "services": ["web design", "frontend development", "accessibility"],
-    "src": "itch",
-    "websiteUrl": "https://itchfilm.com/",
-    "renderOnMobile": true
-  },
-  {
     "title": "things we do",
-    "description": "Mobile app providing therapy and symptom-relief for users suffering from behaviour control conditions such as Tourette syndrome. Built with Typescript, Next.js, Tailwind, RxDB, Plotly.js, DND.",
-    "services": [
-      "web design",
-      "full-stack development",
-      "data analytics",
-      "accessibility"
-    ],
+    "description": "Mobile app providing therapy and symptom-relief for users suffering from behaviour control conditions such as Tourette syndrome, with offline-first architecture, data visualisation, and drag-and-drop interaction.",
+    "services": ["web design", "full-stack development", "accessibility"],
     "src": "twd",
     "githubUrl": "https://github.com/fac30/things-we-do",
     "websiteUrl": "https://things-we-do.netlify.app/",
