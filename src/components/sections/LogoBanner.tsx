@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 const logos = [
-  { src: "/client-logos/BRC.png", alt: "British Red Cross", height: 50 },
   {
     src: "/client-logos/department-for-education.svg",
     alt: "Department for Education",
@@ -12,10 +11,21 @@ const logos = [
     alt: "Skills England",
     height: 130,
   },
+  { src: "/client-logos/BRC.png", alt: "British Red Cross", height: 50 },
   {
     src: "/client-logos/warwick.jpg",
     alt: "University of Warwick",
     height: 80,
+  },
+  {
+    src: "/client-logos/chirp.jpg",
+    alt: "University of Warwick",
+    height: 100,
+  },
+  {
+    src: "/client-logos/ozeaon.png",
+    alt: "University of Warwick",
+    height: 45,
   },
 ];
 
@@ -29,11 +39,6 @@ const logosSecondRow = [
     src: "/client-logos/amagi.png",
     alt: "University of Warwick",
     height: 100,
-  },
-  {
-    src: "/client-logos/ozeaon.png",
-    alt: "University of Warwick",
-    height: 45,
   },
 ];
 
@@ -74,8 +79,7 @@ export default function LogoBanner() {
         Trusted by
       </p>
       <div className="flex flex-col gap-8">
-        <LogoRow logos={logosSecondRow} className="-mb-12 " />
-        <LogoRow logos={logos} className="opacity-70 mb-2" />
+        <LogoRow logos={logos} className="opacity-90 mb-2" />
       </div>
     </div>
   );
