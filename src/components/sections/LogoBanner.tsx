@@ -11,12 +11,17 @@ const logos = [
     alt: "Skills England",
     height: 130,
   },
+];
+const secondLogos = [
   { src: "/client-logos/BRC.png", alt: "British Red Cross", height: 50 },
   {
     src: "/client-logos/warwick.jpg",
     alt: "University of Warwick",
     height: 80,
   },
+];
+
+const thirdLogos = [
   {
     src: "/client-logos/chirp.jpg",
     alt: "University of Warwick",
@@ -55,7 +60,7 @@ function LogoRow({
 }) {
   return (
     <div
-      className={`flex w-full flex-wrap items-center justify-center gap-10 md:gap-16 ${className ?? ""}`}
+      className={`flex sm:flex-row flex-col  items-center justify-center gap-10 md:gap-16 ${className ?? ""}`}
     >
       {logos.map(({ src, alt, height }) => (
         <Image
@@ -78,8 +83,10 @@ export default function LogoBanner() {
       <p className="font-tandem-mono-medium text-xs uppercase text-black text-center mb-6">
         Trusted by
       </p>
-      <div className="flex flex-col gap-8">
-        <LogoRow logos={logos} className="opacity-90 mb-2" />
+      <div className="flex sm:flex-row flex-col flex-wrap gap-x-8 items-center justify-center">
+        <LogoRow logos={logos} className="m2" />
+        <LogoRow logos={secondLogos} className="m2" />
+        <LogoRow logos={thirdLogos} className="m2" />
       </div>
     </div>
   );
