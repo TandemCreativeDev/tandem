@@ -74,8 +74,8 @@ export default function LogoBanner() {
         Trusted by
       </p>
       <div className="flex flex-col gap-8">
-        <LogoRow logos={logos} className="opacity-70 -mb-8" />
-        <LogoRow logos={logosSecondRow} className="mb-2" />
+        <LogoRow logos={logosSecondRow} className="-mb-12 " />
+        <LogoRow logos={logos} className="opacity-70 mb-2" />
       </div>
     </div>
   );
