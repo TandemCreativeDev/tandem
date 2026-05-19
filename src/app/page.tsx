@@ -1,6 +1,7 @@
 import AboutSection from "@/components/sections/About";
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
+import LogoBanner from "@/components/sections/LogoBanner";
 import ServicesSection from "@/components/sections/Services";
 import ProjectsSection from "@/components/sections/Projects";
 import ClientsSection from "@/components/sections/Clients";
@@ -16,7 +17,7 @@ export default function HeroPage() {
       <main id="main">
         <Hero />
         <AboutSection />
-        <ClientsSection />
+        <LogoBanner />
         <ProjectsSection />
         <ServicesSection />
         <TestimonialsSection />
