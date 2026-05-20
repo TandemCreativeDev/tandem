@@ -4,7 +4,6 @@ import Hero from "@/components/sections/Hero";
 import LogoBanner from "@/components/sections/LogoBanner";
 import ServicesSection from "@/components/sections/Services";
 import ProjectsSection from "@/components/sections/Projects";
-import ClientsSection from "@/components/sections/Clients";
 import TestimonialsSection from "@/components/sections/Testimonials";
 import TeamSection from "@/components/sections/Team";
 import FooterSection from "@/components/layout/Footer";

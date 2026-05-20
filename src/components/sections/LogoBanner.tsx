@@ -24,12 +24,12 @@ const secondLogos = [
 const thirdLogos = [
   {
     src: "/client-logos/chirp-2.jpg",
-    alt: "University of Warwick",
+    alt: "Chirp",
     height: 50,
   },
   {
     src: "/client-logos/ozeaon.png",
-    alt: "University of Warwick",
+    alt: "Ozeaon",
     height: 45,
   },
 ];
@@ -63,7 +63,7 @@ function LogoRow({ logos }: { logos: Logo[] }) {
 
 export default function LogoBanner() {
   return (
-    <section className="b-red-500 px-10 py-8">
+    <section className="px-10 py-8">
       <h2 className="font-tandem-mono-medium text-xs uppercase text-black text-center mb-6">
         Trusted by
       </h2>
