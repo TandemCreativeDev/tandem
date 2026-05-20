@@ -63,10 +63,10 @@ function LogoRow({ logos }: { logos: Logo[] }) {
 
 export default function LogoBanner() {
   return (
-    <div className="b-red-500 px-10 py-8">
-      <p className="font-tandem-mono-medium text-xs uppercase text-black text-center mb-6">
+    <section className="b-red-500 px-10 py-8">
+      <h2 className="font-tandem-mono-medium text-xs uppercase text-black text-center mb-6">
         Trusted by
-      </p>
+      </h2>
       {/* Mobile: flat list with single consistent gap */}
       <div className="flex flex-col gap-10 items-center mb-4 sm:hidden">
         {allLogos.map((logo) => (
@@ -79,6 +79,6 @@ export default function LogoBanner() {
         <LogoRow logos={secondLogos} />
         <LogoRow logos={thirdLogos} />
       </div>
-    </div>
+    </section>
   );
 }
