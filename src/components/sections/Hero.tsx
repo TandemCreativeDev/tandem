@@ -21,12 +21,15 @@ export default function Hero() {
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
       <div className="relative z-10 h-screen flex flex-col justify-center items-center pointer-events-none">
-        <span className="pointer-events-auto text-white text-7xl max-w-[1000px] text-pretty text-center uppercase font-tandem-condensed-medium leading-tight">
-          From discovery to deployment, <br /> we run in tandem with you
-        </span>
-        <span className="pointer-events-auto text-xl text-white w-10/12 xl:w-1/3 text-center mt-5 text-pretty font-tandem-regular">
-          End to end full-stack development and AI engineering
-        </span>
+        <div className="relative flex flex-col items-center">
+          <div className="absolute inset-0 -m-16 rounded-full bg-black/80 blur-3xl" aria-hidden="true" />
+          <span className="relative pointer-events-auto text-white text-7xl max-w-[1000px] text-pretty text-center uppercase font-tandem-condensed-medium leading-tight">
+            From discovery to deployment, <br /> we run in tandem with you
+          </span>
+          <span className="relative pointer-events-auto text-xl text-white w-10/12 xl:w-1/3 text-center mt-5 text-pretty font-tandem-regular">
+            End to end full-stack development and AI engineering
+          </span>
+        </div>
       </div>
     </section>
   );
