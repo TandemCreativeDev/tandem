@@ -68,13 +68,13 @@ export default function LogoBanner() {
         Trusted by
       </p>
       {/* Mobile: flat list with single consistent gap */}
-      <div className="flex flex-col gap-10 items-center sm:hidden">
+      <div className="flex flex-col gap-10 items-center mb-4 sm:hidden">
         {allLogos.map((logo) => (
           <LogoImage key={logo.src} {...logo} />
         ))}
       </div>
       {/* Desktop: grouped rows */}
-      <div className="hidden sm:flex flex-row flex-wrap gap-x-10 items-center justify-center">
+      <div className="hidden sm:flex flex-row flex-wrap gap-x-10 gap-y-6 items-center justify-center">
         <LogoRow logos={logos} />
         <LogoRow logos={secondLogos} />
         <LogoRow logos={thirdLogos} />
