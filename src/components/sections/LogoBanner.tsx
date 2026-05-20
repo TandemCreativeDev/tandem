@@ -7,9 +7,9 @@ const logos = [
     height: 70,
   },
   {
-    src: "/client-logos/skills-england.jpg",
+    src: "/client-logos/skills-england-2.jpg",
     alt: "Skills England",
-    height: 130,
+    height: 70,
   },
 ];
 const secondLogos = [
@@ -23,9 +23,9 @@ const secondLogos = [
 
 const thirdLogos = [
   {
-    src: "/client-logos/chirp.jpg",
+    src: "/client-logos/chirp-2.jpg",
     alt: "University of Warwick",
-    height: 100,
+    height: 50,
   },
   {
     src: "/client-logos/ozeaon.png",
@@ -34,44 +34,28 @@ const thirdLogos = [
   },
 ];
 
-const logosSecondRow = [
-  {
-    src: "/client-logos/omnifolio.png",
-    alt: "University of Warwick",
-    height: 30,
-  },
-  {
-    src: "/client-logos/amagi.png",
-    alt: "University of Warwick",
-    height: 100,
-  },
-];
+const allLogos = [...logos, ...secondLogos, ...thirdLogos];
 
 type Logo = { src: string; alt: string; height: number };
 
-function LogoRow({
-  logos,
-  className,
-  imageClassName = "grayscale hover:grayscale-0 transition-all duration-300",
-}: {
-  logos: Logo[];
-  className?: string;
-  imageClassName?: string;
-}) {
+function LogoImage({ src, alt, height }: Logo) {
   return (
-    <div
-      className={`flex sm:flex-row flex-col  items-center justify-center gap-10 md:gap-16 ${className ?? ""}`}
-    >
-      {logos.map(({ src, alt, height }) => (
-        <Image
-          key={src}
-          src={src}
-          alt={alt}
-          height={height}
-          width={200}
-          style={{ objectFit: "contain", width: "auto", height: `${height}px` }}
-          className={imageClassName}
-        />
+    <Image
+      src={src}
+      alt={alt}
+      height={height}
+      width={200}
+      style={{ objectFit: "contain", width: "auto", height: `${height}px` }}
+      className="grayscale hover:grayscale-0 transition-all duration-300"
+    />
+  );
+}
+
+function LogoRow({ logos }: { logos: Logo[] }) {
+  return (
+    <div className="flex flex-row items-center justify-center gap-10 md:gap-16">
+      {logos.map((logo) => (
+        <LogoImage key={logo.src} {...logo} />
       ))}
     </div>
   );
@@ -79,14 +63,21 @@ function LogoRow({
 
 export default function LogoBanner() {
   return (
-    <div className="bg-white px-10 py-8">
+    <div className="b-red-500 px-10 py-8">
       <p className="font-tandem-mono-medium text-xs uppercase text-black text-center mb-6">
         Trusted by
       </p>
-      <div className="flex sm:flex-row flex-col flex-wrap gap-x-8 items-center justify-center">
-        <LogoRow logos={logos} className="m2" />
-        <LogoRow logos={secondLogos} className="m2" />
-        <LogoRow logos={thirdLogos} className="m2" />
+      {/* Mobile: flat list with single consistent gap */}
+      <div className="flex flex-col gap-10 items-center sm:hidden">
+        {allLogos.map((logo) => (
+          <LogoImage key={logo.src} {...logo} />
+        ))}
+      </div>
+      {/* Desktop: grouped rows */}
+      <div className="hidden sm:flex flex-row flex-wrap gap-x-10 items-center justify-center">
+        <LogoRow logos={logos} />
+        <LogoRow logos={secondLogos} />
+        <LogoRow logos={thirdLogos} />
       </div>
     </div>
   );
