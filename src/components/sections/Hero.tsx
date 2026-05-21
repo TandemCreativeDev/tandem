@@ -25,7 +25,7 @@ export default function Hero() {
       <Link
         href="#reviews"
         onClick={(e) => e.stopPropagation()}
-        className="absolute bottom-8 right-8 z-20 flex flex-col items-end gap-1 border border-white/40 px-4 py-3 text-white transition-colors hover:border-white/70 hover:text-white/70"
+        className="absolute bottom-8 right-8 z-20 flex flex-col items-end gap-1 border border-white/40 px-4 py-3 text-white motion-safe:transition-colors hover:border-white/70 hover:text-white/70"
       >
         <span className="text-sm tracking-widest" aria-hidden="true">
           ★★★★★
