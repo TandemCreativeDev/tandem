@@ -87,7 +87,8 @@ export default function Header() {
             href={"#home"}
             onClick={() => setIsOpen(false)}
           >
-            <h1 className="text-center flex gap-1 group">
+            <h1 className="relative text-center flex gap-1 group">
+              {!isOpen && <div className="absolute inset-0 -m-6 rounded-full bg-black/95 blur-2xl -z-10" aria-hidden="true" />}
               <span className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
                 &lt;
               </span>
