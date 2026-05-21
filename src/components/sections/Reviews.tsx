@@ -81,9 +81,14 @@ export default function ReviewsSection() {
                   </span>
                 ))}
               </div>
-              <span className="font-tandem-mono-regular text-xs uppercase text-gray-500">
-                {REVIEW_COUNT} reviews · Google
-              </span>
+              <a
+                href="https://share.google/i6GRxFpwXWs5tM7EZ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-tandem-mono-regular text-xs uppercase text-gray-500 hover:text-black transition-colors"
+              >
+                {REVIEW_COUNT} reviews · <span className="underline">Google</span> ↗
+              </a>
             </div>
           </div>
         </div>
