@@ -63,7 +63,7 @@ function LogoRow({ logos }: { logos: Logo[] }) {
 
 export default function LogoBanner() {
   return (
-    <section className="px-10 py-8">
+    <section className="px-10 pt-8 pb-12">
       <h2 className="font-tandem-mono-medium text-xs uppercase text-black text-center mb-6">
         Trusted by
       </h2>
