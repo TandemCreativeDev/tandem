@@ -5,6 +5,7 @@ import LogoBanner from "@/components/sections/LogoBanner";
 import ServicesSection from "@/components/sections/Services";
 import ProjectsSection from "@/components/sections/Projects";
 import TestimonialsSection from "@/components/sections/Testimonials";
+import ReviewsSection from "@/components/sections/Reviews";
 import TeamSection from "@/components/sections/Team";
 import FooterSection from "@/components/layout/Footer";
 import ContactSection from "@/components/sections/Contact";
@@ -17,6 +18,7 @@ export default function HeroPage() {
         <Hero />
         <AboutSection />
         <LogoBanner />
+        <ReviewsSection />
         <ProjectsSection />
         <ServicesSection />
         <TestimonialsSection />
