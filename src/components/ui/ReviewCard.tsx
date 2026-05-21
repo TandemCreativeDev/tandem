@@ -3,6 +3,7 @@ interface ReviewCardProps {
   reviewer: string;
   rating: number;
   timeAgo?: string;
+  date?: string;
   initials: string;
 }
 
@@ -11,6 +12,7 @@ export default function ReviewCard({
   reviewer,
   rating,
   timeAgo,
+  date,
   initials,
 }: ReviewCardProps) {
   return (
@@ -51,7 +53,14 @@ export default function ReviewCard({
         </div>
         <div className="flex min-w-0 flex-col font-tandem-mono-medium uppercase">
           <p className="truncate text-sm">{reviewer}</p>
-          {timeAgo && <p className="text-xs text-gray-500">{timeAgo}</p>}
+          {timeAgo && (
+            <time
+              dateTime={date}
+              className="text-xs text-gray-500"
+            >
+              {timeAgo}
+            </time>
+          )}
         </div>
       </figcaption>
     </figure>

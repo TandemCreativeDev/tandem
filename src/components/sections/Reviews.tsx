@@ -55,18 +55,21 @@ export default function ReviewsSection() {
     <section className="border-y border-black overflow-hidden">
       <div className="m-auto flex w-10/12 grid-cols-12 flex-col gap-6 py-16 md:py-24 lg:grid lg:w-full">
         <h2 className="col-span-2 col-start-3 font-tandem-mono-medium text-xs uppercase">
-          ■ Reviews
+          <span aria-hidden="true">■ </span>Reviews
         </h2>
         <div className="col-span-4 col-start-5 flex flex-col gap-3">
           <div className="flex items-end gap-5">
-            <span className="font-tandem-condensed-medium text-7xl leading-none">
+            <span
+              className="font-tandem-condensed-medium text-7xl leading-none"
+              aria-hidden="true"
+            >
               {OVERALL_RATING.toFixed(1)}
             </span>
             <div className="flex flex-col gap-1 pb-1">
               <div
                 className="flex gap-0.5"
                 role="img"
-                aria-label={`${OVERALL_RATING} out of 5 stars`}
+                aria-label={`Rated ${OVERALL_RATING} out of 5 stars on Google`}
               >
                 {Array.from({ length: 5 }).map((_, i) => (
                   <span
@@ -86,9 +89,19 @@ export default function ReviewsSection() {
         </div>
       </div>
 
+      <ul className="sr-only">
+        {reviews.map((review) => (
+          <li key={review.reviewer}>
+            <p>{review.reviewer} — {review.rating} out of 5 stars</p>
+            <blockquote>{review.content}</blockquote>
+            <time dateTime={review.date}>{timeAgo(review.date)}</time>
+          </li>
+        ))}
+      </ul>
+
       <div className="overflow-hidden pb-16 md:pb-24">
         <div className="flex w-max animate-marquee" style={{ animationDuration: "40s" }} aria-hidden="true">
-          {[reviews, reviews].map((set, s) => (
+          {[reviews, reviews, reviews, reviews].map((set, s) => (
             <div key={s} className="flex gap-6 mr-6">
               {set.map((review, i) => (
                 <ReviewCard
@@ -98,6 +111,7 @@ export default function ReviewsSection() {
                   rating={review.rating}
                   content={review.content}
                   timeAgo={timeAgo(review.date)}
+                  date={review.date}
                 />
               ))}
             </div>
