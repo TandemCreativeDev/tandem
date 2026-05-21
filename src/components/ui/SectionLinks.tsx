@@ -29,22 +29,33 @@ export default function SectionLinks({
           className="relative list-none transition-all motion-reduce:transition-none duration-500 group-hover:text-gray-500 pointer-events-auto"
         >
           {index >= startIndex && (
-            <Link
-              href={`#${item}`}
-              aria-label={`Scroll to ${item}`}
-              className={clsx(
-                `relative z-10
-                before:absolute before:top-0 before:left-0 before:w-full before:h-full
-                before:bg-white before:z-[-1] before:transition-transform motion-reduce:before:transition-none before:duration-500
-                before:origin-right before:scale-x-0 before:scale-y-75
-                hover:before:origin-left hover:before:scale-x-100 hover:!text-black
-                px-1`,
-                padded && "py-[2px]"
-              )}
-              onClick={() => onClick(false)}
-            >
-              {item}
-            </Link>
+            item === "contact" ? (
+              <Link
+                href="#contact"
+                aria-label="Scroll to contact"
+                className="bg-black px-3 py-0.5 text-white transition-colors hover:bg-gray-800 xl:bg-white xl:text-black xl:hover:bg-gray-100"
+                onClick={() => onClick(false)}
+              >
+                {item}
+              </Link>
+            ) : (
+              <Link
+                href={`#${item}`}
+                aria-label={`Scroll to ${item}`}
+                className={clsx(
+                  `relative z-10
+                  before:absolute before:top-0 before:left-0 before:w-full before:h-full
+                  before:bg-white before:z-[-1] before:transition-transform motion-reduce:before:transition-none before:duration-500
+                  before:origin-right before:scale-x-0 before:scale-y-75
+                  hover:before:origin-left hover:before:scale-x-100 hover:!text-black
+                  px-1`,
+                  padded && "py-[2px]"
+                )}
+                onClick={() => onClick(false)}
+              >
+                {item}
+              </Link>
+            )
           )}
         </li>
       ))}
