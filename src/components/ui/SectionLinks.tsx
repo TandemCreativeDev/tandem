@@ -10,6 +10,7 @@ interface SectionLinksProps {
   startIndex?: number;
   onClick?: (isOpen: boolean) => void;
   padded?: boolean;
+  ctaContact?: boolean;
 }
 
 export default function SectionLinks({
@@ -17,6 +18,7 @@ export default function SectionLinks({
   startIndex = 1,
   onClick = () => {},
   padded = false,
+  ctaContact = false,
 }: SectionLinksProps) {
   return (
     <ul
@@ -29,7 +31,7 @@ export default function SectionLinks({
           className="relative list-none transition-all motion-reduce:transition-none duration-500 group-hover:text-gray-500 pointer-events-auto"
         >
           {index >= startIndex && (
-            item === "contact" ? (
+            item === "contact" && ctaContact ? (
               <Link
                 href="#contact"
                 aria-label="Scroll to contact"

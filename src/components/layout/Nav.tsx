@@ -11,6 +11,7 @@ export default function Nav({ setIsOpen }: NavProps) {
         className="flex flex-col gap-4 xl:flex-row"
         onClick={() => setIsOpen(false)}
         padded
+        ctaContact
       />
     </nav>
   );
