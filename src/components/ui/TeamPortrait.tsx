@@ -28,12 +28,12 @@ export default function TeamPortrait({
       >
         <button role="link">
           <div
-            className={`transition-all duration-700 ${
+            className={`transition-all duration-700 motion-reduce:transition-none ${
               activeImage === teamMember
                 ? "md:max-w-[500px] md:max-h-[500px]"
                 : activeImage === otherTeamMember
-                ? "md:max-w-[380px] md:max-h-[380px]"
-                : "md:max-w-[400px] md:max-h-[400px]"
+                  ? "md:max-w-[380px] md:max-h-[380px]"
+                  : "md:max-w-[400px] md:max-h-[400px]"
             }`}
           >
             <Image

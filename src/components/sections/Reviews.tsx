@@ -86,7 +86,7 @@ export default function ReviewsSection() {
               href="https://share.google/i6GRxFpwXWs5tM7EZ"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-tandem-mono-regular text-xs uppercase text-gray-500 transition-colors hover:text-black"
+              className="font-tandem-mono-regular text-xs uppercase text-gray-500 motion-safe:transition-colors hover:text-black"
             >
               {reviews.length} reviews ·{" "}
               <span className="underline">Google</span> ↗

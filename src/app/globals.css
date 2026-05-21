@@ -36,7 +36,14 @@
 
 button,
 a {
-  @apply focus:outline-none focus-visible:ring-2 focus:ring-blue-600 focus:ring-offset-1 focus:ring-offset-transparent transition-colors;
+  @apply focus:outline-none focus-visible:ring-2 focus:ring-blue-600 focus:ring-offset-1 focus:ring-offset-transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  button,
+  a {
+    @apply transition-colors;
+  }
 }
 
 /* CHECKBOX STYLING - eventually would be nice to use tailwind */
@@ -72,7 +79,12 @@ a {
   outline: none;
   margin: 0;
   padding: 0;
-  transition: all calc(var(--dur) / 3) linear;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .checkbox-wrapper-30 .checkbox input {
+    transition: all calc(var(--dur) / 3) linear;
+  }
 }
 .checkbox-wrapper-30 .checkbox input:hover,
 .checkbox-wrapper-30 .checkbox input:checked {
@@ -100,7 +112,14 @@ a {
   stroke-linejoin: round;
   stroke-width: 2px;
   top: 0;
-  transition: stroke-dasharray var(--dur), stroke-dashoffset var(--dur);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .checkbox-wrapper-30 .checkbox svg {
+    transition:
+      stroke-dasharray var(--dur),
+      stroke-dashoffset var(--dur);
+  }
 }
 .checkbox-wrapper-30 .checkbox svg,
 .checkbox-wrapper-30 .checkbox input {
@@ -121,7 +140,12 @@ section {
   color: #fff;
   padding: 0.5rem 1rem;
   z-index: 50;
-  transition: top 0.3s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .skip-link {
+    transition: top 0.3s ease;
+  }
 }
 
 .skip-link:focus {
