@@ -51,7 +51,7 @@ const OVERALL_RATING = 5.0;
 
 export default function ReviewsSection() {
   return (
-    <section className="overflow-hidden border-y border-black pb-16 md:pb-24">
+    <section id="reviews" className="overflow-hidden border-y border-black pb-16 md:pb-24">
       <div className="m-auto flex w-10/12 grid-cols-12 flex-col gap-6 py-16 md:py-24 lg:grid lg:w-full">
         <h2 className="col-span-2 col-start-3 font-tandem-mono-medium text-xs uppercase">
           <span aria-hidden="true">■ </span>Reviews
