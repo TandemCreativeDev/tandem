@@ -102,7 +102,7 @@ export default function ReviewsSection() {
       </ul>
 
       <div
-        className="flex w-max animate-marquee"
+        className="flex w-max motion-safe:animate-marquee"
         style={{ animationDuration: "40s" }}
         aria-hidden="true"
       >
