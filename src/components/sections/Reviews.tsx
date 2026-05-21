@@ -1,37 +1,49 @@
 import ReviewCard from "@/components/ui/ReviewCard";
 
+function timeAgo(date: string): string {
+  const diff = Date.now() - new Date(date).getTime();
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  if (days < 7) return `${days} day${days !== 1 ? "s" : ""} ago`;
+  const weeks = Math.floor(days / 7);
+  if (weeks < 5) return `${weeks} week${weeks !== 1 ? "s" : ""} ago`;
+  const months = Math.floor(days / 30);
+  if (months < 12) return `${months} month${months !== 1 ? "s" : ""} ago`;
+  const years = Math.floor(days / 365);
+  return `${years} year${years !== 1 ? "s" : ""} ago`;
+}
+
 const reviews = [
   {
     reviewer: "Joseph Flynn",
     initials: "JF",
     rating: 5,
+    date: "2026-04-21",
     content:
       "Jack and Max are both brilliant and highly productive developers with a lot of experience. They are both very friendly and supportive, professionally and personally. I would highly recommend working with them if you're looking for talented developers. Would give more stars if possible!",
-    timeAgo: "1 month ago",
   },
   {
     reviewer: "Jaz Maslen",
     initials: "JM",
     rating: 5,
+    date: "2026-04-30",
     content:
       "I went to some summer workshops on Claude Code that Jack and Max ran. They were some of the most productive and informative workshops I've been to — plus super hands on!",
-    timeAgo: "3 weeks ago",
   },
   {
     reviewer: "Dan Sofer",
     initials: "DS",
     rating: 5,
+    date: "2026-03-21",
     content:
       "I've worked with Jack and Max at Tandem. I highly recommend them.",
-    timeAgo: "2 months ago",
   },
   {
     reviewer: "Lucy Paul",
     initials: "LP",
     rating: 5,
+    date: "2026-03-21",
     content:
       "These guys are superb to work with. Brilliant at interpreting our brief. Brought new ideas to the design. Informative, creative and responsive. Highly recommend. Was such a pleasure working with Max.",
-    timeAgo: "2 months ago",
   },
 ];
 
@@ -39,8 +51,6 @@ const OVERALL_RATING = 5.0;
 const REVIEW_COUNT = reviews.length;
 
 export default function ReviewsSection() {
-  const doubled = [...reviews, ...reviews];
-
   return (
     <section className="border-y border-black overflow-hidden">
       <div className="m-auto flex w-10/12 grid-cols-12 flex-col gap-6 py-16 md:py-24 lg:grid lg:w-full">
@@ -77,12 +87,20 @@ export default function ReviewsSection() {
       </div>
 
       <div className="overflow-hidden pb-16 md:pb-24">
-        <div
-          className="flex w-max animate-marquee gap-6"
-          aria-hidden="true"
-        >
-          {doubled.map((review, i) => (
-            <ReviewCard key={i} {...review} />
+        <div className="flex w-max animate-marquee" style={{ animationDuration: "40s" }} aria-hidden="true">
+          {[reviews, reviews].map((set, s) => (
+            <div key={s} className="flex gap-6 mr-6">
+              {set.map((review, i) => (
+                <ReviewCard
+                  key={i}
+                  reviewer={review.reviewer}
+                  initials={review.initials}
+                  rating={review.rating}
+                  content={review.content}
+                  timeAgo={timeAgo(review.date)}
+                />
+              ))}
+            </div>
           ))}
         </div>
       </div>
