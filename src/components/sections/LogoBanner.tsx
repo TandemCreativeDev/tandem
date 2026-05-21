@@ -46,7 +46,7 @@ function LogoImage({ src, alt, height }: Logo) {
       height={height}
       width={200}
       style={{ objectFit: "contain", width: "auto", height: `${height}px` }}
-      className="grayscale hover:grayscale-0 transition-all duration-300"
+      className="grayscale hover:grayscale-0 motion-safe:transition-all motion-safe:duration-300"
     />
   );
 }
