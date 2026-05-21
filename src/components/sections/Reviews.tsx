@@ -48,48 +48,45 @@ const reviews = [
 ];
 
 const OVERALL_RATING = 5.0;
-const REVIEW_COUNT = reviews.length;
 
 export default function ReviewsSection() {
   return (
-    <section className="border-y border-black overflow-hidden">
+    <section className="overflow-hidden border-y border-black pb-16 md:pb-24">
       <div className="m-auto flex w-10/12 grid-cols-12 flex-col gap-6 py-16 md:py-24 lg:grid lg:w-full">
         <h2 className="col-span-2 col-start-3 font-tandem-mono-medium text-xs uppercase">
           <span aria-hidden="true">■ </span>Reviews
         </h2>
-        <div className="col-span-4 col-start-5 flex flex-col gap-3">
-          <div className="flex items-end gap-5">
-            <span
-              className="font-tandem-condensed-medium text-7xl leading-none"
-              aria-hidden="true"
+        <div className="col-span-4 col-start-5 flex items-end gap-5">
+          <span
+            className="font-tandem-condensed-medium text-7xl leading-none"
+            aria-hidden="true"
+          >
+            {OVERALL_RATING.toFixed(1)}
+          </span>
+          <div className="flex flex-col gap-1 pb-1">
+            <div
+              className="flex gap-0.5"
+              role="img"
+              aria-label={`Rated ${OVERALL_RATING} out of 5 stars on Google`}
             >
-              {OVERALL_RATING.toFixed(1)}
-            </span>
-            <div className="flex flex-col gap-1 pb-1">
-              <div
-                className="flex gap-0.5"
-                role="img"
-                aria-label={`Rated ${OVERALL_RATING} out of 5 stars on Google`}
-              >
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span
-                    key={i}
-                    aria-hidden="true"
-                    className="text-2xl leading-none text-black"
-                  >
-                    ★
-                  </span>
-                ))}
-              </div>
-              <a
-                href="https://share.google/i6GRxFpwXWs5tM7EZ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-tandem-mono-regular text-xs uppercase text-gray-500 hover:text-black transition-colors"
-              >
-                {REVIEW_COUNT} reviews · <span className="underline">Google</span> ↗
-              </a>
+              {Array.from({ length: 5 }).map((_, i) => (
+                <span
+                  key={i}
+                  aria-hidden="true"
+                  className="text-2xl leading-none text-black"
+                >
+                  ★
+                </span>
+              ))}
             </div>
+            <a
+              href="https://share.google/i6GRxFpwXWs5tM7EZ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-tandem-mono-regular text-xs uppercase text-gray-500 transition-colors hover:text-black"
+            >
+              {reviews.length} reviews · <span className="underline">Google</span> ↗
+            </a>
           </div>
         </div>
       </div>
@@ -104,24 +101,26 @@ export default function ReviewsSection() {
         ))}
       </ul>
 
-      <div className="overflow-hidden pb-16 md:pb-24">
-        <div className="flex w-max animate-marquee" style={{ animationDuration: "40s" }} aria-hidden="true">
-          {[reviews, reviews, reviews, reviews].map((set, s) => (
-            <div key={s} className="flex gap-6 mr-6">
-              {set.map((review, i) => (
-                <ReviewCard
-                  key={i}
-                  reviewer={review.reviewer}
-                  initials={review.initials}
-                  rating={review.rating}
-                  content={review.content}
-                  timeAgo={timeAgo(review.date)}
-                  date={review.date}
-                />
-              ))}
-            </div>
-          ))}
-        </div>
+      <div
+        className="flex w-max animate-marquee"
+        style={{ animationDuration: "40s" }}
+        aria-hidden="true"
+      >
+        {([reviews, reviews, reviews, reviews]).map((set, s) => (
+          <div key={s} className="flex gap-6 mr-6">
+            {set.map((review, i) => (
+              <ReviewCard
+                key={i}
+                reviewer={review.reviewer}
+                initials={review.initials}
+                rating={review.rating}
+                content={review.content}
+                timeAgo={timeAgo(review.date)}
+                date={review.date}
+              />
+            ))}
+          </div>
+        ))}
       </div>
     </section>
   );
