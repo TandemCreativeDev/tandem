@@ -13,7 +13,7 @@ export default function GoogleReviewBadge({
     <Link
       href="#reviews"
       onClick={onClick}
-      className={`flex flex-col gap-1 border border-white/40 px-4 py-3 text-white transition-colors hover:border-white/70 hover:text-white/70 ${className}`}
+      className={`flex flex-col gap-1 border border-white/40 px-4 py-3 text-white motion-safe:transition-colors hover:border-white/70 hover:text-white/70 ${className}`}
     >
       <span className="text-sm tracking-widest" aria-hidden="true">
         ★★★★★

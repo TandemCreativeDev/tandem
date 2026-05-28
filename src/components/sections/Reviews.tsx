@@ -51,7 +51,10 @@ const OVERALL_RATING = 5.0;
 
 export default function ReviewsSection() {
   return (
-    <section id="reviews" className="overflow-hidden border-y border-black pb-16 md:pb-24">
+    <section
+      id="reviews"
+      className="overflow-hidden border-y border-black pb-16 md:pb-24"
+    >
       <div className="m-auto flex w-10/12 grid-cols-12 flex-col gap-6 py-16 md:py-24 lg:grid lg:w-full">
         <h2 className="col-span-2 col-start-3 font-tandem-mono-medium text-xs uppercase">
           <span aria-hidden="true">■ </span>Reviews
@@ -83,9 +86,10 @@ export default function ReviewsSection() {
               href="https://share.google/i6GRxFpwXWs5tM7EZ"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-tandem-mono-regular text-xs uppercase text-gray-500 transition-colors hover:text-black"
+              className="font-tandem-mono-regular text-xs uppercase text-gray-500 motion-safe:transition-colors hover:text-black"
             >
-              {reviews.length} reviews · <span className="underline">Google</span> ↗
+              {reviews.length} reviews ·{" "}
+              <span className="underline">Google</span> ↗
             </a>
           </div>
         </div>
@@ -94,33 +98,37 @@ export default function ReviewsSection() {
       <ul className="sr-only">
         {reviews.map((review) => (
           <li key={review.reviewer}>
-            <p>{review.reviewer} — {review.rating} out of 5 stars</p>
+            <p>
+              {review.reviewer} — {review.rating} out of 5 stars
+            </p>
             <blockquote>{review.content}</blockquote>
             <time dateTime={review.date}>{timeAgo(review.date)}</time>
           </li>
         ))}
       </ul>
 
-      <div
-        className="flex w-max animate-marquee"
-        style={{ animationDuration: "40s" }}
-        aria-hidden="true"
-      >
-        {([reviews, reviews, reviews, reviews]).map((set, s) => (
-          <div key={s} className="flex gap-6 mr-6">
-            {set.map((review, i) => (
-              <ReviewCard
-                key={i}
-                reviewer={review.reviewer}
-                initials={review.initials}
-                rating={review.rating}
-                content={review.content}
-                timeAgo={timeAgo(review.date)}
-                date={review.date}
-              />
-            ))}
-          </div>
-        ))}
+      <div className="flex justify-center">
+        <div
+          className="flex gap-6 w-max motion-safe:animate-marquee"
+          style={{ animationDuration: "40s" }}
+          aria-hidden="true"
+        >
+          {[reviews, reviews, reviews, reviews].map((set, s) => (
+            <div key={s} className="flex gap-6">
+              {set.map((review, i) => (
+                <ReviewCard
+                  key={i}
+                  reviewer={review.reviewer}
+                  initials={review.initials}
+                  rating={review.rating}
+                  content={review.content}
+                  timeAgo={timeAgo(review.date)}
+                  date={review.date}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

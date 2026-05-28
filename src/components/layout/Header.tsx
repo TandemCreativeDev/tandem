@@ -70,8 +70,9 @@ export default function Header() {
               ? "fixed top-0 left-0 bg-black pb-5"
               : "absolute top-0 left-0 bg-none"
           }
-          transition-all 
-          duration-300 
+          transition-all
+          duration-300
+          motion-reduce:transition-none
           z-50
         `}
       >
@@ -88,11 +89,11 @@ export default function Header() {
             onClick={() => setIsOpen(false)}
           >
             <h1 className="text-center flex gap-1 group">
-              <span className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
+              <span className="text-gray-400 opacity-0 group-hover:opacity-100 motion-safe:transition-opacity hidden md:block">
                 &lt;
               </span>
               tandem creative dev
-              <span className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
+              <span className="text-gray-400 opacity-0 group-hover:opacity-100 motion-safe:transition-opacity hidden md:block">
                 /&gt;
               </span>
             </h1>
