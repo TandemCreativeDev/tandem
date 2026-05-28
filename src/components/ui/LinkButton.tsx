@@ -13,7 +13,7 @@ interface LinkButtonProps {
 export default function LinkButton({
   href,
   label,
-  className,
+  className = "text-sm",
   ariaLabel,
   onClick,
 }: LinkButtonProps) {
@@ -23,7 +23,7 @@ export default function LinkButton({
       aria-label={ariaLabel}
       onClick={onClick}
       className={twMerge(
-        "border-2 border-white bg-white font-tandem-mono-regular text-sm uppercase text-black motion-safe:transition-colors hover:bg-black hover:text-white",
+        "border-2 border-white bg-white font-tandem-mono-regular uppercase text-black motion-safe:transition-colors hover:bg-black hover:text-white",
         className,
       )}
     >

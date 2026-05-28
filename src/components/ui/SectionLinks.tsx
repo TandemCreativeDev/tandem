@@ -37,7 +37,7 @@ export default function SectionLinks({
                 href="#contact"
                 label={item}
                 ariaLabel="Scroll to contact"
-                className="bg-black px-3 py-0.5 text-white hover:bg-white hover:text-black xl:bg-white xl:text-black xl:hover:bg-black xl:hover:text-white"
+                className="bg-black px-3 py-0.5 text-white hover:bg-white hover:text-black xl:text-sm xl:bg-white xl:text-black xl:hover:bg-black xl:hover:text-white"
                 onClick={() => onClick(false)}
               />
             ) : (
