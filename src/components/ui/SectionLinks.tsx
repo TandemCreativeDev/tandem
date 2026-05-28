@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import LinkButton from "@/components/ui/LinkButton";
 import nav_items from "@/data/nav_items.json";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
@@ -30,16 +31,15 @@ export default function SectionLinks({
           key={index}
           className="relative list-none transition-all motion-reduce:transition-none duration-500 group-hover:text-gray-500 pointer-events-auto"
         >
-          {index >= startIndex && (
-            item === "contact" && ctaContact ? (
-              <Link
+          {index >= startIndex &&
+            (item === "contact" && ctaContact ? (
+              <LinkButton
                 href="#contact"
-                aria-label="Scroll to contact"
-                className="bg-black px-3 py-0.5 text-white transition-colors hover:bg-gray-800 xl:bg-white xl:text-black xl:hover:bg-gray-100"
+                label={item}
+                ariaLabel="Scroll to contact"
+                className="bg-black px-3 py-0.5 text-white hover:bg-white hover:text-black xl:text-sm xl:bg-white xl:text-black xl:hover:bg-black xl:hover:text-white"
                 onClick={() => onClick(false)}
-              >
-                {item}
-              </Link>
+              />
             ) : (
               <Link
                 href={`#${item}`}
@@ -51,14 +51,13 @@ export default function SectionLinks({
                   before:origin-right before:scale-x-0 before:scale-y-75
                   hover:before:origin-left hover:before:scale-x-100 hover:!text-black
                   px-1`,
-                  padded && "py-[2px]"
+                  padded && "py-[2px]",
                 )}
                 onClick={() => onClick(false)}
               >
                 {item}
               </Link>
-            )
-          )}
+            ))}
         </li>
       ))}
     </ul>

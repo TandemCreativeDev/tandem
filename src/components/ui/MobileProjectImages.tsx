@@ -26,7 +26,7 @@ export default function MobileProjectImages({
                 setSelectedProject(index);
                 openModal();
               }}
-              className="uppercase text-2xl font-tandem-medium mb-2 text-left hover:text-gray-300 transition-colors"
+              className="uppercase text-2xl font-tandem-medium mb-2 text-left hover:text-gray-300 motion-safe:transition-colors"
             >
               {project.title}
             </button>

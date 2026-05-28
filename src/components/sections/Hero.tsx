@@ -3,6 +3,7 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import LinkButton from "@/components/ui/LinkButton";
 import nav_items from "@/data/nav_items.json";
 
 const NodeGraph = dynamic(() => import("./NodeGraph"), { ssr: false });
@@ -24,7 +25,7 @@ export default function Hero() {
       <Link
         href="#reviews"
         onClick={(e) => e.stopPropagation()}
-        className="absolute bottom-8 right-8 z-20 flex flex-col items-end gap-1 border border-white/40 px-4 py-3 text-white transition-colors hover:border-white/70 hover:text-white/70"
+        className="absolute bottom-8 right-8 z-20 flex flex-col items-end gap-1 border border-white/40 px-4 py-3 text-white motion-safe:transition-colors hover:border-white/70 hover:text-white/70"
       >
         <span className="text-sm tracking-widest" aria-hidden="true">
           ★★★★★
@@ -46,13 +47,13 @@ export default function Hero() {
             End to end full-stack development and AI engineering
           </span>
         </div>
-        <Link
+        <LinkButton
           href="#contact"
+          label="Get in touch"
+          ariaLabel="Scroll to contact"
           onClick={(e) => e.stopPropagation()}
-          className="relative pointer-events-auto mt-10 bg-white px-8 py-3 font-tandem-mono-regular text-sm uppercase text-black transition-colors hover:bg-gray-100"
-        >
-          Get in touch
-        </Link>
+          className="relative pointer-events-auto mt-10 px-8 py-3"
+        />
       </div>
     </section>
   );
