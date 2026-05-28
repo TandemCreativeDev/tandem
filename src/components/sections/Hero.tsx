@@ -24,7 +24,7 @@ export default function Hero() {
       <Link
         href="#reviews"
         onClick={(e) => e.stopPropagation()}
-        className="absolute bottom-8 right-8 z-20 flex flex-col items-end gap-1 border border-white/40 px-4 py-3 text-white transition-colors hover:border-white/70 hover:text-white/70"
+        className="absolute bottom-8 right-8 z-20 hidden sm:flex flex-col items-end gap-1 border border-white/40 px-4 py-3 text-white transition-colors hover:border-white/70 hover:text-white/70"
       >
         <span className="text-sm tracking-widest" aria-hidden="true">
           ★★★★★
@@ -39,7 +39,7 @@ export default function Hero() {
             className="absolute inset-0 -m-16 rounded-full bg-black/80 blur-3xl"
             aria-hidden="true"
           />
-          <span className="relative pointer-events-auto text-white text-7xl max-w-[1000px] text-pretty text-center uppercase font-tandem-condensed-medium leading-tight">
+          <span className="relative pointer-events-auto text-white text-5xl sm:text-7xl max-w-[1000px] text-pretty text-center uppercase font-tandem-condensed-medium leading-tight">
             From discovery to deployment, <br /> we run in tandem with you
           </span>
           <span className="relative pointer-events-auto text-xl text-white w-10/12 xl:w-1/3 text-center mt-5 text-pretty font-tandem-regular">
@@ -52,6 +52,18 @@ export default function Hero() {
           className="relative pointer-events-auto mt-10 bg-white px-8 py-3 font-tandem-mono-regular text-sm uppercase text-black transition-colors hover:bg-gray-100"
         >
           Get in touch
+        </Link>
+        <Link
+          href="#reviews"
+          onClick={(e) => e.stopPropagation()}
+          className="relative pointer-events-auto mt-6 flex sm:hidden flex-col items-center gap-1 border border-white/40 px-4 py-3 text-white transition-colors hover:border-white/70 hover:text-white/70"
+        >
+          <span className="text-sm tracking-widest" aria-hidden="true">
+            ★★★★★
+          </span>
+          <span className="font-tandem-mono-regular text-xs uppercase tracking-widest">
+            5.0 · Google
+          </span>
         </Link>
       </div>
     </section>
