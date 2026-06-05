@@ -63,7 +63,6 @@
     "services": ["full-stack development", "web design", "accessibility"],
     "src": "yapli",
     "githubUrl": "https://github.com/TandemCreativeDev/yapli",
-    "websiteUrl": "https://yapli.chat",
     "renderOnMobile": true
   },
   {
