@@ -28,7 +28,6 @@ export default function DesktopProjectImages({
           <Image
             key={`project-image-${index}`}
             fill
-            priority
             sizes="100vw"
             className={clsx(
               "absolute left-0 top-0 -z-50",
@@ -39,7 +38,6 @@ export default function DesktopProjectImages({
             }}
             alt={`Mockup of ${project.title}`}
             src={`/projects/${project.src}.jpg`}
-            fetchPriority="low"
           />
         ))}
       </div>
