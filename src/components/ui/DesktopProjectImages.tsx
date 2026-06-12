@@ -1,4 +1,5 @@
 "use client";
+import { useSyncExternalStore } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import projects from "@/data/projects.json";
@@ -13,6 +14,17 @@ export default function DesktopProjectImages({
   setSelectedProject,
   openModal,
 }: DesktopProjectImagesProps) {
+  // Defer mockups until the page (incl. the hero's three.js chunk) has
+  // loaded, then fetch them all so hover-swapping never shows a part-loaded image
+  const warmImages = useSyncExternalStore(
+    (callback) => {
+      window.addEventListener("load", callback);
+      return () => window.removeEventListener("load", callback);
+    },
+    () => document.readyState === "complete",
+    () => false,
+  );
+
   return (
     <>
       <div className="absolute left-0 top-0 z-30 hidden h-full w-full md:block">
@@ -28,6 +40,7 @@ export default function DesktopProjectImages({
           <Image
             key={`project-image-${index}`}
             fill
+            loading={warmImages ? "eager" : "lazy"}
             sizes="100vw"
             className={clsx(
               "absolute left-0 top-0 -z-50",
