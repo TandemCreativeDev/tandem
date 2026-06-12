@@ -7,7 +7,9 @@ import LinkButton from "@/components/ui/LinkButton";
 import nav_items from "@/data/nav_items.json";
 import GoogleReviewBadge from "@/components/GoogleReviewBadge";
 
-const NodeGraph = dynamic(() => import("./NodeGraph"), { ssr: false });
+// Start fetching the three.js chunk at parse time, before hydration completes
+const nodeGraphPromise = import("./NodeGraph");
+const NodeGraph = dynamic(() => nodeGraphPromise, { ssr: false });
 
 export default function Hero() {
   const [seed, setSeed] = useState(0);
