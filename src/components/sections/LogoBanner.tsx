@@ -19,6 +19,11 @@ const secondLogos = [
     alt: "University of Warwick",
     height: 80,
   },
+  {
+    src: "/client-logos/alan-turing-institute.svg",
+    alt: "The Alan Turing Institute",
+    height: 55,
+  },
 ];
 
 const thirdLogos = [
