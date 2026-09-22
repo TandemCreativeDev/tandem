@@ -18,16 +18,16 @@ export default function AboutSection() {
         </p>
       </div>
       <div className="grid-cols-12 flex-col border-y border-black lg:grid ">
-        <div className="relative col-span-7 h-[300px] md:h-[500px] lg:h-full">
+        <div className="relative col-span-7 aspect-[3/2] lg:aspect-auto lg:min-h-[560px]">
           <Image
             src="/jackandmax.jpg"
             alt="Laptop showcasing work by Tandem"
             fill
-            sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: "bottom" }}
+            sizes="(min-width: 1024px) 58vw, 100vw"
+            style={{ objectFit: "cover", objectPosition: "60% 55%" }}
           ></Image>
         </div>
-        <div className="col-span-6 col-start-8 bg-white lg:py-28 py-10 lg:px-24 flex flex-col gap-10">
+        <div className="col-span-5 col-start-8 flex flex-col justify-center gap-10 bg-white py-10 lg:px-12 lg:py-28 xl:px-24">
           <p className="m-auto  w-10/12">
             We&apos;re a two-person agency. The people you brief are the people
             who build, and we care deeply about what we hand over. The
